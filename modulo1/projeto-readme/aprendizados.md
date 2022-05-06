@@ -1,0 +1,2 @@
+*Aprendizados da semana*
+A primeira semana de curso na *Labenu* foi desafiadora e ao mesmo tempo animadora. Durante as aulas, enquanto só escutamos, parece que não conseguimos absorver nada. Mas, depois, quando começamos a praticar com o exercício começa a dar uma clareada e as coisas começam a fazer sentido. Aprendi a usar o *terminal, o **git* e o *git hub*.
