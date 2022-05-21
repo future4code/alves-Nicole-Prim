@@ -19,18 +19,17 @@ if (confirm(perguntaInicio)) {
    cartaDoisUsuario = comprarCarta()
    cartaUmComputador = comprarCarta()
    cartaDoisComputador = comprarCarta()
-   let resultadoUsuario = cartaUmUsuario.valor + cartaDoisUsuario.valor 
-   let resultadoComputador = cartaUmComputador.valor + cartaDoisComputador.valor
-
+   resultadoUsuario = cartaUmUsuario.valor + cartaDoisUsuario.valor 
+   resultadoComputador = cartaUmComputador.valor + cartaDoisComputador.valor
    console.log(`Usuário - cartas: ${cartaUmUsuario.texto} ${cartaDoisUsuario.texto} - pontuação ${resultadoUsuario}`)
    console.log(`Computador - cartas: ${cartaUmComputador.texto} ${cartaDoisComputador.texto} - pontuação ${resultadoComputador}`)
+   if (resultadoUsuario === resultadoComputador) {
+      console.log("Empate!")
+   } else if (resultadoUsuario > resultadoComputador && resultadoUsuario < 21) {
+      console.log("O usuário ganhou!")
+   } else if (resultadoComputador > resultadoUsuario && resultadoComputador < 21) {
+      console.log("O computador ganhou!")
+   }
 } else {
    console.log("O jogo acabou.")
 }
-
-
-
-
-// let resultado = () => {
-//   if 
-// }
