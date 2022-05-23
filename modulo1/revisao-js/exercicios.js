@@ -76,7 +76,17 @@ function retornaSegundoMaiorESegundoMenor(array) {
 
 // EXERCÍCIO 11
 function retornaChamadaDeFilme(filme) {
-   
+    frase = `Venha assistir ao filme ${filme.nome}, de ${filme.ano}, dirigido por ${filme.diretor} e estrelado por`
+    for (ator of filme.atores) {        
+        if (filme.atores.indexOf(ator) === 0) {
+            frase = frase.concat(" " + ator)
+        } else if (filme.atores.indexOf(ator) === filme.atores.length-1) {
+            frase = frase.concat(", " + ator + ".")
+        } else {
+            frase = frase.concat(", " + ator)
+        }
+    }
+   return frase
 }
 
 // EXERCÍCIO 12
