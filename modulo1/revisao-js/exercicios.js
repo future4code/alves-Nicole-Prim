@@ -29,6 +29,12 @@ function retornaNumerosPares(array) {
 
 // EXERCÍCIO 05
 function retornaNumerosParesElevadosADois(array) {
+    const pares = array.filter(x => x % 2 === 0)
+    const paresDois = []
+    for (par of pares) {
+        paresDois.push(Math.pow(par, 2))
+    }
+    return paresDois
 }
 
 // EXERCÍCIO 06
