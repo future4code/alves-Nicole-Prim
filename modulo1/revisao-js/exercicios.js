@@ -70,7 +70,13 @@ return numerosPares
 
 // EXERCÍCIO 09
 function classificaTriangulo(ladoA, ladoB, ladoC) {
-
+    if (ladoA == ladoB && ladoB == ladoC) {
+        return "Equilátero"
+    } else if (ladoA != ladoB && ladoB != ladoC && ladoA != ladoC) {
+        return "Escaleno"
+    } else {
+        return "Isósceles"
+    }
 }
 
 // EXERCÍCIO 10
