@@ -77,10 +77,12 @@ div img {
     padding-bottom: 100px;
     background-color: #2274a5;
     color: white;
+    text-align: center;
 }
 
 #container-de-descricao>ol {
     padding: 15px 0px;
+    text-align: center;
 }
 
 #container-para-comprar {
@@ -93,6 +95,12 @@ div img {
     font-size: 60px;
 }
 
+#stylelist {
+    width: 200px;
+    height: 30px;
+    margin: 0 auto;
+    text-align: center;
+}
 
 /**
   *
