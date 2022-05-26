@@ -159,3 +159,8 @@ td button:hover {
 #back-button:active {
     color: white;
 }
+
+#botaovoltar {
+    text-align: center;
+    padding-top: 100px;
+}
