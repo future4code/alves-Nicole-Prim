@@ -120,6 +120,10 @@ td button {
     height: 100px;
 }
 
+#styleinput {
+    border: 0;
+    border-bottom: solid;
+}
 
 #back-button {
     background-color: white;
