@@ -1,129 +1,120 @@
 * {
-    font-family: 'Roboto', sans-serif;
-font-family: 'Roboto Condensed', sans-serif;
-background-color: rgba(197, 197, 197, 0.897);
-
+  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  background-color: rgba(191, 193, 197, 0.897);
 }
 
-body{
-  width:90%;
+body {
+  width: 90%;
   margin: 0 auto;
-  min-width:600px;
-  max-width:2000px
-}
-
-.menu{
-    list-style:none;
-    border:1px solid #c0c0c0;
-    float:left;
-    text-align: center;
-    margin-left: 100px;
-    }
-
-.menu li{
-position:relative;
-float:left;
-border-right:1px solid #c0c0c0;
-}
-
-.menu li a{color:#333; 
-    text-decoration:none; 
-    padding:5px 10px; 
-    display:block;
-}
-
-.menu li a:hover{
-background:#333;
-color:#fff;
-text-shadow:0px 0px 5px #fff;
-        }
-
-.menu li  ul{
-position:absolute;
-top:25px;
-left:0;
-background-color:#fff;
-display:none;
-}
-
-.menu li ul li{
-border:1px solid #c0c0c0;
-display:block;
-width:150px;
-}
-
-/* nome e apelido */
-
-#nome, #apelido {
-  text-align: center;
-
+  min-width: 600px;
+  max-width: 2000px
 }
 
 #nome {
+  text-align: center;
+  font-size: 28px;
+  margin: 0 auto;
   padding-top: 100px;
 }
 
-/* Formulário contato */
+.imagemcircular {
+  width: 280px;
+  height: 280px;
+  overflow: hidden;
+  border-radius: 50%;
+  text-align: center;
+  font-size: 28px;
+  margin: 0 auto;
+
+}
+
+.imagemcircular img {
+  width: 100%;
+}
+
+.menu {
+  list-style: none;
+  float: left;
+  text-align: center;
+  margin-left: 25%;
+  margin-right: 25%;
+  font-size: larger;
+}
+
+.menu li {
+  position: relative;
+  float: left;
+  text-align: center;
+}
+
+.menu li a {
+  padding: 5px 10px;
+  display: block;
+  text-align: center;
+}
+
+.menu li a:hover {
+  background-color: rgb(58, 69, 87);
+  color: rgb(255, 255, 255); 
+  text-shadow: 0px 0px 5px #fff; 
+}
+
+.menu li ul {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  display: none;
+  text-align: center;
+}
+
+#tituloum, #titulodois, #titulotres, #tituloquatro, #titulocinco {
+  display: block;
+  color: rgb(72, 77, 88);
+  font-size: 2em;
+}
 
 form {
-    margin: 0 auto;
-    width: 400px;
-    padding: 1em;
-    border: 1px solid #CCC;
-    border-radius: 1em;
-  }
-  
-  form div + div {
-    margin-top: 1em;
-  }
-  
-  label {
-    display: inline-block;
-    width: 90px;
-    text-align: right;
-  }
-  
-  input, textarea {
-    font: 1em sans-serif;
-    width: 300px;
-    box-sizing: border-box;
-    border: 1px solid #999;
-  }
-  
-  input:focus, textarea:focus {
-    border-color: #000;
-  }
-  
-  textarea {
-    vertical-align: top;
-    height: 5em;
-  }
-  
-  .button {
-    padding-left: 90px;
-  }
-  
-  button {
-    margin-left: .5em;
-  }
+  margin: 0 auto;
+  width: 400px;
+  padding: 1em;
+  border: 1px solid rgb(48, 51, 58);
+  border-radius: 1em;
+}
 
-/* Redes Sociais */
+form div+div {
+  margin-top: 1em;
+}
 
-  .imagensredes {
-      height: 15px;
-      width: 15px;
-  }
+label {
+  display: inline-block;
+  width: 90px;
+  text-align: right;
+}
 
-/* Foto */
+input,
+textarea {
+  width: 300px;
+  box-sizing: border-box;
+  border: 1px solid rgb(48, 51, 58);
+}
 
-.circular--portrait { 
-    position: relative; 
-    width: 150px; 
-    height: 150px; 
-    overflow: hidden; 
-    border-radius: 50%; 
-} 
-.circular--portrait img { 
-    width: 100%; 
-    height: auto; 
+textarea {
+  vertical-align: top;
+  height: 5em;
+}
+
+.button {
+  padding-left: 90px;
+  margin-left: .5em;
+}
+
+.imagensredes {
+  height: 15px;
+  width: 15px;
+}
+
+.foto {  
+  text-align: center;
+  margin: 0 auto;
 }
