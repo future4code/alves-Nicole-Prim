@@ -1,21 +1,21 @@
 * {
   font-family: 'Roboto', sans-serif;
   font-family: 'Roboto Condensed', sans-serif;
-  background-color: rgba(191, 193, 197, 0.897);
+  background-color: rgba(199, 200, 202, 0.897);
 }
 
-body {
-  width: 90%;
-  margin: 0 auto;
-  min-width: 600px;
-  max-width: 2000px
+html, body {
+	width: 100%;
+	height: 100%;
+	margin: 0;
+	padding: 0;
 }
 
 #nome {
   text-align: center;
   font-size: 28px;
   margin: 0 auto;
-  padding-top: 100px;
+  padding-top: 30px;
 }
 
 .imagemcircular {
@@ -26,17 +26,19 @@ body {
   text-align: center;
   font-size: 28px;
   margin: 0 auto;
-
 }
 
 .imagemcircular img {
   width: 100%;
 }
 
+.navum{
+  display: flex;
+  justify-content: center;
+}
+
 .menu {
   list-style: none;
-  float: left;
-  text-align: center;
   margin-left: 25%;
   margin-right: 25%;
   font-size: larger;
@@ -55,17 +57,21 @@ body {
 }
 
 .menu li a:hover {
-  background-color: rgb(58, 69, 87);
+  background-color: rgb(206, 125, 167);
   color: rgb(255, 255, 255); 
   text-shadow: 0px 0px 5px #fff; 
 }
 
-.menu li ul {
-  position: absolute;
-  top: 25px;
-  left: 0;
-  display: none;
-  text-align: center;
+.menu li a:visited {
+  background-color: rgb(228, 199, 214);
+  color: rgb(124, 118, 121); 
+  text-shadow: 0px 0px 5px #fff; 
+}
+
+.menu li a:link {
+  background-color: rgb(219, 193, 207);
+  color: rgb(179, 174, 178); 
+  text-shadow: 0px 0px 5px #fff; 
 }
 
 #tituloum, #titulodois, #titulotres, #tituloquatro, #titulocinco {
@@ -78,7 +84,7 @@ form {
   margin: 0 auto;
   width: 400px;
   padding: 1em;
-  border: 1px solid rgb(48, 51, 58);
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 1em;
 }
 
@@ -96,7 +102,7 @@ input,
 textarea {
   width: 300px;
   box-sizing: border-box;
-  border: 1px solid rgb(48, 51, 58);
+  border: 1px solid rgb(0, 0, 0);
 }
 
 textarea {
