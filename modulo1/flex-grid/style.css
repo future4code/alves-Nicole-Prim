@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    display: flex;
+    background-color: mediumvioletred;
+    justify-content:space-between;
+    padding: 0 16px 0 16px;
+    height: 60px;
+    align-items:center;
+    column-gap: 3%;
+}
+
+h1 {
+    flex: 1 1 30%;
+}
+
+header img {
+    height: 30px;
+}
+
+footer {
+    background-color: mediumvioletred;
+    height: 30px;
+    text-align: center;
+    align-items:center;
+}
