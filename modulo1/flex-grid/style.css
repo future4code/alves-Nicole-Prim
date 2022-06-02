@@ -1,0 +1,108 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    display: flex;
+    background-color: mediumvioletred;
+    justify-content:space-between;
+    padding: 0 16px 0 16px;
+    height: 60px;
+    align-items:center;
+    column-gap: 3%;
+}
+
+nav {
+    background-color: #f2d0e0;
+}
+
+nav > ul {
+    display: flex;
+    gap:18px;
+    flex-direction: column;
+    width: 250px;
+}
+
+.textomenu {
+    text-align: left;
+    flex: 1 1 20%;
+}
+
+nav img {
+    max-width: 20px;
+    max-height: 20px;
+} 
+
+.iconesnav {
+    padding-top: 20px;
+    direction: row;
+    justify-content:space-between;
+    display: flex;
+}
+
+.iconesum {
+    height: 15px;
+    padding-left: 20px;
+    justify-content: space-between;
+    display: flex; 
+    padding-right: 30px; 
+    flex: 1 1;
+
+}
+
+.iconesdois {
+    height: 20px;
+    padding-left: 60px;
+    align-content: right;
+    justify-content: space-between;
+    display: flex;
+} 
+
+main {
+    display: flex;
+    gap: 16px;
+    flex-grow: 3;
+}
+
+h1 {
+    flex: 1 1 30%;
+}
+
+header img {
+    height: 30px;
+}
+
+section img {
+    height: 200px;
+    width: 200px;
+}
+
+section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 20px;
+    height: 100px;
+}
+
+section div {
+    box-shadow: 2px 4px darkgray;
+    width: 200px;
+    padding-top: 20px;
+}
+
+
+footer {
+    background-color: mediumvioletred;
+    height: 30px;
+    text-align: center;
+    align-items:center;
+}
+
