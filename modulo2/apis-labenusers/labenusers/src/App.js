@@ -28,6 +28,7 @@ class App extends React.Component {
     )
       .then((resposta) => {
         alert("Usário cadastrado");
+        this.setState({ nomeUsuario: "", emailUsuario: ""})
       })
       .catch((erro) => {
         alert(erro.response.data.message);
