@@ -19,6 +19,7 @@ export default class App extends Component {
         return <Playlist
           changeScreen={this.changeScreen}
           goToMusics={this.goToMusics}
+          id={this.state.clickedPlaylistId}
         />
       case "playlistdetails":
         return <PlaylistDetails 

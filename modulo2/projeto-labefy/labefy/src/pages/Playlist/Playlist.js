@@ -47,9 +47,31 @@ export default class Playlist extends Component {
             })
     }
 
+    deletePlaylist = (id) => {
+        if (window.confirm("Você deseja mesmo excluir essa playlist?")) {
+            axios.delete(`${BASE_URL}/${id} `,
+                {
+                    headers: {
+                        Authorization: "nicole-prim-alves"
+                    }
+                }).then((res) => {
+                    this.getAllPlaylists()
+                    alert("Playlist excluída com sucesso")
+                }).catch((erro) => {
+                    alert(erro.response)
+                })
+            }
+    }
+
     render() {
         const playlists = this.state.listPlaylist.map((playlist) => {
-            return <p key={playlist.id} onClick={ () => this.props.goToMusics (playlist.id)}>{playlist.name}</p>
+            return <div key={playlist.id}>
+                <p>
+                {playlist.name}
+                <button onClick={() => this.props.goToMusics(playlist.id)}>Ir para a Playlist</button>
+                <button onClick={() => this.deletePlaylist(playlist.id)}>X</button>
+                </p>
+                </div>
         })
         return (
             <div>
@@ -60,8 +82,6 @@ export default class Playlist extends Component {
                 <button onClick={this.createPlaylist}>Criar Playlist</button>
                 {playlists}
                 <button onClick={() => this.props.changeScreen("home")}>Ir para a Home</button>
-
-
 
             </div>
         )
