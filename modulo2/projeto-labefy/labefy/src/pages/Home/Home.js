@@ -11,7 +11,7 @@ export default class Home extends Component {
                 <ContainerInicio>
                     <img src={Logo}/>
 
-                    <button onClick={ () => this.props.changeScreen("playlist")}>Clique aqui para começar sua aventura musical</button>
+                    <button onClick={ () => this.props.changeScreen("playlist")}>Clique aqui para começar sua aventura musical!</button>
                 </ContainerInicio>
                 <footer>
                     

@@ -75,12 +75,15 @@ export default class Playlist extends Component {
         })
         return (
             <div>
-
+                <h2>Aqui estão suas playlists</h2>
+                <h3>O que vamos ouvir hoje?</h3>
+                {playlists}
+                <h3>Se você está enjoado(a) das suas playlists, crie uma nova abaixo:</h3>
                 <input
                     type="text" onChange={this.onChangeInputPlaylist} value={this.state.inputNomePlaylist} placeholder="Digite o nome da Playlist..."
                 />
                 <button onClick={this.createPlaylist}>Criar Playlist</button>
-                {playlists}
+               
                 <button onClick={() => this.props.changeScreen("home")}>Ir para a Home</button>
 
             </div>
