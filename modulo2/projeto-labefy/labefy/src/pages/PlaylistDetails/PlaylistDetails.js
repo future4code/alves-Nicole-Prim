@@ -1,7 +1,10 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { BASE_URL } from '../../constants/url'
+import { Container, ContainerPlaylists, BotaoDeletar, BotaoIr, ContainerCreate, ContainerLogo, ContainerDois, DivButton, ContainerPlaylistsDois } from './StyledDetails.js'
 import Playlist from '../Playlist/Playlist'
+import Logo from '../../assets/imagens/logo2.png'
+import Icone from '../../assets/imagens/iconehome.png'
 
 export default class PlaylistDetails extends Component {
   state = {
@@ -80,26 +83,38 @@ export default class PlaylistDetails extends Component {
 
   render() {
     const musics = this.state.musicsList.map((music) => {
-      return <div key={music.id}>
-        <li>Música:{music.name}</li>
-        <li>Artista:{music.artist}</li>
-        <li><audio ref="audio_tag" src={music.url} controls /></li>
-        <button onClick={() => this.deleteMusics(music.id)}>X</button>
-      </div>
+      return <ContainerPlaylistsDois key={music.id}>
+        <p>Música: {music.name}</p>
+        <p>Artista: {music.artist}</p>
+        <p><audio ref="audio_tag" src={music.url} controls /></p>
+        <BotaoDeletar onClick={() => this.deleteMusics(music.id)}>X</BotaoDeletar>
+      </ContainerPlaylistsDois>
     })
     return (
-      <div>
+      <Container>
+        <ContainerLogo>
+
+      <img src={Logo} alt="Logo"/>
+
+      </ContainerLogo>
+      <ContainerDois>
+      <ContainerPlaylists>
         <h4>Dê o play e divirta-se com suas músicas!</h4>
         {musics}
+        </ContainerPlaylists>
+        <ContainerCreate>
         <h3>Insira novas músicas na sua playlist:</h3>
         <input type="text" onChange={this.newMusicName} value={this.state.name} placeholder="Nome da Música" />
         <input type="text" onChange={this.newMusicArtist} value={this.state.artist} placeholder="Artista" />
         <input type="text" onChange={this.newMusicURL} value={this.state.url} placeholder="URL" />
         <button onClick={this.addMusic}>Adicionar</button>
-        
-        <button onClick={() => this.props.changeScreen("home")}>Ir para a Home</button>
+        </ContainerCreate>
+        </ContainerDois>
+        <DivButton>
+        <button onClick={() => this.props.changeScreen("home")}><img src={Icone} alt="Ícone"/></button>
         <button onClick={() => this.props.changeScreen("playlist")}>Voltar para Playlists</button>
-      </div>
+        </DivButton>
+      </Container>
     )
   }
 }

@@ -29,6 +29,9 @@ overflow-y: scroll;
 align-items: center;
 width: 60rem;
 max-height: 30rem;
+h4 {
+    font-size: 2rem;
+}
 `
 
 export const ContainerCreate = styled.div`
@@ -74,9 +77,12 @@ img {
 export const DivButton = styled.div`
 margin-left: 5%;
 padding-top: 6%;
+display: flex;
+height: 13vh;
 button {
     background-color: transparent;
     width: 5rem;
+    font-weight: bold;
     cursor: pointer;
     img {
         width: 3rem;
