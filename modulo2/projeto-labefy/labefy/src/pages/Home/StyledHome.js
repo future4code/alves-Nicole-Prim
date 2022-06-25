@@ -7,8 +7,8 @@ background-size: cover;
 position: absolute;
 top: 0;
 left: 0;
-width: 100%;
-height: 100%;
+width: 100vw;
+height: 100vh;
 `
 
 export const ContainerInicio = styled.div`
@@ -29,6 +29,7 @@ button {
     font-size: 1rem;
     border-radius: 1rem;
     border: 3px solid;
+    cursor: pointer;
 }
 
 `

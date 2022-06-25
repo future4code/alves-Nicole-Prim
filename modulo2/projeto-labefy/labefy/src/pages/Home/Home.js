@@ -9,8 +9,7 @@ export default class Home extends Component {
         return (
             <Background>
                 <ContainerInicio>
-                    <img src={Logo}/>
-
+                    <img src={Logo} alt="Logo"/>
                     <button onClick={ () => this.props.changeScreen("playlist")}>Clique aqui para começar sua aventura musical!</button>
                 </ContainerInicio>
                 <footer>
