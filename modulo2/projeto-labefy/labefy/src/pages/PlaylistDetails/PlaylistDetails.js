@@ -89,12 +89,14 @@ export default class PlaylistDetails extends Component {
     })
     return (
       <div>
+        <h4>Dê o play e divirta-se com suas músicas!</h4>
+        {musics}
         <h3>Insira novas músicas na sua playlist:</h3>
         <input type="text" onChange={this.newMusicName} value={this.state.name} placeholder="Nome da Música" />
         <input type="text" onChange={this.newMusicArtist} value={this.state.artist} placeholder="Artista" />
         <input type="text" onChange={this.newMusicURL} value={this.state.url} placeholder="URL" />
         <button onClick={this.addMusic}>Adicionar</button>
-        {musics}
+        
         <button onClick={() => this.props.changeScreen("home")}>Ir para a Home</button>
         <button onClick={() => this.props.changeScreen("playlist")}>Voltar para Playlists</button>
       </div>
