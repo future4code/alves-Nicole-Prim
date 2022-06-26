@@ -35,7 +35,7 @@ h4 {
 @media screen and (min-device-width : 1200px) {
 margin-top: 5vh;
 width: 50rem;
-
+max-height: 24rem;
 }
 `
 
@@ -69,9 +69,13 @@ cursor: pointer;
     }
 }
 @media screen and (min-device-width : 1200px) {
-margin-top: 5vh;
+margin-top: 2vh;
 width: 50rem;
 font-size: 1.2rem;
+input {
+    padding: 1%;
+    width: 20%;
+}
 }
 `
 
