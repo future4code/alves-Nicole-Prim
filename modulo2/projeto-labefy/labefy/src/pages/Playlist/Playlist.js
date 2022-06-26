@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
 import { BASE_URL } from '../../constants/url'
-import { Container, ContainerPlaylists, BotaoDeletar, BotaoIr, ContainerCreate, ContainerLogo, ContainerDois, DivButton, ContainerPlaylistsDois } from './StyledPlaylist'
+import { Container, ContainerPlaylists, Names, BotaoDeletarDiv, BotaoIrDiv, ContainerCreate, ContainerLogo, ContainerDois, DivButton, ContainerPlaylistsDois } from './StyledPlaylist'
 import Logo from '../../assets/imagens/logo2.png'
 import Icone from '../../assets/imagens/iconehome.png'
 
@@ -69,20 +69,24 @@ export default class Playlist extends Component {
     render() {
         const playlists = this.state.listPlaylist.map((playlist) => {
             return <ContainerPlaylistsDois key={playlist.id}>
-                <p>
+                <Names>
                 {playlist.name}
-                </p>
-                <BotaoIr onClick={() => this.props.goToMusics(playlist.id)}>Ir para a Playlist</BotaoIr>
-                <BotaoDeletar onClick={() => this.deletePlaylist(playlist.id)}>X</BotaoDeletar>
+                </Names>
+                <BotaoIrDiv>
+                <button onClick={() => this.props.goToMusics(playlist.id)}>Ir para a Playlist</button>
+                </BotaoIrDiv>
+                <BotaoDeletarDiv>
+                <button onClick={() => this.deletePlaylist(playlist.id)}>X</button>
+                </BotaoDeletarDiv>
                 </ContainerPlaylistsDois>
         })
         return (
             <Container>
- 
                 <ContainerLogo>
-
                 <img src={Logo} alt="Logo"/>
-    
+                <DivButton>
+                <button onClick={() => this.props.changeScreen("home")}> <img src={Icone} alt="Ícone"/> </button>
+                </DivButton>
                 </ContainerLogo>
                 <ContainerDois>
                 <ContainerPlaylists>
@@ -98,9 +102,6 @@ export default class Playlist extends Component {
                 <button onClick={this.createPlaylist}>Criar Playlist</button>
                 </ContainerCreate>
                 </ContainerDois>
-                <DivButton>
-                <button onClick={() => this.props.changeScreen("home")}> <img src={Icone} alt="Ícone"/> </button>
-                </DivButton>
             </Container>
         )
     }

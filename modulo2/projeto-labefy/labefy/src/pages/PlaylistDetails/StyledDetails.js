@@ -32,6 +32,11 @@ max-height: 30rem;
 h4 {
     font-size: 2rem;
 }
+@media screen and (min-device-width : 1200px) {
+margin-top: 5vh;
+width: 50rem;
+
+}
 `
 
 export const ContainerCreate = styled.div`
@@ -63,6 +68,11 @@ cursor: pointer;
         color: #39D5E3;
     }
 }
+@media screen and (min-device-width : 1200px) {
+margin-top: 5vh;
+width: 50rem;
+font-size: 1.2rem;
+}
 `
 
 export const ContainerLogo = styled.div`
@@ -71,6 +81,12 @@ display: block;
 padding-top: 5%;
 img {
     width: 22rem;
+}
+@media screen and (min-device-width : 1200px) {
+img{
+    width: 17rem;
+}
+padding-top: 3%;
 }
 `
 
@@ -88,7 +104,11 @@ button {
         width: 3rem;
     }
 }
-
+@media screen and (min-device-width : 1200px) {
+margin-left: 15%;
+height: 8vh;
+margin-top: 120%;
+}
 `
 
 export const ContainerPlaylistsDois = styled.div`
@@ -102,31 +122,37 @@ p {
 }
 `
 
-export const BotaoDeletar = styled.button`
-padding: 1%;
+export const BotaoDeletarDiv = styled.div`
+display: flex;
+width: 5%;
+button {
+    padding: 1%;
 color: black;
 font-size: 1rem;
 border-radius: 1rem;
 border: 3px solid;
 background-color: #5F6A6B;
-width: 10%;
+width: 100%;
 cursor: pointer;
 :hover {
         color: #39D5E3;
     }
+}
 `
 
-export const BotaoIr = styled.button`
-padding: 1%;
-color: black;
-font-size: 1rem;
-border-radius: 1rem;
-border: 3px solid;
-background-color: #5F6A6B;
-width: 20%;
-cursor: pointer;
-:hover {
-        color: #39D5E3;
-    }
-
+export const MusicasDiv = styled.div`
+font-size: 1.5rem;
+font-weight: bold;
+width: 22%;
+padding-top: 3%;
+`
+export const ArtistDiv = styled.div`
+font-size: 1.5rem;
+font-weight: bold;
+width: 18%;
+padding-top: 3%;
+`
+export const AudioDiv = styled.audio`
+width: 30%;
+padding-top: 3%;
 `

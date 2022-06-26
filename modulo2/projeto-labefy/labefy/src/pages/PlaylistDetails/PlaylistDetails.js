@@ -1,8 +1,7 @@
 import axios from 'axios'
 import React, { Component } from 'react'
 import { BASE_URL } from '../../constants/url'
-import { Container, ContainerPlaylists, BotaoDeletar, BotaoIr, ContainerCreate, ContainerLogo, ContainerDois, DivButton, ContainerPlaylistsDois } from './StyledDetails.js'
-import Playlist from '../Playlist/Playlist'
+import { Container, ContainerPlaylists, MusicasDiv, ArtistDiv, AudioDiv, BotaoDeletarDiv, ContainerCreate, ContainerLogo, ContainerDois, DivButton, ContainerPlaylistsDois } from './StyledDetails.js'
 import Logo from '../../assets/imagens/logo2.png'
 import Icone from '../../assets/imagens/iconehome.png'
 
@@ -84,10 +83,18 @@ export default class PlaylistDetails extends Component {
   render() {
     const musics = this.state.musicsList.map((music) => {
       return <ContainerPlaylistsDois key={music.id}>
-        <p>Música: {music.name}</p>
-        <p>Artista: {music.artist}</p>
-        <p><audio ref="audio_tag" src={music.url} controls /></p>
-        <BotaoDeletar onClick={() => this.deleteMusics(music.id)}>X</BotaoDeletar>
+        <MusicasDiv>
+        <p>{music.name}</p>
+        </MusicasDiv>
+        <ArtistDiv>
+        <p>{music.artist}</p>
+        </ArtistDiv>
+        
+        <AudioDiv ref="audio_tag" src={music.url} controls />
+       
+        <BotaoDeletarDiv>
+        <button onClick={() => this.deleteMusics(music.id)}>X</button>
+        </BotaoDeletarDiv>
       </ContainerPlaylistsDois>
     })
     return (
@@ -95,8 +102,12 @@ export default class PlaylistDetails extends Component {
         <ContainerLogo>
 
       <img src={Logo} alt="Logo"/>
-
+      <DivButton>
+        <button onClick={() => this.props.changeScreen("home")}><img src={Icone} alt="Ícone"/></button>
+        <button onClick={() => this.props.changeScreen("playlist")}>Voltar para Playlists</button>
+        </DivButton>
       </ContainerLogo>
+  
       <ContainerDois>
       <ContainerPlaylists>
         <h4>Dê o play e divirta-se com suas músicas!</h4>
@@ -110,10 +121,7 @@ export default class PlaylistDetails extends Component {
         <button onClick={this.addMusic}>Adicionar</button>
         </ContainerCreate>
         </ContainerDois>
-        <DivButton>
-        <button onClick={() => this.props.changeScreen("home")}><img src={Icone} alt="Ícone"/></button>
-        <button onClick={() => this.props.changeScreen("playlist")}>Voltar para Playlists</button>
-        </DivButton>
+
       </Container>
     )
   }
