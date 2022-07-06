@@ -2,6 +2,8 @@ import react from "react";
 import TelaInicial from "../Pages/TelaInicial";
 import TelaMatches from "../Pages/TelaMatches";
 import { useState } from 'react';
+import { Container, DivImg } from './HeaderStyle'
+import Logo from '../Assets/Logo.png'
 
 function Header() {
 
@@ -12,14 +14,16 @@ function Header() {
   }
 
   return (
-    <div>
-      <h1>AstroMatch</h1>
+      <Container>
+        <DivImg>
+          <img src={Logo} alt='Logo' />
+        </DivImg>
       {screen === "Tela Inicial" ? (
         <TelaInicial screen={screen} changeScreen={changeScreen} />
       ) : (
         <TelaMatches screen={screen} changeScreen={changeScreen} />
       )}
-    </div>
+      </Container>
   )
 }
 

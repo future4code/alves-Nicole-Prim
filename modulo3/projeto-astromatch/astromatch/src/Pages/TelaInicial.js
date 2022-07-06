@@ -39,22 +39,19 @@ function TelaInicial(props) {
         getProfileToChoose()
     }, [])
 
-
-
     return (
         <div>
-            <h1>Tela inicial</h1>
             <button onClick={() => props.changeScreen("Tela Matches")}>Ir para matches</button>
 
             {profileUser ? (
                 <Profiles
-                profileUser={profileUser}
+                    profileUser={profileUser}
                 />
-            ) : 
-            <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
+            ) :
+                <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
             }
             <button onClick={() => choosePerson(profileUser.id, false)}> Gostei </button>
-                <button onClick={getProfileToChoose}> Não gostei </button> 
+            <button onClick={getProfileToChoose}> Não gostei </button>
         </div>
     );
 }

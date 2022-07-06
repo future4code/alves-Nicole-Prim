@@ -43,7 +43,6 @@ function TelaMatches(props) {
         getMatches()
     }
 
-
     return (
         <div>
             <h1>Tela Matches</h1>
