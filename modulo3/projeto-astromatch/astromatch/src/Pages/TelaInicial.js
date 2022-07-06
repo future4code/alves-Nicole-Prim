@@ -1,39 +1,44 @@
 import react from "react";
 import axios from "axios";
 import { useState, useEffect } from 'react';
-import { PROFILES_URL, CHOOSE_URL } from '../Constants/URL'
+import { PROFILES_URL, CHOOSE_URL, CLEAR_URL } from '../Constants/URL'
+import Profiles from "./Profiles";
 
 function TelaInicial(props) {
     const [profileUser, setProfileUser] = useState({})
 
 
-    const getProfileToChoose = async () => {
-        try {
-            const res = await axios.get(`${PROFILES_URL}`)
-            setProfileUser(res.data.profile)
-        } catch (error) {
-            console.log(error.response);
-        }
-    };
+    const getProfileToChoose = () => {
+        axios.get(`${PROFILES_URL}`)
+            .then((res) => {
+                console.log(res)
+                setProfileUser(res.data.profile)
+            })
+            .catch((err) => {
+                console.log(err)
+            })
+    }
 
-    const choosePerson = async (id, choice) => {
-        const body = {
-            id: id,
-            choice: choice,
-        }
-        try {
-            await axios.post(`${CHOOSE_URL}`, body);
-            getProfileToChoose()
-            console.log(choosePerson);
-        } catch {
-            console.log("Error");
-        }
-       
-    };
+    const choosePerson = (id) => {
+        axios.post(`${CHOOSE_URL}`,
+            {
+                id: id,
+                choice: true
+            }).then((response) => {
+                if (response.data.isMatch) {
+                    alert("Deu match!")
+                }
+                getProfileToChoose()
+            }).catch((error) => {
+                console.log(error)
+            })
+    }
+
 
     useEffect(() => {
-        getProfileToChoose();
+        getProfileToChoose()
     }, [])
+
 
 
     return (
@@ -41,29 +46,15 @@ function TelaInicial(props) {
             <h1>Tela inicial</h1>
             <button onClick={() => props.changeScreen("Tela Matches")}>Ir para matches</button>
 
-            { profileUser ? 
-                (
-                        <div>
-                            <img src={profileUser.photo} alt='Foto do Perfil' />
-                            <div>
-                                <h2>{profileUser.name}, {profileUser.age}</h2>
-                                <p>{profileUser.bio}</p>
-                            </div>
-                        </div>
-                ) :
-               <div> lalala </div>
+            {profileUser ? (
+                <Profiles
+                profileUser={profileUser}
+                />
+            ) : 
+            <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
             }
-
-
-
- {/*            {profileUser &&
-                <div>
-                    <p>   {profileUser.name} </p>
-                    <p>  {profileUser.age} </p>
-                    <img width={'200rem'} src={profileUser.photo} />
-                    <p>  {profileUser.bio} </p>
-                </div>
-            } */}
+            <button onClick={() => choosePerson(profileUser.id, false)}> Gostei </button>
+                <button onClick={getProfileToChoose}> Não gostei </button> 
         </div>
     );
 }
