@@ -13,9 +13,9 @@ function Header() {
 
   return (
     <div>
-
+      <h1>AstroMatch</h1>
       {screen === "Tela Inicial" ? (
-        <TelaInicial screen={screen} changeScreen={changeScreen}/>
+        <TelaInicial screen={screen} changeScreen={changeScreen} />
       ) : (
         <TelaMatches screen={screen} changeScreen={changeScreen} />
       )}
