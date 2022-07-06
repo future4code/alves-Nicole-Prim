@@ -3,6 +3,8 @@ import axios from "axios";
 import { useState, useEffect } from 'react';
 import { PROFILES_URL, CHOOSE_URL, CLEAR_URL } from '../Constants/URL'
 import Profiles from "./Profiles";
+import Like from '../Assets/like.png'
+import Deslike from '../Assets/deslike.png'
 
 function TelaInicial(props) {
     const [profileUser, setProfileUser] = useState({})
@@ -50,8 +52,8 @@ function TelaInicial(props) {
             ) :
                 <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
             }
-            <button onClick={() => choosePerson(profileUser.id, false)}> Gostei </button>
-            <button onClick={getProfileToChoose}> Não gostei </button>
+            <button onClick={() => choosePerson(profileUser.id, false)}> <img src={Like} alt='Like'/> </button>
+            <button onClick={getProfileToChoose}> <img src={Deslike} alt='Deslike'/> </button>
         </div>
     );
 }
