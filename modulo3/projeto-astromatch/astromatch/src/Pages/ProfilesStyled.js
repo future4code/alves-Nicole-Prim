@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 export const ContainerProfile = styled.div`
+    padding-top: 3rem;
     display: flex;
     flex-direction: column;
     align-items: center;
 `
 
 export const ImageProfile = styled.img`
+    margin-bottom: 1rem;
     display: flex;
     width: 14rem;
     height: 20rem;

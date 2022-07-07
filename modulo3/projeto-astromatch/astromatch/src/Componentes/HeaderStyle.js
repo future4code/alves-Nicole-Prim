@@ -4,10 +4,12 @@ export const MaxContainer = styled.div`
     width: 100vw;
     display: flex;
     justify-content: center;
+    padding: 0;
+    margin:0;
 `
 export const Container = styled.div`
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-    width: 21rem;
+    width: 19rem;
     height: 43rem;
     display: block;
     background-image: linear-gradient(#FADED4, #F5CFC8, #FBBFB7);

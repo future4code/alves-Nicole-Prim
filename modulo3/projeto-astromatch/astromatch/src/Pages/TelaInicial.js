@@ -46,9 +46,9 @@ function TelaInicial(props) {
 
     return (
         <div>
-            <MatchesDiv>
+          {/*   <MatchesDiv>
             <ButtonMatches onClick={() => props.changeScreen("Tela Matches")}><RiChat3Line/></ButtonMatches>
-            </MatchesDiv>
+            </MatchesDiv> */}
             {profileUser ? (
                 <Profiles
                     profileUser={profileUser}
