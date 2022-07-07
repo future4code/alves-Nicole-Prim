@@ -45,6 +45,9 @@ export const ButtonMatches = styled.button`
     height: 3rem;
     color: #8C4545;
     }
+    img {
+        color:red;
+    }
 `
 
 export const ButtonDislike = styled.button`
@@ -55,6 +58,9 @@ export const ButtonDislike = styled.button`
     width: 4rem;
     height: 4rem;
     color: #E68282;
+    }
+    .hover{
+        width: 7rem;
     }
 `
 
@@ -67,4 +73,8 @@ export const ButtonLike = styled.button`
     height: 4rem;
     color: #F20505;
     }
+    .hover{
+        width: 111rem;
+    }
+
 `

@@ -9,9 +9,9 @@ export const ContainerProfile = styled.div`
 export const ImageProfile = styled.img`
     margin-bottom: 1rem;
     display: flex;
-    width: 14rem;
+    width: 17rem;
     height: 20rem;
-    object-fit: cover;
+    object-fit: cover, contain;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 `
