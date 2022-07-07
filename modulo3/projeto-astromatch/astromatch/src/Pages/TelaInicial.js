@@ -3,8 +3,11 @@ import axios from "axios";
 import { useState, useEffect } from 'react';
 import { PROFILES_URL, CHOOSE_URL, CLEAR_URL } from '../Constants/URL'
 import Profiles from "./Profiles";
-import Like from '../Assets/like.png'
-import Deslike from '../Assets/deslike.png'
+import {IoMdHeartDislike} from 'react-icons/io'
+import {IoMdHeart} from 'react-icons/io'
+import {RiChatSmile2Line} from 'react-icons/ri'
+import { DivButtons, ButtonMatches, MatchesDiv, ButtonDislike, ButtonLike } from '../Componentes/HeaderStyle'
+import Matches from '../Assets/matches.png'
 
 function TelaInicial(props) {
     const [profileUser, setProfileUser] = useState({})
@@ -43,8 +46,9 @@ function TelaInicial(props) {
 
     return (
         <div>
-            <button onClick={() => props.changeScreen("Tela Matches")}>Ir para matches</button>
-
+            <MatchesDiv>
+            <ButtonMatches onClick={() => props.changeScreen("Tela Matches")}><RiChatSmile2Line/></ButtonMatches>
+            </MatchesDiv>
             {profileUser ? (
                 <Profiles
                     profileUser={profileUser}
@@ -52,8 +56,10 @@ function TelaInicial(props) {
             ) :
                 <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
             }
-            <button onClick={() => choosePerson(profileUser.id, false)}> <img src={Like} alt='Like'/> </button>
-            <button onClick={getProfileToChoose}> <img src={Deslike} alt='Deslike'/> </button>
+            <DivButtons>
+            <ButtonDislike onClick={getProfileToChoose}> <IoMdHeartDislike/> </ButtonDislike>
+            <ButtonLike onClick={() => choosePerson(profileUser.id, false)}> <IoMdHeart/> </ButtonLike>
+            </DivButtons>
         </div>
     );
 }

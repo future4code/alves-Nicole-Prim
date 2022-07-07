@@ -1,4 +1,5 @@
 import React from 'react'
+import Loading from '../Assets/loader.png'
 
 const Profiles = (props) => {
   return (
@@ -14,7 +15,7 @@ const Profiles = (props) => {
                 </div>
             </div>
         ) :
-        <div> carregando... </div>
+        <div><img src={Loading} alt='gif' /> </div>
     } 
     </div>
   )

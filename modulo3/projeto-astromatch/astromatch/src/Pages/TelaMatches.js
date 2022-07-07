@@ -45,7 +45,6 @@ function TelaMatches(props) {
 
     return (
         <div>
-            <h1>Tela Matches</h1>
             <button onClick={() => props.changeScreen("Tela Inicial")}>Ir para perfis</button>
             {showMatches}
 
