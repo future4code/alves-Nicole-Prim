@@ -6,11 +6,11 @@ export const MaxContainer = styled.div`
     justify-content: center;
 `
 export const Container = styled.div`
-    border: 1px solid black;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     width: 21rem;
-    height: 38rem;
+    height: 43rem;
     display: block;
-    background-color: #F9E2DC;
+    background-image: linear-gradient(#FADED4, #F5CFC8, #FBBFB7);
 `
 
 export const DivImg = styled.div`
@@ -18,8 +18,7 @@ export const DivImg = styled.div`
     display: flex;
     justify-content: center;
 img{
-    width: 12rem;
-    height: 50%;
+    width: 13rem;
 }
 `
 
@@ -32,19 +31,17 @@ export const DivButtons = styled.div`
 export const MatchesDiv = styled.div`
     display: flex;
     justify-content: flex-end;
-    padding: 1rem;
-
+    padding: 0.8rem;
 `
 
 export const ButtonMatches = styled.button`
     border: none;
     cursor: pointer;
     background-color: transparent;
-    display: flex;
     svg{
-    width: 2rem;
-    height: 2rem;
-    color: #F24949;
+    width: 3rem;
+    height: 3rem;
+    color: #8C4545;
     }
 `
 
@@ -55,7 +52,7 @@ export const ButtonDislike = styled.button`
     svg{
     width: 4rem;
     height: 4rem;
-    color: #D97E7E;
+    color: #E68282;
     }
 `
 

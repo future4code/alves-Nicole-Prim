@@ -2,6 +2,8 @@ import react from "react";
 import { useState, useEffect } from 'react';
 import axios from "axios";
 import { CLEAR_URL, MATCHES_URL } from '../Constants/URL'
+import {TbArrowBack} from 'react-icons/tb'
+import {ContainerMatches} from './MatchesStyled'
 
 function TelaMatches(props) {
 
@@ -45,8 +47,10 @@ function TelaMatches(props) {
 
     return (
         <div>
-            <button onClick={() => props.changeScreen("Tela Inicial")}>Ir para perfis</button>
+            <button onClick={() => props.changeScreen("Tela Inicial")}><TbArrowBack /></button>
+            <ContainerMatches>
             {showMatches}
+            </ContainerMatches>
 
             <button onClick={onClickClear}>Limpar Matches</button>
         </div>

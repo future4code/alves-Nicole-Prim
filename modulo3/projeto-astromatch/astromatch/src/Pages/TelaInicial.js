@@ -5,7 +5,7 @@ import { PROFILES_URL, CHOOSE_URL, CLEAR_URL } from '../Constants/URL'
 import Profiles from "./Profiles";
 import {IoMdHeartDislike} from 'react-icons/io'
 import {IoMdHeart} from 'react-icons/io'
-import {RiChatSmile2Line} from 'react-icons/ri'
+import {RiChat3Line} from  'react-icons/ri'
 import { DivButtons, ButtonMatches, MatchesDiv, ButtonDislike, ButtonLike } from '../Componentes/HeaderStyle'
 import Matches from '../Assets/matches.png'
 
@@ -47,7 +47,7 @@ function TelaInicial(props) {
     return (
         <div>
             <MatchesDiv>
-            <ButtonMatches onClick={() => props.changeScreen("Tela Matches")}><RiChatSmile2Line/></ButtonMatches>
+            <ButtonMatches onClick={() => props.changeScreen("Tela Matches")}><RiChat3Line/></ButtonMatches>
             </MatchesDiv>
             {profileUser ? (
                 <Profiles
