@@ -1,5 +1,6 @@
 import React from 'react'
-import {ContainerProfile, ImageProfile, Infos} from './ProfilesStyled'
+import {ContainerProfile, ImageProfile, Infos, Img} from './ProfilesStyled'
+import Loading from '../Assets/loading.gif'
 
 const Profiles = (props) => {
   return (
@@ -15,7 +16,9 @@ const Profiles = (props) => {
                 </Infos>
             </ContainerProfile>
         ) :
-        <div>Carregando... </div>
+        <Img>
+        <img src={Loading} alt="carregando"/>
+        </Img>
     } 
     </div>
   )

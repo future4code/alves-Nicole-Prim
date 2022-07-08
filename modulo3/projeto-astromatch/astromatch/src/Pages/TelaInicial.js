@@ -7,7 +7,7 @@ import {IoMdHeartDislike} from 'react-icons/io'
 import {IoMdHeart} from 'react-icons/io'
 import {RiChat3Line} from  'react-icons/ri'
 import { DivButtons, ButtonMatches, MatchesDiv, ButtonDislike, ButtonLike } from '../Componentes/HeaderStyle'
-import Matches from '../Assets/match.png'
+
 
 function TelaInicial(props) {
     const [profileUser, setProfileUser] = useState({})

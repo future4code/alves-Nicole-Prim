@@ -5,8 +5,20 @@ export const ContainerMatches = styled.div`
     height: 27rem;
     width: 19rem;
     flex-direction: column;
-    padding-top: 2rem;
+
+    margin-top: 2rem;
     overflow-y: scroll;
+    &::-webkit-scrollbar {
+        width: 0.7rem;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: #FADED4;
+        border-radius: 1rem;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: #8C4545;
+        border-radius: 1rem;
+    }
 `
 
 export const InfosUser = styled.div`

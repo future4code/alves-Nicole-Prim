@@ -31,3 +31,14 @@ export const Infos = styled.div`
         color: #8C4545;
     }
 `
+
+export const Img = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 11rem;
+    margin-bottom: 11rem;
+    img{
+        width: 9rem;
+    }
+`

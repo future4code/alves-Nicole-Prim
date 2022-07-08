@@ -59,9 +59,9 @@ export const ButtonDislike = styled.button`
     height: 4rem;
     color: #E68282;
     }
-    .hover{
-        width: 7rem;
-    }
+    &:hover{
+       
+  }
 `
 
 export const ButtonLike = styled.button`
