@@ -2,14 +2,14 @@ import React from 'react'
 import {ContainerProfile, ImageProfile, Infos, Img} from './ProfilesStyled'
 import Loading from '../Assets/loading.gif'
 
-const Profiles = (props) => {
+const Profiles = (props, {likeDislike} ) => {
   return (
     <div>
         {props.profileUser.photo && props.profileUser.name
                 && props.profileUser.age && props.profileUser.bio ?
         (
-            <ContainerProfile>
-                <ImageProfile src={props.profileUser.photo} alt='Foto do Perfil' />
+          <ContainerProfile>
+                <ImageProfile likeDislike={likeDislike} src={props.profileUser.photo} alt='Foto do Perfil' />
                 <Infos>
                     <h2>{props.profileUser.name}, {props.profileUser.age}</h2>
                     <p>{props.profileUser.bio}</p>

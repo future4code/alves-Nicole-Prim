@@ -2,10 +2,9 @@ import styled from 'styled-components'
 
 export const ContainerMatches = styled.div`
     display: flex;
-    height: 27rem;
+    height: 29rem;
     width: 19rem;
     flex-direction: column;
-
     margin-top: 2rem;
     overflow-y: scroll;
     &::-webkit-scrollbar {
@@ -47,17 +46,44 @@ p {
 `
 
 export const ButtonDivClear = styled.div`
-    margin-top: 3rem;
     display: flex;
     justify-content: center;
+    margin-top: 1rem;
     align-items: center;
     button {
-        background-color: #8C4545;
-        border-radius: 2rem;
-        color: #F5CFC8;
-        padding: 1rem;
+        background-color: transparent;
+        border-radius: 1rem;
+        border: 2px solid #8C4545;
+        color: #8C4545;
+        padding: 0.6rem;
         font-weight: bold;
         font-size: 1rem;
         cursor: pointer;
+    &:hover{
+        background-color:#F5CFC8;
+        box-shadow: 0 0 10px #F5CFC8, 0 0 5px #FBBFB7, 0 0 30px #FADED4;
+    }
+    }
+`
+
+export const ButtonBack = styled.div`
+    display: flex;
+margin-left: 1rem;
+margin-top: 0.6rem;
+    align-items: center;
+    button {
+        background-color: transparent;
+        border: none;
+        color: #8C4545;
+        font-weight: bold;
+        cursor: pointer;
+    &:hover{
+        background-color:#F5CFC8;
+        box-shadow: 0 0 10px #F5CFC8, 0 0 5px #FBBFB7, 0 0 30px #FADED4;
+    }
+    svg{
+       font-weight: bold;
+       font-size: 2rem;
+    }
     }
 `

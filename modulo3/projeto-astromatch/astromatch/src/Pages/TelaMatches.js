@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import axios from "axios";
 import { CLEAR_URL, MATCHES_URL } from '../Constants/URL'
 import { TbArrowBack } from 'react-icons/tb'
-import { ContainerMatches, InfosUser, ButtonDivClear, DivImg, DivAll } from './MatchesStyled'
+import { MdArrowBackIos } from 'react-icons/md'
+import { ContainerMatches, ButtonBack, InfosUser, ButtonDivClear, DivImg, DivAll } from './MatchesStyled'
+import { toast } from "react-toastify";
 
 function TelaMatches(props) {
 
@@ -43,19 +45,23 @@ function TelaMatches(props) {
 
     const onClickClear = () => {
         clear()
-        alert("Começou de novo")
+        toast.success("Matches limpos. Vamos começar de novo?")
         getMatches()
     }
 
     return (
         <div>
-            <button onClick={() => props.changeScreen("Tela Inicial")}><TbArrowBack /></button>
+           
             <ContainerMatches>
                 {showMatches}
             </ContainerMatches>
+            <ButtonBack>
+            <button onClick={() => props.changeScreen("Tela Inicial")}><MdArrowBackIos /></button>
+            </ButtonBack>
             <ButtonDivClear>
                 <button onClick={onClickClear}>Limpar Matches</button>
             </ButtonDivClear>
+            
         </div>
     );
 }

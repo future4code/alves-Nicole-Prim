@@ -1,39 +1,54 @@
 import react from "react";
 import axios from "axios";
 import { useState, useEffect } from 'react';
-import { PROFILES_URL, CHOOSE_URL, CLEAR_URL } from '../Constants/URL'
+import { PROFILES_URL, CHOOSE_URL } from '../Constants/URL'
 import Profiles from "./Profiles";
-import {IoMdHeartDislike} from 'react-icons/io'
-import {IoMdHeart} from 'react-icons/io'
-import {RiChat3Line} from  'react-icons/ri'
-import { DivButtons, ButtonMatches, MatchesDiv, ButtonDislike, ButtonLike } from '../Componentes/HeaderStyle'
-
+import { IoMdHeartDislike } from 'react-icons/io'
+import { IoMdHeart } from 'react-icons/io'
+import { MdPeopleOutline } from 'react-icons/md'
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
+import Fire from '../Assets/flame.png'
+import { DivButtons, MatchesDiv, ButtonDislike, ButtonLike } from '../Componentes/HeaderStyle'
 
 function TelaInicial(props) {
     const [profileUser, setProfileUser] = useState({})
-
+    const [likeDislike, setLikeDislike] = useState("normal")
 
     const getProfileToChoose = () => {
         axios.get(`${PROFILES_URL}`)
             .then((res) => {
-                console.log(res)
                 setProfileUser(res.data.profile)
+                changeAnimation("normal")
             })
             .catch((err) => {
                 console.log(err)
             })
     }
 
-    const choosePerson = (id) => {
+    const changeAnimation =(status)=>{
+        setLikeDislike(status)
+    }
+
+    const choosePerson = (choice) => {
         axios.post(`${CHOOSE_URL}`,
             {
-                id: id,
-                choice: true
+                "id": profileUser.id,
+                "choice": choice
             }).then((response) => {
+                if (choice === true) {
+                    changeAnimation("like")
+                } else if (choice === false) {
+                    changeAnimation("dislike")
+                }
                 if (response.data.isMatch) {
-                    alert("Deu match!")
+                    toast(`Você tem match com ${profileUser.name}`, {
+                        icon: <img src={Fire} widht='1rem' height='25rem' />
+                    }
+                    )
                 }
                 getProfileToChoose()
+
             }).catch((error) => {
                 console.log(error)
             })
@@ -45,20 +60,21 @@ function TelaInicial(props) {
 
     return (
         <div>
-          {   <MatchesDiv>
-            <ButtonMatches onClick={() => props.changeScreen("Tela Matches")}><RiChat3Line/></ButtonMatches>
-            </MatchesDiv> }
             {profileUser ? (
                 <Profiles
                     profileUser={profileUser}
+                    likeDislike={likeDislike}
                 />
             ) :
                 <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
             }
             <DivButtons>
-            <ButtonDislike onClick={getProfileToChoose}> <IoMdHeartDislike/> </ButtonDislike>
-            <ButtonLike onClick={() => choosePerson(profileUser.id, false)}> <IoMdHeart/> </ButtonLike>
+                <ButtonDislike onClick={() => choosePerson(false)}> <IoMdHeartDislike /> </ButtonDislike>
+                <ButtonLike onClick={() => choosePerson(true)}> <IoMdHeart /> </ButtonLike>
             </DivButtons>
+            <MatchesDiv>
+                <button onClick={() => props.changeScreen("Tela Matches")}> <MdPeopleOutline /> </button>
+            </MatchesDiv>
         </div>
     );
 }

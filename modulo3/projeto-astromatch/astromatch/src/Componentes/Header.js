@@ -2,8 +2,11 @@ import react from "react";
 import TelaInicial from "../Pages/TelaInicial";
 import TelaMatches from "../Pages/TelaMatches";
 import { useState } from 'react';
-import { Container, DivImg, MaxContainer } from './HeaderStyle'
+import { Container, DivImg, MaxContainer, Footer } from './HeaderStyle'
 import Logo from '../Assets/Logo.png'
+import {IoMdHeart} from 'react-icons/io'
+import {AiFillLinkedin} from 'react-icons/ai'
+
 
 function Header() {
 
@@ -24,7 +27,9 @@ function Header() {
         ) : (
           <TelaMatches screen={screen} changeScreen={changeScreen} />
         )}
+    <Footer> Desenvolvido com <IoMdHeart/> por Nicole Prim <a target={'blank'} href="https://www.linkedin.com/in/nicole-prim-478b6822b/"> <AiFillLinkedin /> </a> </Footer>
       </Container>
+
     </MaxContainer>
   )
 }
