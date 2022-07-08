@@ -43,6 +43,8 @@ export const MatchesDiv = styled.div`
     &:hover{
         background-color:#F5CFC8;
         box-shadow: 0 0 10px #F5CFC8, 0 0 5px #FBBFB7, 0 0 30px #FADED4;
+        transform: scale(1.1);
+    transition: all 0.5s;
     }
     svg{
        font-weight: bold;
@@ -60,7 +62,10 @@ export const ButtonDislike = styled.button`
     height: 4rem;
     color: #E68282;
     }
-
+    &:hover{
+        transform: scale(1.2);
+    transition: all 0.5s;
+    }
 `
 
 export const ButtonLike = styled.button`
@@ -71,6 +76,10 @@ export const ButtonLike = styled.button`
     width: 4rem;
     height: 4rem;
     color: #F20505;
+    }
+    &:hover{
+        transform: scale(1.2);
+    transition: all 0.5s;
     }
 `
 export const Footer = styled.div`
