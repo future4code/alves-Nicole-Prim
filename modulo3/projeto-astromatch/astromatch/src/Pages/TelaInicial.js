@@ -19,27 +19,33 @@ function TelaInicial(props) {
         axios.get(`${PROFILES_URL}`)
             .then((res) => {
                 setProfileUser(res.data.profile)
-                changeAnimation("normal")
+                setLikeSlideNormal()
             })
             .catch((err) => {
                 console.log(err)
             })
     }
 
-    const changeAnimation =(status)=>{
-        setLikeDislike(status)
+    const setLikeSlide = () => {
+        setLikeDislike("like")
+    }
+    const setDislikeSlide = () => {
+        setLikeDislike("dislike")
+    }
+    const setLikeSlideNormal = () => {
+        setLikeDislike("normal")
     }
 
     const choosePerson = (choice) => {
         axios.post(`${CHOOSE_URL}`,
             {
-                "id": profileUser.id,
-                "choice": choice
+                id: profileUser.id,
+                choice: choice
             }).then((response) => {
                 if (choice === true) {
-                    changeAnimation("like")
+                    setLikeSlide()
                 } else if (choice === false) {
-                    changeAnimation("dislike")
+                    setDislikeSlide()
                 }
                 if (response.data.isMatch) {
                     toast(`Você tem match com ${profileUser.name}`, {
@@ -69,8 +75,8 @@ function TelaInicial(props) {
                 <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
             }
             <DivButtons>
-                <ButtonDislike onClick={() => choosePerson(false)}> <IoMdHeartDislike /> </ButtonDislike>
-                <ButtonLike onClick={() => choosePerson(true)}> <IoMdHeart /> </ButtonLike>
+                <ButtonDislike type='button' onClick={() => choosePerson(false)}> <IoMdHeartDislike /> </ButtonDislike>
+                <ButtonLike type='button' onClick={() => choosePerson(true)}> <IoMdHeart /> </ButtonLike>
             </DivButtons>
             <MatchesDiv>
                 <button onClick={() => props.changeScreen("Tela Matches")}> <MdPeopleOutline /> </button>

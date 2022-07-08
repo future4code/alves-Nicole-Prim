@@ -14,14 +14,14 @@ export const ImageProfile = styled.img`
     height: 20rem;
     object-fit: cover, contain;
     border-radius: 10px;
+    transition: all 2s ease;
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
     ${(props) => props.likeDislike === "like" && "transform:   translate(15rem, 5rem) rotate(15deg)"};
-    ${(props) => props.likeDislike ==="like" && "opacity: 0"};
-    ${(props) => props.likeDislike==="normal" && ""}
-    ${(props) => props.likeDislike==="dislike" && "transform:   translate(-15rem, 5rem) rotate(-15deg)"};
-    ${(props) => props.likeDislike ==="dislike" && "opacity: 0"};
-
-`
+    ${(props) => props.likeDislike === "like" && "opacity: 0"};
+    ${(props) => props.likeDislike === "normal" && ""};
+    ${(props) => props.likeDislike === "dislike" && "transform:   translate(-15rem, 5rem) rotate(-15deg)"};
+    ${(props) => props.likeDislike === "dislike" && "opacity: 0"};
+    `
 
 export const Infos = styled.div`
     display: flex;
