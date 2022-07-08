@@ -7,6 +7,24 @@ export const ContainerProfile = styled.div`
     margin-top: 2rem;
 `
 
+export const Message = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 2rem;
+    h2 {
+    color:  #8C4545;
+    font-size: 2rem;
+    }
+    p{
+    display: flex;
+    text-align: center;
+    color:  #8C4545;
+    font-size: 1rem;
+    margin: 2rem;
+    }
+`
+
 export const ImageProfile = styled.img`
     margin-bottom: 1rem;
     display: flex;

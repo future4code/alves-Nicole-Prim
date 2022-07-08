@@ -10,6 +10,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { ToastContainer, toast } from 'react-toastify';
 import Fire from '../Assets/flame.png'
 import { DivButtons, MatchesDiv, ButtonDislike, ButtonLike } from '../Componentes/HeaderStyle'
+import { Message } from './ProfilesStyled'
 
 function TelaInicial(props) {
     const [profileUser, setProfileUser] = useState({})
@@ -48,7 +49,7 @@ function TelaInicial(props) {
                     setDislikeSlide()
                 }
                 if (response.data.isMatch) {
-                    toast(`Você tem match com ${profileUser.name}`, {
+                    toast(`Você deu match com ${profileUser.name}`, {
                         icon: <img src={Fire} widht='1rem' height='25rem' />
                     }
                     )
@@ -72,7 +73,11 @@ function TelaInicial(props) {
                     likeDislike={likeDislike}
                 />
             ) :
-                <div> Uau! Você zerou os perfis. Para começar de novo, limpe os matches.</div>
+                <Message>
+                    <h2>Uau! </h2>
+                    <p>Você zerou os perfis. </p>
+                    <p>   Para começar de novo, vá até a página de matches e clique em "Limpar Matches".</p>
+                </Message>
             }
             <DivButtons>
                 <ButtonDislike type='button' onClick={() => choosePerson(false)}> <IoMdHeartDislike /> </ButtonDislike>
