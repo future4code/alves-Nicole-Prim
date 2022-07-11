@@ -1,6 +1,6 @@
 import React from 'react'
 
-const CreateTripPage = () => {
+export function CreateTripPage () {
   return (
     <div>CreateTripPage</div>
   )

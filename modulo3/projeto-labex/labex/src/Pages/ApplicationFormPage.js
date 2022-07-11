@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ApplicationFormPage = () => {
+export function ApplicationFormPage() {
   return (
     <div>ApplicationFormPage</div>
   )
