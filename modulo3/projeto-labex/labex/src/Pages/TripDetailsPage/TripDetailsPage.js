@@ -4,7 +4,7 @@ import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { goBack } from '../../Routes/Coordinator'
 
-export function TripDetailsPage () {
+function TripDetailsPage () {
 
   const params = useParams()
   const trip = useGetData(`/trip/${params.id}`, {});

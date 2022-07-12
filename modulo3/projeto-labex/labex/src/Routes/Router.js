@@ -7,14 +7,13 @@ import AdminHomePage from '../Pages/AdminHomePage/AdminHomePage'
 import ApplicationFormPage from '../Pages/ApplicationFormPage/ApplicationFormPage'
 import CreateTripPage from '../Pages/CreateTripPage/CreateTripPage'
 import TripDetailsPage from '../Pages/TripDetailsPage/TripDetailsPage'
-import { useParams } from 'react-router-dom'
 
 export const Router = () => {
     return (
         <BrowserRouter>
+        <Header />
             <Routes>
-                <Route exact path="/" element={<HomePage />} />
-{/*                 <Route path="HomePage" element={<HomePage />} /> */}
+                <Route index exact path="/" element={<HomePage />} />
                 <Route path="ListTripsPage" element={<ListTripsPage />} />
                 <Route path="LoginPage" element={<LoginPage />} />
                 <Route path="AdminHomePage" element={<AdminHomePage />} />
