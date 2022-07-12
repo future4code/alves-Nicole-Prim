@@ -1,7 +1,7 @@
 
 
 export const goToHomePage = (navigate) => {
-    navigate("/HomePage")
+    navigate("/")
 }
 
 export const goToListTripsPage = (navigate) => {
@@ -24,8 +24,8 @@ export const goToCreateTripPage= (navigate) => {
     navigate("/CreateTripPage")
 }
 
-export const goToTripDetailsPage = (navigate) => {
-    navigate("/TripDetailsPage")
+export const goToTripDetailsPage = (navigate, id) => {
+    navigate(`/TripDetailsPage/${id}`)
 }
 
 export const goBack = (navigate) => {

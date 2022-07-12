@@ -6,7 +6,8 @@ export const ContainerHome = styled.div`
     padding: 0;
     height: 100vh;
     margin: 0;
-   background-image: linear-gradient(#D1EDFF, #BBDBEB, #b6d4e8, #9fc8e0, #86BAD7);
+    box-sizing: border-box;
+    background-image: linear-gradient(#D1EDFF, #BBDBEB, #b6d4e8, #9fc8e0, #86BAD7);
 `
 
 export const DivLogo = styled.div`
@@ -33,6 +34,7 @@ export const DivButtonHome = styled.div`
     color: #207EB4;
     font-weight: bold;
     font-size: 1rem;
+    cursor: pointer;
     &:hover{
         box-shadow: 0 0 10px #207EB4, 0 0 10px #207EB4;
         text-shadow: 0 0 5px #D1EDFF, 0 0 5px #D1EDFF;
