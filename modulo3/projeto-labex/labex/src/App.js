@@ -1,11 +1,14 @@
 import React from "react";
-import HomePage from "./Pages/HomePage";
+import HomePage from "./Pages/HomePage/HomePage";
+import Header from "./Pages/Header/Header";
+import axios from 'react'
 
 function App() {
   return (
     <div>
-      <h1>Olá</h1>
+      <Header />
       <HomePage />
+
     </div>
   );
 }
