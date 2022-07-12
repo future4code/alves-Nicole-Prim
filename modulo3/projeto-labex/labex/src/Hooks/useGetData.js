@@ -8,8 +8,6 @@ export function useGetData(path) {
     const [loading, setLoading] = useState(false);
     const [erro, setErro] = useState();
     useEffect(() => {
-        console.log("entrou")
-        console.log(`${BASE_URL}`)
         setLoading(true);
         axios
             .get(`${BASE_URL}${path}`)

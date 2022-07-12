@@ -1,8 +1,14 @@
 import React from 'react'
+import { useNavigate } from 'react-router-dom'
+import { goBack } from '../../Routes/Coordinator'
 
 export function CreateTripPage () {
+  const navigate = useNavigate()
   return (
-    <div>CreateTripPage</div>
+    <div>
+      <button onClick={() => goBack(navigate)}>Voltar</button>
+      <button>Criar</button>
+    </div>
   )
 }
 

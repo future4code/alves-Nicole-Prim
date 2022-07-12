@@ -1,8 +1,17 @@
 import React from 'react'
 
-export function LoginPage () {
+import { useNavigate } from 'react-router-dom'
+import { goBack, goToAdminHomePage  } from '../../Routes/Coordinator'
+
+export function LoginPage() {
+
+  const navigate = useNavigate()
+
   return (
-    <div>LoginPage</div>
+    <div>
+      <button onClick={() => goBack(navigate)}>Voltar</button>
+      <button onClick={() => goToAdminHomePage(navigate)}>Entrar</button>
+    </div>
   )
 }
 

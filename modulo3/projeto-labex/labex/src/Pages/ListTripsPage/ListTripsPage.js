@@ -3,6 +3,7 @@ import React from 'react';
 import { useGetData } from '../../Hooks/useGetData'
 //rotas
 import { useNavigate } from 'react-router-dom';
+import { goBack, goToApplicationFormPage } from '../../Routes/Coordinator';
 
 export function ListTripsPage() {
   const { dados, loading, erro } = useGetData("/trips");
@@ -23,16 +24,12 @@ export function ListTripsPage() {
 
   const navigate = useNavigate ()
 
-  const goBack = () => {
-    navigate(-1)
-  }
-
   return (
     <div>
       <h1>Lista de Viagens</h1>
       {listTrips}
-      <button onClick={goBack}>Voltar</button>
-      <button>Inscrever-se</button>
+      <button onClick={() => goBack(navigate)}>Voltar</button>
+      <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
     </div>
   )
 }
