@@ -1,14 +1,14 @@
 import React from "react";
-import HomePage from "./Pages/HomePage/HomePage";
+//Páginas
 import Header from "./Pages/Header/Header";
-import axios from 'react'
+import {Router} from '../src/Routes/Router'
+
 
 function App() {
   return (
     <div>
       <Header />
-      <HomePage />
-
+      <Router />
     </div>
   );
 }
