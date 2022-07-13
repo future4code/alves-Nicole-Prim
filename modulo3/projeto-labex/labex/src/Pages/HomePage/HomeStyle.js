@@ -7,7 +7,7 @@ export const ContainerHome = styled.div`
     height: 100vh;
     margin: 0;
     box-sizing: border-box;
-    background-image: linear-gradient(#D1EDFF, #BBDBEB, #b6d4e8, #9fc8e0, #86BAD7);
+    background-color: #D1EDFF;
 `
 
 export const DivLogo = styled.div`

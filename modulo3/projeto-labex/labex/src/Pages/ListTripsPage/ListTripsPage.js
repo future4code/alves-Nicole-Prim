@@ -7,7 +7,7 @@ import { goBack, goToApplicationFormPage } from '../../Routes/Coordinator';
 //styled
 import {ContainerList, InfosTrip, ContainerTrips, DivImg, DivButtons} from './ListTripsStyled'
 //assets
-import Imagens from '../../Assets/tresimg.png'
+import Imagens from '../../Assets/tresimg.jpg'
 
 export function ListTripsPage() {
   const { dados, loading, erro } = useGetData("/trips");
@@ -18,6 +18,7 @@ export function ListTripsPage() {
     return (
       <div key={trip.id}>
         <InfosTrip>
+
         <p><strong>Nome: </strong> {trip.name}</p>
         <p><strong>Descrição: </strong> {trip.description}</p>
         <p><strong>Planeta: </strong> {trip.planet}</p>
@@ -36,9 +37,6 @@ export function ListTripsPage() {
       <ContainerTrips>
       {listTrips}
       </ContainerTrips>
-      <DivImg>
-      <img src={Imagens} alt="três imagens em círculos"/>
-      </DivImg>
       <DivButtons>
       <button onClick={() => goBack(navigate)}>Voltar</button>
       <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
