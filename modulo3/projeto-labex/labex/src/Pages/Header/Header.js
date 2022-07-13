@@ -2,19 +2,19 @@ import React from 'react'
 //assets
 import Labex from '../../Assets/labex.png'
 //styled
-import {ContainerHeader} from './HeaderStyle'
+import { ContainerHeader } from './HeaderStyle'
 //rotas
 import { useNavigate } from 'react-router-dom'
-import {goToHomePage} from '../../Routes/Coordinator'
+import { goToHomePage } from '../../Routes/Coordinator'
 
 function Header() {
- const navigate = useNavigate()
 
+  const navigate = useNavigate()
 
   return (
     <ContainerHeader>
       <img src={Labex} alt="Logo Labex" />
-      <button onClick={goToHomePage(navigate)}> Home</button>
+      <button onClick={() => goToHomePage(navigate)}> Home</button>
     </ContainerHeader>
   )
 }

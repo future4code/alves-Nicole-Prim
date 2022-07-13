@@ -1,9 +1,7 @@
 
-
 export const goToHomePage = (navigate) => {
     navigate("/")
 }
-
 export const goToListTripsPage = (navigate) => {
     navigate("/ListTripsPage")
 }

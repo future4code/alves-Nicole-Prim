@@ -4,6 +4,10 @@ import { useGetData } from '../../Hooks/useGetData'
 //rotas
 import { useNavigate } from 'react-router-dom';
 import { goBack, goToApplicationFormPage } from '../../Routes/Coordinator';
+//styled
+import {ContainerList, InfosTrip, ContainerTrips, DivImg, DivButtons} from './ListTripsStyled'
+//assets
+import Imagens from '../../Assets/tresimg.png'
 
 export function ListTripsPage() {
   const { dados, loading, erro } = useGetData("/trips");
@@ -13,11 +17,13 @@ export function ListTripsPage() {
   const listTrips = trips?.map((trip) => {
     return (
       <div key={trip.id}>
-        <p><strong>Nome:</strong> {trip.name}</p>
-        <p><strong>Descrição:</strong> {trip.description}</p>
-        <p><strong>Planeta:</strong> {trip.planet}</p>
-        <p><strong>Duração:</strong> {trip.durationInDays} dias</p>
-        <p><strong>Data:</strong> {trip.date}</p>
+        <InfosTrip>
+        <p><strong>Nome: </strong> {trip.name}</p>
+        <p><strong>Descrição: </strong> {trip.description}</p>
+        <p><strong>Planeta: </strong> {trip.planet}</p>
+        <p><strong>Duração: </strong> {trip.durationInDays} dias</p>
+        <p><strong>Data: </strong> {trip.date}</p>
+        </InfosTrip>
       </div>
     )
   })
@@ -25,12 +31,19 @@ export function ListTripsPage() {
   const navigate = useNavigate ()
 
   return (
-    <div>
+    <ContainerList>
       <h1>Lista de Viagens</h1>
+      <ContainerTrips>
       {listTrips}
+      </ContainerTrips>
+      <DivImg>
+      <img src={Imagens} alt="três imagens em círculos"/>
+      </DivImg>
+      <DivButtons>
       <button onClick={() => goBack(navigate)}>Voltar</button>
       <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
-    </div>
+      </DivButtons>
+    </ContainerList>
   )
 }
 
