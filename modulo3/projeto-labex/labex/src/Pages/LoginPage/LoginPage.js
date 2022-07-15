@@ -4,22 +4,28 @@ import { useNavigate } from 'react-router-dom'
 import { goBack, goToAdminHomePage  } from '../../Routes/Coordinator'
 
 import {useForm} from '../../Hooks/useForm'
+import axios from 'axios'
+import { BASE_URL } from '../../Credentials/Credentials'
 
 export function LoginPage() {
   const {form, onChange, cleanFields} = useForm({email: "", password: ""})
 
-
-
   const navigate = useNavigate()
-
 
   const submitLogin = (event) => {
     event.preventDefault()
+    axios.post(`${BASE_URL}/login`, form)
+    .then((response) => {
+      console.log("Deu certo", response.data)
+      goToAdminHomePage(navigate)
+    }).catch((error) => {
+      console.log(error.response)
+    })
   }
 
   return (
     <div>
-      <form onSubmit={submitLogin} onClick={() => goToAdminHomePage(navigate)}>
+      <form onSubmit={submitLogin} >
         <input
         name="email"
         type="email"
