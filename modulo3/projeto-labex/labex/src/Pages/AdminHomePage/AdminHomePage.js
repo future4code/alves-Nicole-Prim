@@ -14,36 +14,36 @@ function AdminHomePage() {
   const trips = dados?.trips
   console.log("testando2")
   console.log(dados)
-// const handleDelete = () => {
-//   setRefresh(!refresh)
-// }
+const handleDelete = () => {
+  setRefresh(!refresh)
+}
 
-  // const handleClickDelete = (id) => {
-  //   console.log("testando1")
-  //   const token = localStorage.getItem('token')
-  //   axios.delete(`${BASE_URL}/trips/${id}`,
-  //   {
-  //     headers: {
-  //       auth: token
-  //     }
-  //   }
-  //   )
-  //   .then((res) => {
-  //     alert("bla bla")
-  //     handleDelete()
-  //   })
-  //   .catch((err) => {
-  //     console.log(err)
-  //     console.log("testando")
-  //   })
-  // }
+  const handleClickDelete = (id) => {
+    console.log("testando1")
+    const token = localStorage.getItem('token')
+    axios.delete(`${BASE_URL}/trips/${id}`,
+    {
+      headers: {
+        auth: token
+      }
+    }
+    )
+    .then((res) => {
+      alert("bla bla")
+      handleDelete()
+    })
+    .catch((err) => {
+      console.log(err)
+      console.log("testando")
+    })
+  }
   const listTrips = trips?.map((trip) => {
       return (
         <div key={trip.id}>
           <button onClick={() => goToTripDetailsPage(navigate, trip.id)}>
           <p><strong>Nome:</strong> {trip.name}</p>
           </button>
-          {/* <button onClick={() => handleClickDelete(trip.id)}>Deletar Viagem</button> */}
+          <button onClick={() => handleClickDelete(trip.id)}>Deletar Viagem</button>
         </div>
       )
   })
