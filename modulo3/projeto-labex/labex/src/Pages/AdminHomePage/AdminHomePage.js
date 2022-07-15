@@ -10,10 +10,11 @@ import { BASE_URL, HEADERS } from '../../Credentials/Credentials'
 function AdminHomePage() {
   const navigate = useNavigate()
   const [refresh, setRefresh] = useState(false)
-  const { dados, loading, erro } = useGetData("/trips");
+  const { dados, loading, erro } = useGetData("/trips", refresh);
   const trips = dados?.trips
   console.log("testando2")
   console.log(dados)
+
 const handleDelete = () => {
   setRefresh(!refresh)
 }
@@ -31,6 +32,7 @@ const handleDelete = () => {
     .then((res) => {
       alert("bla bla")
       handleDelete()
+      document.location.reload(true)
     })
     .catch((err) => {
       console.log(err)
