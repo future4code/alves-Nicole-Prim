@@ -7,16 +7,17 @@ import {useProtectedPage} from '../../Hooks/useProtectedPage'
 import { HEADERS } from '../../Credentials/Credentials'
 
 function TripDetailsPage () {
+  useProtectedPage()
   const params = useParams()
-  const { dados, loading, erro, candidates } = useGetDataDetails(`/trip/${params.id}`, {});
+  const { dados, loading, erro } = useGetDataDetails(`/trip/${params.id}`, {});
   const trip = dados?.trip
 console.log("aqui", trip)
+console.log(params.id)
   const detailsTrip = () => {
     if (trip) {
       return (
         <div>
           <p>{trip.name}</p>
-          {candidates}
         </div>
       )
     } else {
@@ -27,7 +28,7 @@ console.log("aqui", trip)
   }
 
   const navigate = useNavigate()
-  useProtectedPage()
+
   return (
     <div>
       <button onClick={() => goBack(navigate)}>Voltar</button>

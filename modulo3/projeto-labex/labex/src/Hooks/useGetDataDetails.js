@@ -7,7 +7,6 @@ export function useGetDataDetails(path) {
     const [dados, setDados] = useState();
     const [loading, setLoading] = useState(false);
     const [erro, setErro] = useState();
-    const [candidates, setCandidates] = useState([])
     useEffect(() => {
         setLoading(true);
         const token = localStorage.getItem("token")
@@ -20,8 +19,7 @@ export function useGetDataDetails(path) {
             })
             .then((res) => {
                 setLoading(false);
-                setDados(res.data.trip);
-                setCandidates(res.data.trip.candidates)
+                setDados(res.data);
             })
             .catch((err) => {
                 console.log(err.response.data);
@@ -29,5 +27,5 @@ export function useGetDataDetails(path) {
                 setErro(err.response.message);
             })
     }, [path])
-    return { dados, loading, erro, candidates }
+    return { dados, loading, erro }
 }

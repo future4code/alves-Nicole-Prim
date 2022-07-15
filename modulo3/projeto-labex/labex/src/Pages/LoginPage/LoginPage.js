@@ -20,6 +20,7 @@ export function LoginPage() {
       console.log("Deu certo", response.data)
       localStorage.setItem('token', response.data.token)
       goToAdminHomePage(navigate)
+      cleanFields()
     }).catch((error) => {
       console.log(error.response)
     })

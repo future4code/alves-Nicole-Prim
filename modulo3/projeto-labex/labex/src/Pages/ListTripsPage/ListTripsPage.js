@@ -13,18 +13,24 @@ export function ListTripsPage() {
   const trips = dados?.trips
 
   const listTrips = trips?.map((trip) => {
-    return (
-      <div key={trip.id}>
-        <InfosTrip>
-        <p><strong>Nome: </strong> {trip.name}</p>
-        <p><strong>Descrição: </strong> {trip.description}</p>
-        <p><strong>Planeta: </strong> {trip.planet}</p>
-        <p><strong>Duração: </strong> {trip.durationInDays} dias</p>
-        <p><strong>Data: </strong> {trip.date}</p>
-        </InfosTrip>
-      </div>
-    )
-  })
+    if (trip) {
+      return (
+        <div key={trip.id}>
+               <InfosTrip>
+               <p><strong>Nome: </strong> {trip.name}</p>
+               <p><strong>Descrição: </strong> {trip.description}</p>
+               <p><strong>Planeta: </strong> {trip.planet}</p>
+               <p><strong>Duração: </strong> {trip.durationInDays} dias</p>
+               <p><strong>Data: </strong> {trip.date}</p>
+               </InfosTrip>
+             </div>
+      )
+    } else {
+      return (
+        <p>carregando...</p>
+      )
+    }
+    })
 
   const navigate = useNavigate ()
 
