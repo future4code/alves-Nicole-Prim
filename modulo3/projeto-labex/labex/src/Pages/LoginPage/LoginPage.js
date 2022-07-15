@@ -13,10 +13,12 @@ export function LoginPage() {
   const navigate = useNavigate()
 
   const submitLogin = (event) => {
+    console.log("entrou")
     event.preventDefault()
     axios.post(`${BASE_URL}/login`, form)
     .then((response) => {
       console.log("Deu certo", response.data)
+      localStorage.setItem('token', response.data.token)
       goToAdminHomePage(navigate)
     }).catch((error) => {
       console.log(error.response)

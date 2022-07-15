@@ -3,10 +3,13 @@ import { useGetData } from '../../Hooks/useGetData'
 import { useParams } from 'react-router-dom'
 import { useNavigate } from 'react-router-dom'
 import { goBack, goToCreateTripPage, goToLoginPage, goToTripDetailsPage } from '../../Routes/Coordinator'
+import {useProtectedPage} from '../../Hooks/useProtectedPage'
 
 export function AdminHomePage() {
   const { dados, loading, erro } = useGetData("/trips");
   const trips = dados?.trips
+
+  useProtectedPage()
 
   const listTrips = trips?.map((trip) => {
     return (
