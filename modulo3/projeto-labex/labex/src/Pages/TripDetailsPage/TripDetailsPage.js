@@ -53,7 +53,7 @@ function TripDetailsPage() {
             <p>{trip.name}</p>
           </div>
           <div>
-            <h1>Candidatos pendentes</h1>
+            <h1>Candidatos Pendentes</h1>
             {candidates}
           </div>
           <h1>Candidatos Aprovados</h1>

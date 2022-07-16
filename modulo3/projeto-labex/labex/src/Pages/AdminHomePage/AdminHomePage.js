@@ -30,7 +30,7 @@ const handleDelete = () => {
     }
     )
     .then((res) => {
-      alert("bla bla")
+      alert("Viagem deletada com sucesso")
       handleDelete()
       document.location.reload(true)
     })

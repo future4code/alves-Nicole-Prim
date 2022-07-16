@@ -5,7 +5,9 @@ import { useGetData } from '../../Hooks/useGetData'
 import { useNavigate } from 'react-router-dom';
 import { goBack, goToApplicationFormPage } from '../../Routes/Coordinator';
 //styled
-import {ContainerList, InfosTrip, ContainerTrips, DivImg, DivButtons} from './ListTripsStyled'
+import {ContainerList, ButtonInsc, ButtonBack, InfosTrip, ContainerTrips, DivButtons} from './ListTripsStyled'
+import {TiArrowBackOutline} from 'react-icons/ti'
+
 
 export function ListTripsPage() {
   const { dados, loading, erro } = useGetData("/trips");
@@ -37,12 +39,18 @@ export function ListTripsPage() {
   return (
     <ContainerList>
       <h1>Lista de Viagens</h1>
+      <ButtonInsc>
+      <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
+      </ButtonInsc>
+      <ButtonBack>
+      <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
+      </ButtonBack>
       <ContainerTrips>
       {listTrips}
       </ContainerTrips>
       <DivButtons>
-      <button onClick={() => goBack(navigate)}>Voltar</button>
-      <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
+     
+     
       </DivButtons>
     </ContainerList>
   )

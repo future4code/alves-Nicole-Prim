@@ -6,7 +6,6 @@ export const ContainerList = styled.div`
     padding: 0;
     margin: 0;
     width: 100vw;
-    border: 2px solid black;
     text-align: center;
     background-color: #D1EDFF;
     h1{
@@ -24,8 +23,6 @@ export const InfosTrip = styled.div`
     padding: 0.5rem;
     overflow: auto;
     border-radius: 10px;
-    border: 2px solid purple;
-
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 p {
     color: #207EB4;
@@ -40,11 +37,43 @@ export const ContainerTrips = styled.div`
     height: 100%;
     margin-top: 2rem;
     padding-left: 2rem;
-    border: 2px solid red;
     flex-wrap: wrap;
     justify: center;
 `
 
 export const DivButtons = styled.div`
     display: flex;
+`
+
+export const ButtonInsc = styled.div`
+    display: flex;
+    justify-content: center;
+    button{
+        background-color: transparent;
+        padding: 0.7rem;
+        border-radius: 0.7rem;
+        border: solid #207EB4;
+        color: #207EB4;
+        font-weight: bold;
+        font-size: 1rem;
+        cursor: pointer;
+        &:hover{
+            box-shadow: 0 0 10px #207EB4, 0 0 10px #207EB4;
+            text-shadow: 0 0 5px #D1EDFF, 0 0 5px #D1EDFF;
+        }
+    }
+`
+
+export const ButtonBack = styled.div `
+    display: flex;
+    margin-left: 2rem;
+    button{
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    svg {
+        color: #207EB4;
+        font-size: 3rem;
+    }
+}
 `

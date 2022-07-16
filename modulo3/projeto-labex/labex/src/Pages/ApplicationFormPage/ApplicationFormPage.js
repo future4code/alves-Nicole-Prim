@@ -7,6 +7,8 @@ import axios from 'axios'
 import {BASE_URL} from '../../Credentials/Credentials'
 import { useGetData } from '../../Hooks/useGetData';
 import {countries} from '../../Constants/Countries'
+import {ContainerApply, Form, DivForm, ButtonBack} from './ApplicationStyled'
+import {TiArrowBackOutline} from 'react-icons/ti'
 
 export function ApplicationFormPage() {
   const navigate = useNavigate ()
@@ -37,8 +39,13 @@ export function ApplicationFormPage() {
   }
 
   return (
-    <div>
-        <form onSubmit={onSubmitApplyToTrip}>
+    <ContainerApply>
+      <h1>Inscreva-se para uma viagem</h1>
+      <ButtonBack>
+      <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
+      </ButtonBack>
+      <DivForm>
+        <Form onSubmit={onSubmitApplyToTrip}>
           <select name={'tripId'}
           value={form.tripId}
           onChange={onChange}
@@ -86,7 +93,7 @@ export function ApplicationFormPage() {
           onChange={onChange}
           required >
             <option value="" disabled>
-              Escolha uma viagem para se inscrever
+              País
             </option>
          {countries.map((item) => {
            return (
@@ -95,9 +102,9 @@ export function ApplicationFormPage() {
          })}
             </select>
         <button>Enviar</button>
-      </form>
-      <button onClick={() => goBack(navigate)}>Voltar</button>
-    </div>
+      </Form>
+      </DivForm>
+    </ContainerApply>
   )
 }
 
