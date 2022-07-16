@@ -6,6 +6,9 @@ import { goBack, goToCreateTripPage, goToLoginPage, goToTripDetailsPage } from '
 import {useProtectedPage} from '../../Hooks/useProtectedPage'
 import axios from 'axios'
 import { BASE_URL, HEADERS } from '../../Credentials/Credentials'
+import {ContainerAdmin, ButtonBack, ButtonsAdmin, InfosTrip, ButtonDelete, ContainerTrips} from './AdminStyled'
+import {TiArrowBackOutline} from 'react-icons/ti'
+import {TbTrash} from 'react-icons/tb'
 
 function AdminHomePage() {
   const navigate = useNavigate()
@@ -42,40 +45,35 @@ const handleDelete = () => {
   const listTrips = trips?.map((trip) => {
       return (
         <div key={trip.id}>
+          <InfosTrip>
           <button onClick={() => goToTripDetailsPage(navigate, trip.id)}>
           <p><strong>Nome:</strong> {trip.name}</p>
           </button>
-          <button onClick={() => handleClickDelete(trip.id)}>Deletar Viagem</button>
+          <ButtonDelete>
+          <button onClick={() => handleClickDelete(trip.id)}><TbTrash/></button>
+          </ButtonDelete>
+          </InfosTrip>
         </div>
       )
   })
 
-  // const listTrips = trips?.map((trip) => {
-  //   if (trip) {
-  //   return (
-  //     <div key={trip.id}>
-  //       <button onClick={() => goToTripDetailsPage(navigate, trip.id)}>
-  //       <p><strong>Nome:</strong> {trip.name}</p>
-  //       </button>
-  //       <button onClick={() => handleClickDelete(trip.id)}>Deletar Viagem</button>
-  //     </div>
-  //   )} else {
-  //     return (
-  //       <p>carregando...</p>
-  //     )
-  //   }
-  // })
-
  
-  //useProtectedPage()
+  useProtectedPage()
 
   return (
-    <div>
-      <button onClick={() => goBack(navigate)}>Voltar</button>
+    <ContainerAdmin>
+           <ButtonBack>
+      <button onClick={() => goBack(navigate)}><TiArrowBackOutline/></button>
+      </ButtonBack>
+      <h1>Painel Administrativo</h1>
+      <ButtonsAdmin>
       <button onClick={() => goToCreateTripPage(navigate)}>Criar Viagem</button>
       <button onClick={() => goToLoginPage(navigate)}>Logout</button>
+      </ButtonsAdmin>
+      <ContainerTrips>
       {listTrips}
-    </div>
+      </ContainerTrips>
+    </ContainerAdmin>
   )
 }
 

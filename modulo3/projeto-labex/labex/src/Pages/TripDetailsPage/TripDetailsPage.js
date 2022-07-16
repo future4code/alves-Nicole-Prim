@@ -6,6 +6,7 @@ import { goBack } from '../../Routes/Coordinator'
 import { useProtectedPage } from '../../Hooks/useProtectedPage'
 import { BASE_URL, HEADERS } from '../../Credentials/Credentials'
 import axios from 'axios'
+import {ContainerDetails} from './TripDetailsStyled'
 
 function TripDetailsPage() {
   useProtectedPage()
@@ -74,10 +75,10 @@ function TripDetailsPage() {
   const navigate = useNavigate()
 
   return (
-    <div>
+    <ContainerDetails>
       <button onClick={() => goBack(navigate)}>Voltar</button>
       {detailsTrip()}
-    </div>
+    </ContainerDetails>
   )
 }
 

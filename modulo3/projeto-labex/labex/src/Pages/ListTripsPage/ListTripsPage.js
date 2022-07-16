@@ -38,13 +38,14 @@ export function ListTripsPage() {
 
   return (
     <ContainerList>
+            <ButtonBack>
+      <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
+      </ButtonBack>
       <h1>Lista de Viagens</h1>
       <ButtonInsc>
       <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
       </ButtonInsc>
-      <ButtonBack>
-      <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
-      </ButtonBack>
+
       <ContainerTrips>
       {listTrips}
       </ContainerTrips>

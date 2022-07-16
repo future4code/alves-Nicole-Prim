@@ -1,11 +1,12 @@
 import React, {useState} from 'react'
-
+import {TiArrowBackOutline} from 'react-icons/ti'
 import { useNavigate } from 'react-router-dom'
 import { goBack, goToAdminHomePage  } from '../../Routes/Coordinator'
-
+import {ContainerLogin, ButtonBack, Form, DivForm} from './LoginStyled'
 import {useForm} from '../../Hooks/useForm'
 import axios from 'axios'
 import { BASE_URL } from '../../Credentials/Credentials'
+
 
 export function LoginPage() {
   const {form, onChange, cleanFields} = useForm({email: "", password: ""})
@@ -27,8 +28,13 @@ export function LoginPage() {
   }
 
   return (
-    <div>
-      <form onSubmit={submitLogin} >
+    <ContainerLogin>
+            <ButtonBack>
+      <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
+      </ButtonBack>
+      <h1>Login</h1>
+<DivForm>
+      <Form onSubmit={submitLogin} >
         <input
         name="email"
         type="email"
@@ -49,10 +55,11 @@ export function LoginPage() {
         />
       
       <button >Entrar</button>
-      </form>
-      <button onClick={() => goBack(navigate)}>Voltar</button>
+      </Form>
+      </DivForm>
 
-    </div>
+
+    </ContainerLogin>
   )
 }
 

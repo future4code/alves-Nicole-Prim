@@ -40,10 +40,11 @@ export function ApplicationFormPage() {
 
   return (
     <ContainerApply>
-      <h1>Inscreva-se para uma viagem</h1>
-      <ButtonBack>
+       <ButtonBack>
       <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
       </ButtonBack>
+      <h1>Inscreva-se para uma viagem</h1>
+     
       <DivForm>
         <Form onSubmit={onSubmitApplyToTrip}>
           <select name={'tripId'}

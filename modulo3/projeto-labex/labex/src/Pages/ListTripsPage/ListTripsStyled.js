@@ -5,7 +5,6 @@ export const ContainerList = styled.div`
     flex-direction: column;
     padding: 0;
     margin: 0;
-    width: 100vw;
     text-align: center;
     background-color: #D1EDFF;
     h1{
@@ -34,11 +33,8 @@ p {
 
 export const ContainerTrips = styled.div`
     display: flex;
-    height: 100%;
-    margin-top: 2rem;
     padding-left: 2rem;
     flex-wrap: wrap;
-    justify: center;
 `
 
 export const DivButtons = styled.div`

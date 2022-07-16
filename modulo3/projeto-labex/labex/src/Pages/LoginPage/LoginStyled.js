@@ -1,16 +1,30 @@
 import styled from 'styled-components'
 
-export const ContainerApply = styled.div`
+export const ContainerLogin = styled.div`
 display: flex;
 flex-direction: column;
 padding: 0;
 height: 100vh;
 margin: 0;
 box-sizing: border-box;
-text-align: center;
 background-color: #D1EDFF;
+text-align: center;
 h1{
     color: #207EB4;
+}
+`
+
+export const ButtonBack = styled.div`
+display: flex;
+margin-left: 2rem;
+button{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+svg {
+    color: #207EB4;
+    font-size: 3rem;
+}
 }
 `
 
@@ -25,7 +39,7 @@ export const Form = styled.form`
 display: flex;
 flex-direction: column;
 justify-content: center;
-width: 40rem;
+width: 30rem;
 button{
     background-color: transparent;
     margin: 1rem;
@@ -48,19 +62,5 @@ input, select{
     margin: 0.3rem;
     border-radius: 1rem;
     border: none;
-}
-`
-
-export const ButtonBack = styled.div`
-display: flex;
-margin-left: 2rem;
-button{
-    background-color: transparent;
-    border: none;
-    cursor: pointer;
-svg {
-    color: #207EB4;
-    font-size: 3rem;
-}
 }
 `
