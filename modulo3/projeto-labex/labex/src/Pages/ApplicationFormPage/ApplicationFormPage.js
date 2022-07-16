@@ -22,14 +22,10 @@ export function ApplicationFormPage() {
   const {dados} = useGetData("/trips/")
   const trips = dados?.trips
 
-  const onSubmitApplyToTrip = (event, id) => {
+  const onSubmitApplyToTrip = (event) => {
     event.preventDefault()
     const token = localStorage.getItem("token")
-    axios.post(`${BASE_URL}/trips/${form.tripId}/apply`, form, {
-      headers: {
-        auth: token
-      }
-    })
+    axios.post(`${BASE_URL}/trips/${form.tripId}/apply`, form)
     .then((res) => {
       alert("Inscrição enviada com sucesso")
       console.log("feito", res)
