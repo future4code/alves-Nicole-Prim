@@ -47,6 +47,9 @@ button{
     background-color: transparent;
     border: none;
     cursor: pointer;
+    &:hover{
+        background-color: #D1EDFF;
+    }
 }
 `
 

@@ -23,6 +23,7 @@ export function LoginPage() {
       goToAdminHomePage(navigate)
       cleanFields()
     }).catch((error) => {
+      alert("Usuário ou senha inválidos")
       console.log(error.response)
     })
   }

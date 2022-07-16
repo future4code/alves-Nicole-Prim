@@ -5,6 +5,8 @@ import {useProtectedPage} from '../../Hooks/useProtectedPage'
 import { useForm } from '../../Hooks/useForm'
 import { BASE_URL } from '../../Credentials/Credentials'
 import axios from 'axios'
+import {ContainerCreate, ButtonBack, Form, DivForm} from './CreateTripStyle'
+import {TiArrowBackOutline} from 'react-icons/ti'
 
 export function CreateTripPage () {
   const navigate = useNavigate()
@@ -35,10 +37,13 @@ export function CreateTripPage () {
   }
 
   return (
-    <div>
-            <button onClick={() => goBack(navigate)}>Voltar</button>
-      <h2>Criar Viagem</h2>
-      <form onSubmit={onSubmitCreateTrip}>
+    <ContainerCreate>
+      <ButtonBack>
+            <button onClick={() => goBack(navigate)}><TiArrowBackOutline/></button>
+     </ButtonBack>
+      <h1>Criar Viagem</h1>
+      <DivForm>
+      <Form onSubmit={onSubmitCreateTrip}>
         <input 
         name={'name'} 
         value={form.name} 
@@ -73,8 +78,9 @@ export function CreateTripPage () {
         placeholder="Duração em dias" 
         required />
         <button>Criar</button>
-      </form>
-    </div>
+      </Form>
+      </DivForm>
+    </ContainerCreate>
   )
 }
 
