@@ -25,10 +25,18 @@ export const InfosTrip = styled.div`
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
 p {
     color: #207EB4;
-    font-size: 1.1rem;
     text-align: center;
     font-size: 1.6rem;
 }
+@media(max-width: 800px) {
+    width: 17rem;
+    margin-top:1rem;
+    margin-left: 0;
+    height: 24rem;
+p{
+    font-size: 1.2rem;
+}
+  }
 `
 
 export const ContainerTrips = styled.div`

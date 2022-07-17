@@ -63,6 +63,15 @@ p {
     text-align: center;
     font-size: 1.6rem;
 }
+@media(max-width: 800px) {
+    width: 20rem;
+    margin-top:1rem;
+    margin-left: 3rem;
+    height: 30rem;
+p{
+    font-size: 1.2rem;
+}
+  }
 `
 
 export const Container = styled.div`

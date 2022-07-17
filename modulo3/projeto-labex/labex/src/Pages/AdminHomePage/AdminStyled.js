@@ -51,6 +51,15 @@ button{
         background-color: #D1EDFF;
     }
 }
+@media(max-width: 800px) {
+    width: 20rem;
+    margin-top:1rem;
+    margin-left: 2rem;
+    height: 9rem;
+p{
+    font-size: 1.2rem;
+}
+  }
 `
 
 export const ButtonDelete = styled.div`

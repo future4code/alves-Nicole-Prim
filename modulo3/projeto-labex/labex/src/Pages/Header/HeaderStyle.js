@@ -4,6 +4,10 @@ export const ContainerHeader = styled.div`
     background-color: #d1edff;
     display: flex;
     justify-content: space-between;
+    @media(max-width: 800px) {
+   flex-direction: column;
+   align-items: center;
+  }
 `
 
 export const DivImg = styled.div`
