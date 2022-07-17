@@ -8,6 +8,7 @@ import { BASE_URL, HEADERS } from '../../Credentials/Credentials'
 import axios from 'axios'
 import { ContainerDetails, Container, ButtonBack, ButtonCandidate, Infos } from './TripDetailsStyled'
 import { TiArrowBackOutline } from 'react-icons/ti'
+import Gif from '../../Assets/gif.gif'
 
 function TripDetailsPage() {
   useProtectedPage()
@@ -35,7 +36,6 @@ function TripDetailsPage() {
       console.log(err)
     })
   }
-
 
   const candidates = trip?.candidates.map((candidate, index) => {
     return (<div key={index}>
@@ -77,7 +77,7 @@ function TripDetailsPage() {
       )
     } else {
       return (
-        <p>Carregando...</p>
+        <p><img src={Gif} alt="Ícone carregando gif" /></p>
       )
     }
   }
