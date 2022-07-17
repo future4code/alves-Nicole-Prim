@@ -4,7 +4,6 @@ export const ContainerDetails = styled.div`
 display: flex;
 flex-direction: column;
 padding: 0;
-height: 100vh;
 margin: 0;
 box-sizing: border-box;
 background-color: #D1EDFF;
@@ -47,4 +46,26 @@ cursor: pointer;
     text-shadow: 0 0 5px #D1EDFF, 0 0 5px #D1EDFF;
 }
 }
+`
+
+export const Infos = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin: 4rem;
+    background-color: #b6e4ff;
+    width: 50rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
+p {
+    color: #207EB4;
+    font-size: 1.1rem;
+    text-align: center;
+    font-size: 1.6rem;
+}
+`
+
+export const Container = styled.div`
+    display: flex;
+    justify-content: center;
 `

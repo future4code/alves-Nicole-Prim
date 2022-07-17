@@ -45,13 +45,10 @@ export function ListTripsPage() {
       <ButtonInsc>
       <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
       </ButtonInsc>
-
       <ContainerTrips>
       {listTrips}
       </ContainerTrips>
       <DivButtons>
-     
-     
       </DivButtons>
     </ContainerList>
   )

@@ -6,7 +6,7 @@ import { goBack } from '../../Routes/Coordinator'
 import { useProtectedPage } from '../../Hooks/useProtectedPage'
 import { BASE_URL, HEADERS } from '../../Credentials/Credentials'
 import axios from 'axios'
-import {ContainerDetails, ButtonBack, ButtonCandidate} from './TripDetailsStyled'
+import {ContainerDetails, Container, ButtonBack, ButtonCandidate, Infos} from './TripDetailsStyled'
 import {TiArrowBackOutline} from 'react-icons/ti'
 
 function TripDetailsPage() {
@@ -59,20 +59,22 @@ function TripDetailsPage() {
     if (trip) {
       return (
         <div>
-          <div>
+          <Infos>
             <h1>Detalhes da Viagem</h1>
             <p> <strong> Nome: </strong> {trip.name}</p>
             <p> <strong> Descrição: </strong> {trip.description}</p>
     <p> <strong> Planeta: </strong>  {trip.planet}</p>
     <p> <strong> Duração: </strong>  {trip.durationInDays} dias</p>
     <p> <strong> Data: </strong>  {trip.date}</p>
-          </div>
-          <div>
+          </Infos>
+          <Infos>
             <h1>Candidatos Pendentes</h1>
             {(candidates.length === 0) ? (<p>Não há candidatos pendentes</p>) : (<div> {candidates} </div>)}
-          </div>
+          </Infos>
+          <Infos>
           <h1>Candidatos Aprovados</h1>
       {(approved.length === 0) ? (<p>Não há candidatos aprovados</p>) : (<div> {approved}</div>)}
+      </Infos>
       </div>
       )
     } else {
@@ -93,7 +95,9 @@ function TripDetailsPage() {
       <ButtonBack>
       <button onClick={() => goBack(navigate)}><TiArrowBackOutline/></button>
       </ButtonBack>
+      <Container>
       {detailsTrip()}
+      </Container>
     </ContainerDetails>
   )
 }
