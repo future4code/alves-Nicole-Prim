@@ -6,6 +6,8 @@ import {ContainerLogin, ButtonBack, Form, DivForm} from './LoginStyled'
 import {useForm} from '../../Hooks/useForm'
 import axios from 'axios'
 import { BASE_URL } from '../../Credentials/Credentials'
+import { ToastContainer, toast } from 'react-toastify';
+
 
 
 export function LoginPage() {
@@ -18,13 +20,13 @@ export function LoginPage() {
     event.preventDefault()
     axios.post(`${BASE_URL}/login`, form)
     .then((response) => {
-      console.log("Deu certo", response.data)
       localStorage.setItem('token', response.data.token)
       goToAdminHomePage(navigate)
       cleanFields()
     }).catch((error) => {
-      alert("Usuário ou senha inválidos")
+      toast.error("Usuário ou senha inválidos")
       console.log(error.response)
+      cleanFields()
     })
   }
 

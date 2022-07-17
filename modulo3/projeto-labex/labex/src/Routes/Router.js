@@ -11,7 +11,7 @@ import Header from "../Pages/Header/Header";
 export const Router = () => {
     return (
         <BrowserRouter>
-        <Header />
+            <Header />
             <Routes>
                 <Route index exact path="/" element={<HomePage />} />
                 <Route path="ListTripsPage" element={<ListTripsPage />} />

@@ -7,6 +7,7 @@ import { BASE_URL } from '../../Credentials/Credentials'
 import axios from 'axios'
 import {ContainerCreate, ButtonBack, Form, DivForm} from './CreateTripStyle'
 import {TiArrowBackOutline} from 'react-icons/ti'
+import { ToastContainer, toast } from 'react-toastify';
 
 export function CreateTripPage () {
   const navigate = useNavigate()
@@ -28,7 +29,7 @@ export function CreateTripPage () {
       }
     })
     .then((res) => {
-      alert("Viagem criada com sucesso")
+      toast.success("Viagem criada com sucesso")
       cleanFields()
     })
     .catch((err) => {

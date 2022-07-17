@@ -6,16 +6,14 @@ import { goBack } from '../../Routes/Coordinator'
 import { useProtectedPage } from '../../Hooks/useProtectedPage'
 import { BASE_URL, HEADERS } from '../../Credentials/Credentials'
 import axios from 'axios'
-import {ContainerDetails, Container, ButtonBack, ButtonCandidate, Infos} from './TripDetailsStyled'
-import {TiArrowBackOutline} from 'react-icons/ti'
+import { ContainerDetails, Container, ButtonBack, ButtonCandidate, Infos } from './TripDetailsStyled'
+import { TiArrowBackOutline } from 'react-icons/ti'
 
 function TripDetailsPage() {
   useProtectedPage()
   const params = useParams()
   const { dados, loading, erro } = useGetDataDetails(`/trip/${params.id}`, {});
   const trip = dados?.trip
-  console.log("aqui", trip)
-  console.log(params.id)
 
   const decideCandidate = (id, choice) => {
     const token = localStorage.getItem("token")
@@ -29,7 +27,7 @@ function TripDetailsPage() {
     }).then((res) => {
       if (choice === true) {
         console.log("aprovado")
-      }else {
+      } else {
         console.log("reprovado")
       }
       document.location.reload(true)
@@ -42,15 +40,15 @@ function TripDetailsPage() {
   const candidates = trip?.candidates.map((candidate, index) => {
     return (<div key={index}>
       <div>
-      <p> <strong> Nome: </strong> {candidate.name}</p>
-    <p> <strong> Idade: </strong>  {candidate.age}</p>
-    <p> <strong> Profissão: </strong>  {candidate.profession}</p>
-    <p> <strong> Texto de candidatura: </strong>  {candidate.applicationText}</p>
-    <p> <strong> País: </strong> {candidate.country}</p>
+        <p> <strong> Nome: </strong> {candidate.name}</p>
+        <p> <strong> Idade: </strong>  {candidate.age}</p>
+        <p> <strong> Profissão: </strong>  {candidate.profession}</p>
+        <p> <strong> Texto de candidatura: </strong>  {candidate.applicationText}</p>
+        <p> <strong> País: </strong> {candidate.country}</p>
       </div>
       <ButtonCandidate>
-      <button onClick={() => decideCandidate(candidate.id, true)}>Aprovar</button>
-      <button onClick={() => decideCandidate(candidate.id, false)}>Reprovar</button>
+        <button onClick={() => decideCandidate(candidate.id, true)}>Aprovar</button>
+        <button onClick={() => decideCandidate(candidate.id, false)}>Reprovar</button>
       </ButtonCandidate>
     </div>)
   })
@@ -63,19 +61,19 @@ function TripDetailsPage() {
             <h1>Detalhes da Viagem</h1>
             <p> <strong> Nome: </strong> {trip.name}</p>
             <p> <strong> Descrição: </strong> {trip.description}</p>
-    <p> <strong> Planeta: </strong>  {trip.planet}</p>
-    <p> <strong> Duração: </strong>  {trip.durationInDays} dias</p>
-    <p> <strong> Data: </strong>  {trip.date}</p>
+            <p> <strong> Planeta: </strong>  {trip.planet}</p>
+            <p> <strong> Duração: </strong>  {trip.durationInDays} dias</p>
+            <p> <strong> Data: </strong>  {trip.date}</p>
           </Infos>
           <Infos>
             <h1>Candidatos Pendentes</h1>
             {(candidates.length === 0) ? (<p>Não há candidatos pendentes</p>) : (<div> {candidates} </div>)}
           </Infos>
           <Infos>
-          <h1>Candidatos Aprovados</h1>
-      {(approved.length === 0) ? (<p>Não há candidatos aprovados</p>) : (<div> {approved}</div>)}
-      </Infos>
-      </div>
+            <h1>Candidatos Aprovados</h1>
+            {(approved.length === 0) ? (<p>Não há candidatos aprovados</p>) : (<div> {approved}</div>)}
+          </Infos>
+        </div>
       )
     } else {
       return (
@@ -93,10 +91,10 @@ function TripDetailsPage() {
   return (
     <ContainerDetails>
       <ButtonBack>
-      <button onClick={() => goBack(navigate)}><TiArrowBackOutline/></button>
+        <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
       </ButtonBack>
       <Container>
-      {detailsTrip()}
+        {detailsTrip()}
       </Container>
     </ContainerDetails>
   )

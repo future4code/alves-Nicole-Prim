@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 import { BASE_URL } from '../Credentials/Credentials'
 
-export function useGetData(path) {
+export function useGetData(path, refresh) {
     const [dados, setDados] = useState();
     const [loading, setLoading] = useState(false);
     const [erro, setErro] = useState();
@@ -20,6 +20,6 @@ export function useGetData(path) {
                 setLoading(false);
                 setErro(err.response.data);
             })
-    }, [path])
+    }, [path, refresh])
     return { dados, loading, erro }
 }
