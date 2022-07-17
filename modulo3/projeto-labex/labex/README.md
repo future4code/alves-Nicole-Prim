@@ -1,70 +1,48 @@
-# Getting Started with Create React App
+![Logo](./img-readme/logo.png)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Acesse o site:
 
-## Available Scripts
+<a href=http://labex-nicole.surge.sh>LabeX</a>
 
-In the project directory, you can run:
+## Login:
 
-### `npm start`
+E-mail: astrodev@gmail.com.br
+Senha: 123456
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Logo:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+A Logo foi feita no Canva.
 
-### `npm test`
+## Paleta de Cores:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A paleta de cores foi escolhida de acordo com a logo:
 
-### `npm run build`
+![Paleta](./img-readme/paletalabex.png)
+![Gradiente](./img-readme/GRADIENTE2.png)
+![Gradiente](./img-readme/gradiente.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## Tecnologias utilizadas:
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- React
+- Axios
+- Styled Components
+- JavaScript
+- Toast React
+- Regex
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## Sobre / Funcionalidades:
 
-### `npm run eject`
+Ao acessar o LabeX, o usuário poderá ir para a página de Lista de Viagens ou para a página de Login. Na página de Lista de Viagens o usuário terá acesso a todas as viagens disponíveis, com um card para cada viagem em que poderá verificar todas as informações sobre ela, poderá também clicar no botão para se increver em algumas das viagens. Para isso, terá que preencher um formulário. Se clicar na página de login, será redirecionado para uma página em que deverá preencher e-mail e senha. Ao preencher corretamente, irá para uma página em que visualizará cards com o nome de cada viagem e terá a opção de deletar cada uma delas. Clicando no nome da viagem será redirecionado para uma página de detalhes da viagem, em que poderá ver também os candidatos pendentes para aquela viagem, podendo aprovar ou reprovar cada um deles e, abaixo, terá uma lista dos candidatos aprovados para aquela viagem. No painel administrativo o administrador poderá clicar em "Criar Viagem", onde deverá preencher um formulário para criar viagens. A responsividade funciona. Tem um gif de "carregando" que aparece nos momentos em que está sendo realizada a troca de página. Foi implementado o uso de "toasts" para substituir os alerts.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Imagens:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Home](./img-readme/home.png)
+![Lista](./img-readme/lista.png)
+![Inscrição](./img-readme/inscricao.png)
+![Login](./img-readme/login.png)
+![Painel](./img-readme/painel.png)
+![Detalhes](./img-readme/detalhes.png)
+![Detalhes](./img-readme/detalhess.png)
+![Criar](./img-readme/criar.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Desenvolvido por Nicole Prim
