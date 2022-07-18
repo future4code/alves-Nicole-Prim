@@ -14,7 +14,7 @@ export function HomePage() {
   return (
     <ContainerHome>
       <DivLogo>
-      <img src={Logo} alt="Logo Labex" />
+        <img src={Logo} alt="Logo Labex" />
       </DivLogo>
       <DivButtonHome>
         <button onClick={() => goToListTripsPage(navigate)}>Lista de Viagens</button>

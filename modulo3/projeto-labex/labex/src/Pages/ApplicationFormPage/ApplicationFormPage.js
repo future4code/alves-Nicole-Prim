@@ -80,7 +80,7 @@ export function ApplicationFormPage() {
             placeholder="Texto de candidatura"
             required
             pattern={'^.{30,}'}
-            title={"O nome deve conter no mínimo trinta caracteres"} 
+            title={"O nome deve conter no mínimo trinta caracteres"}
           />
           <input
             name={'profession'}
@@ -89,7 +89,7 @@ export function ApplicationFormPage() {
             placeholder="Profissão"
             required
             pattern={'^.{10,}'}
-            title={"O nome deve conter no mínimo dez caracteres"}  />
+            title={"O nome deve conter no mínimo dez caracteres"} />
           <select
             name={'country'}
             value={form.country}

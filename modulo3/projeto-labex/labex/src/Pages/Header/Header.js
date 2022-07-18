@@ -14,12 +14,12 @@ function Header() {
   return (
     <ContainerHeader>
       <DivImg>
-      <img src={Labex} alt="Logo Labex" />
+        <img src={Labex} alt="Logo Labex" />
       </DivImg>
       <DivButtonHeader>
-      <button onClick={() => goToHomePage(navigate)}> Home</button>
-    <button onClick={() => goToLoginPage(navigate)}>Login</button>
-    </DivButtonHeader>
+        <button onClick={() => goToHomePage(navigate)}> Home</button>
+        <button onClick={() => goToLoginPage(navigate)}>Login</button>
+      </DivButtonHeader>
     </ContainerHeader>
   )
 }

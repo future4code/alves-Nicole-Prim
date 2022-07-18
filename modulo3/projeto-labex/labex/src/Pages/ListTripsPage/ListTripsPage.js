@@ -5,8 +5,8 @@ import { useGetData } from '../../Hooks/useGetData'
 import { useNavigate } from 'react-router-dom';
 import { goBack, goToApplicationFormPage } from '../../Routes/Coordinator';
 //styled
-import {ContainerList, ButtonInsc, ButtonBack, InfosTrip, ContainerTrips, DivButtons} from './ListTripsStyled'
-import {TiArrowBackOutline} from 'react-icons/ti'
+import { ContainerList, ButtonInsc, ButtonBack, InfosTrip, ContainerTrips, DivButtons } from './ListTripsStyled'
+import { TiArrowBackOutline } from 'react-icons/ti'
 
 
 export function ListTripsPage() {
@@ -18,35 +18,35 @@ export function ListTripsPage() {
     if (trip) {
       return (
         <div key={trip.id}>
-               <InfosTrip>
-               <p><strong>Nome: </strong> {trip.name}</p>
-               <p><strong>Descrição: </strong> {trip.description}</p>
-               <p><strong>Planeta: </strong> {trip.planet}</p>
-               <p><strong>Duração: </strong> {trip.durationInDays} dias</p>
-               <p><strong>Data: </strong> {trip.date}</p>
-               </InfosTrip>
-             </div>
+          <InfosTrip>
+            <p><strong>Nome: </strong> {trip.name}</p>
+            <p><strong>Descrição: </strong> {trip.description}</p>
+            <p><strong>Planeta: </strong> {trip.planet}</p>
+            <p><strong>Duração: </strong> {trip.durationInDays} dias</p>
+            <p><strong>Data: </strong> {trip.date}</p>
+          </InfosTrip>
+        </div>
       )
     } else {
       return (
         <p>carregando...</p>
       )
     }
-    })
+  })
 
-  const navigate = useNavigate ()
+  const navigate = useNavigate()
 
   return (
     <ContainerList>
-            <ButtonBack>
-      <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
+      <ButtonBack>
+        <button onClick={() => goBack(navigate)}><TiArrowBackOutline /></button>
       </ButtonBack>
       <h1>Lista de Viagens</h1>
       <ButtonInsc>
-      <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
+        <button onClick={() => goToApplicationFormPage(navigate)}>Inscrever-se</button>
       </ButtonInsc>
       <ContainerTrips>
-      {listTrips}
+        {listTrips}
       </ContainerTrips>
       <DivButtons>
       </DivButtons>

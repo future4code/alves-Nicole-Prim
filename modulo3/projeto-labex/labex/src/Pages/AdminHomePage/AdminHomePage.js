@@ -52,6 +52,10 @@ function AdminHomePage() {
     )
   })
 
+  const logout = () => {
+    localStorage.clear();
+    goToLoginPage(navigate)
+  }
 
   useProtectedPage()
 
@@ -63,7 +67,7 @@ function AdminHomePage() {
       <h1>Painel Administrativo</h1>
       <ButtonsAdmin>
         <button onClick={() => goToCreateTripPage(navigate)}>Criar Viagem</button>
-        <button onClick={() => goToLoginPage(navigate)}>Logout</button>
+        <button onClick={logout}>Logout</button>
       </ButtonsAdmin>
       <ContainerTrips>
         {listTrips}
