@@ -1,6 +1,6 @@
 import React from 'react'
 import Logo from '../../Assets/Logo.svg'
-import { DivImg, DivP, Form, InputUm, InputDois, ButtonForm, Inputs, ContainerHome, DivLine, ButtonSign } from './Styled'
+import { DivImg, DivP, Form, InputUm, InputDois, ButtonForm, Inputs, DivLine, ButtonSign } from './Styled'
 import { useForm } from '../../Hooks/useForm'
 import Line from '../../Assets/Line.svg'
 import { goToSignUpPage, goToPostListPage } from '../../Routes/Coordinator'
@@ -28,7 +28,7 @@ const LoginPage = () => {
   }
 
   return (
-    <ContainerHome>
+    <>
       <DivImg>
         <img src={Logo} alt="imagem logo" />
       </DivImg>
@@ -42,7 +42,7 @@ const LoginPage = () => {
             type="email"
             onChange={onChange}
             value={form.email}
-            placeholder="E-mail"
+            placeholder="E-mail *"
             required
           />
           <InputDois
@@ -50,7 +50,7 @@ const LoginPage = () => {
             type="password"
             onChange={onChange}
             value={form.password}
-            placeholder="Senha"
+            placeholder="Senha *"
             required
           />
         </Inputs>
@@ -64,7 +64,7 @@ const LoginPage = () => {
       <ButtonSign>
         <button onClick={() => goToSignUpPage(navigate)}>Crie uma conta!</button>
       </ButtonSign>
-    </ContainerHome>
+    </>
   )
 }
 
