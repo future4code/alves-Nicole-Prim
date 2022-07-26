@@ -4,10 +4,15 @@ import Logo from '../../Assets/Logo2.svg'
 import Entrar from '../../Assets/Entrar.svg'
 import Logout from '../../Assets/Logout.svg'
 import Fechar from '../../Assets/fechar.svg'
-import { goToLoginPage } from '../../Routes/Coordinator'
+import { goToLoginPage, goToPostListPage } from '../../Routes/Coordinator'
 
 const Header = () => {
     const navigate = useNavigate()
+
+    const logout = () => {
+        localStorage.removeItem("token")
+        goToLoginPage(navigate)
+    }
 
     const buttonHeader = () => {
         if (window.location.pathname === "/signup") {
@@ -21,15 +26,15 @@ const Header = () => {
             return (
                 <>
                     <img src={Logo} alt="Logo" />
-                    <button onClick={() => goToLoginPage(navigate)}> <img src={Logout} alt="Botão logout" /> </button>
+                    <button onClick={logout}> <img src={Logout} alt="Botão logout" /> </button>
                 </>
             )
         } else if (window.location.pathname === "/postdetailpage/:id") {
             return (
                 <>
-                    <button> <img src={Fechar} alt="Botão fechar" /> </button>
+                    <button onClick={() => goToPostListPage(navigate)}> <img src={Fechar} alt="Botão fechar" /> </button>
                     <img src={Logo} alt="Logo" />
-                    <button onClick={() => goToLoginPage(navigate)}> <img src={Logout} alt="Botão logout" /> </button>
+                    <button onClick={logout}> <img src={Logout} alt="Botão logout" /> </button>
                 </>
             )
         } else {
