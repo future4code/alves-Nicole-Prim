@@ -7,11 +7,13 @@ import CardComments from '../../Components/CardComments/CardComments'
 import { useForm } from '../../Hooks/useForm'
 import axios from 'axios'
 import { createComment } from '../../Services/Posts'
+import LoadingLogin from '../../Assets/loadinglogin.gif'
 
 const PostDetailPage = () => {
     useProtectedPage()
     const params = useParams()
     const [refresh, setRefresh] = useState(false)
+    const [isLoading, setIsLoading] = useState(false)
     const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
     const { form, onChange, cleanFields } = useForm({ body: "" })
     const [post, setPost] = useState({})
@@ -24,7 +26,7 @@ const PostDetailPage = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        createComment(form, params.id, cleanFields, setRefresh, refresh )
+        createComment(form, params.id, cleanFields, setRefresh, refresh, setIsLoading )
     }
 
     return (
@@ -40,7 +42,10 @@ const PostDetailPage = () => {
                     placeholder="Adicionar comentário"
                     required
                 />
-                <button type="submit">Responder</button>
+                <button type="submit">
+                {isLoading? <img width={'30px'} src={LoadingLogin} alt="gif carregando"/> : <>Responder</>}
+                    
+                    </button>
             </form>
             <h2>Comentários:</h2>
             <CardComments comments={comments} />

@@ -6,16 +6,18 @@ import Card from '../../Components/CardPost/Card'
 import { useForm } from '../../Hooks/useForm'
 import {createPost} from '../../Services/Posts'
 import { useState } from 'react'
+import LoadingLogin from '../../Assets/loadinglogin.gif'
 
 const PostListPage = () => {
   useProtectedPage()
   const [refresh, setRefresh] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
   const posts = useRequestData([], `${BASE_URL}/posts`, refresh)
   const { form, onChange, cleanFields } = useForm({ title: "", body: "" })
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    createPost(form, cleanFields, setRefresh, refresh)
+    createPost(form, cleanFields, setRefresh, refresh, setIsLoading)
   }
 
   return (
@@ -37,7 +39,9 @@ const PostListPage = () => {
             placeholder="Escreva seu post..."
             required
           />
-          <button type="submit">Postar</button>
+          <button type="submit">
+          {isLoading? <img width={'30px'} src={LoadingLogin} alt="gif carregando"/> : <>Postar</>}
+            </button>
       </form>
       <hr />
       <Card posts={posts}/>

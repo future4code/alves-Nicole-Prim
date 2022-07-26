@@ -8,16 +8,18 @@ import { goToPostListPage } from '../../Routes/Coordinator'
 import { InputTres, DivTitulo, Check, DivP, ButtonForm } from './Styled'
 import {useUnprotectedPage} from '../../Hooks/useUnprotectedPage'
 import { signUp } from '../../Services/User'
+import { useState } from 'react'
+import LoadingLogin from '../../Assets/loadinglogin.gif'
 
 const SignUpPage = () => {
   useUnprotectedPage()
   const { form, onChange, cleanFields } = useForm({username: "", email: "", password: "" })
-
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    signUp(form, cleanFields, navigate)
+    signUp(form, cleanFields, navigate, setIsLoading)
   }
 
 
@@ -64,7 +66,10 @@ const SignUpPage = () => {
         </Check>
         </DivP>
         <ButtonForm>
-          <button type="submit">Cadastrar</button>
+          <button type="submit">
+          {isLoading? <img width={'30px'} src={LoadingLogin} alt="gif carregando"/> : <>Cadastrar</>}
+            
+            </button>
         </ButtonForm>
       </Form>
     </>

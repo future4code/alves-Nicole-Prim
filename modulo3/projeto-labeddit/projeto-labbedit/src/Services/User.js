@@ -21,13 +21,16 @@ export const login = (body, cleanFields, navigate, setIsLoading) => {
         })
 }
 
-export const signUp = (body, cleanFields, navigate) => {
+export const signUp = (body, cleanFields, navigate, setIsLoading) => {
+  setIsLoading(true)
     axios.post(`${BASE_URL}/users/signup`, body)
       .then((response) => {
         localStorage.setItem('token', response.data.token)
         goToPostListPage(navigate)
         cleanFields()
+        setIsLoading(false)
       }).catch((error) => {
+        setIsLoading(false)
         alert("Tente novamente")
         console.log(error.response)
         cleanFields()
