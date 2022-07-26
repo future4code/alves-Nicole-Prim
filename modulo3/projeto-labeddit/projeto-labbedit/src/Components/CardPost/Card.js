@@ -15,11 +15,11 @@ const Card = (props) => {
         return (
             <div key={post.id} onClick={() => goTo(post, post.id)}>
                 <p>Enviado por: {post.username} </p>
+                <p> {post.title}</p>
                 <p> {post.body} </p>
                 <p> {post.voteSum} </p>
                 <p> {post.commentCount} </p>
             </div>
-
         )
     })
 
