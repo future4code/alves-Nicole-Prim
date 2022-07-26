@@ -8,6 +8,7 @@ import { useForm } from '../../Hooks/useForm'
 import axios from 'axios'
 import { createComment } from '../../Services/Posts'
 import LoadingLogin from '../../Assets/loadinglogin.gif'
+import Loading from '../../Components/Loading/Loading'
 
 const PostDetailPage = () => {
     useProtectedPage()
@@ -31,7 +32,9 @@ const PostDetailPage = () => {
 
     return (
         <div>
-            <p>Enviado por: {post.username}</p>
+            {comments.length > 0 ? 
+           <>
+                        <p>Enviado por: {post.username}</p>
             <p>{post.body}</p>
             <form onSubmit={onSubmitForm}>
                 <input
@@ -47,8 +50,14 @@ const PostDetailPage = () => {
                     
                     </button>
             </form>
+
+            
             <h2>Comentários:</h2>
             <CardComments comments={comments} />
+            </>
+
+        : <Loading />
+        }
         </div>
     )
 }

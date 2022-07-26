@@ -7,6 +7,7 @@ import { useForm } from '../../Hooks/useForm'
 import {createPost} from '../../Services/Posts'
 import { useState } from 'react'
 import LoadingLogin from '../../Assets/loadinglogin.gif'
+import Loading from '../../Components/Loading/Loading'
 
 const PostListPage = () => {
   useProtectedPage()
@@ -22,6 +23,8 @@ const PostListPage = () => {
 
   return (
     <div>
+            {posts.length > 0 ? 
+            <>
       <form onSubmit={onSubmitForm}>
           <input
             name="title"
@@ -44,7 +47,12 @@ const PostListPage = () => {
             </button>
       </form>
       <hr />
+
+
       <Card posts={posts}/>
+      </>
+      : <Loading />
+    }
     </div>
   )
 }
