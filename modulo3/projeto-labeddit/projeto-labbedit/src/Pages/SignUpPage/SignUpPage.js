@@ -6,25 +6,21 @@ import { useForm } from '../../Hooks/useForm'
 import { BASE_URL } from '../../Constants/urls'
 import { goToPostListPage } from '../../Routes/Coordinator'
 import { InputTres, DivTitulo, Check, DivP, ButtonForm } from './Styled'
+import {useUnprotectedPage} from '../../Hooks/useUnprotectedPage'
+import { signUp } from '../../Services/User'
 
 const SignUpPage = () => {
+  useUnprotectedPage()
   const { form, onChange, cleanFields } = useForm({username: "", email: "", password: "" })
 
   const navigate = useNavigate()
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    axios.post(`${BASE_URL}/users/signup`, form)
-      .then((response) => {
-        localStorage.setItem('token', response.data.token)
-        goToPostListPage(navigate)
-        cleanFields()
-      }).catch((error) => {
-        alert("Tente novamente")
-        console.log(error.response)
-        cleanFields()
-      })
+    signUp(form, cleanFields, navigate)
   }
+
+
 
   return (
     <>

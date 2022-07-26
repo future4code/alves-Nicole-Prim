@@ -7,25 +7,21 @@ import { goToSignUpPage, goToPostListPage } from '../../Routes/Coordinator'
 import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../../Constants/urls'
 import axios from 'axios'
+import { login } from '../../Services/User'
+import {useUnprotectedPage} from '../../Hooks/useUnprotectedPage'
 
 const LoginPage = () => {
+  useUnprotectedPage()
   const { form, onChange, cleanFields } = useForm({ email: "", password: "" })
 
   const navigate = useNavigate()
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    axios.post(`${BASE_URL}/users/login`, form)
-      .then((response) => {
-        localStorage.setItem('token', response.data.token)
-        goToPostListPage(navigate)
-        cleanFields()
-      }).catch((error) => {
-        alert("Usuário ou senha inválidos")
-        console.log(error.response)
-        cleanFields()
-      })
+    login(form, cleanFields, navigate)
   }
+
+
 
   return (
     <>
