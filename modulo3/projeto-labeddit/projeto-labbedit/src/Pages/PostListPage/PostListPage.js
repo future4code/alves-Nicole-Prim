@@ -1,11 +1,18 @@
 import React from 'react'
-import {useProtectedPage} from '../../Hooks/useProtectedPage'
+import { BASE_URL } from '../../Constants/urls'
+import { useProtectedPage } from '../../Hooks/useProtectedPage'
+import { useRequestData } from '../../Hooks/useRequestData'
+import Card from '../../Components/CardPost/Card'
 
 const PostListPage = () => {
   useProtectedPage()
-  return (
-    <div>PostListPage
+  const posts = useRequestData([], `${BASE_URL}/posts`)
+  console.log(posts)
 
+
+  return (
+    <div>
+      <Card posts={posts}/>
     </div>
   )
 }

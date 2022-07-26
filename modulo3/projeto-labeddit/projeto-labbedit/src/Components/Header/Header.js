@@ -37,6 +37,13 @@ const Header = () => {
                     <button onClick={logout}> <img src={Logout} alt="Botão logout" /> </button>
                 </>
             )
+        } else if (window.location.pathname === "*") {
+            return (
+                <>
+                    <img src={Logo} alt="Logo" />
+                    <button onClick={() => goToLoginPage(navigate)}> <img src={Entrar} alt="Botão login" /> </button>
+                </>
+            )
         } else {
             return (
                 <>
