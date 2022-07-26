@@ -1,11 +1,11 @@
 import React from 'react'
 import axios from 'axios'
 import { useNavigate } from 'react-router-dom'
-import { Form, InputUm, InputDois, ButtonForm, Inputs } from '../LoginPage/Styled'
+import { Form, InputUm, InputDois, Inputs } from '../LoginPage/Styled'
 import { useForm } from '../../Hooks/useForm'
 import { BASE_URL } from '../../Constants/urls'
 import { goToPostListPage } from '../../Routes/Coordinator'
-import { InputTres, DivTitulo } from './Styled'
+import { InputTres, DivTitulo, Check, DivP, ButtonForm } from './Styled'
 
 const SignUpPage = () => {
   const { form, onChange, cleanFields } = useForm({username: "", email: "", password: "" })
@@ -60,10 +60,13 @@ const SignUpPage = () => {
             required
           />
         </Inputs>
-        <p>Ao continuar, você concorda com o nosso Contrato de Usuárioe nossa Política de Privacidade.</p>
+        <DivP>
+        <p>Ao continuar, você concorda com o nosso Contrato de Usuário e nossa Política de Privacidade.</p>
+        <Check>
         <input type="checkbox"/>
         <p>Eu concordo em receber emails sobre coisas legais no LabEddit</p>
-
+        </Check>
+        </DivP>
         <ButtonForm>
           <button type="submit">Cadastrar</button>
         </ButtonForm>

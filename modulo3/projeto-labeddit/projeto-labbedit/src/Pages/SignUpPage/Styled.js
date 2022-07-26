@@ -39,3 +39,87 @@ line-height: 43px;
 color: #373737;
 }
 `
+
+export const Check = styled.div`
+display: flex;
+justify-content: center;
+align-items: center;
+p{
+margin-top: 0px;
+width: 337.22px;
+height: 38px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+color: #000000;
+}
+`
+
+export const DivP = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+position: absolute;
+height: 93px;
+top: 520px;
+p{
+    width: 337.22px;
+height: 38px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 19px;
+color: #000000;
+}
+`
+
+export const ButtonForm = styled.div`
+display: flex;
+justify-content: center;
+padding: 13px, 133px, 13px, 133px;
+align-items: center;
+button{
+    cursor: pointer;
+background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+text-align: center;
+color: #FFFFFF;
+border: none;
+border-radius: 27px;
+position: absolute;
+width: 21rem;
+height: 51px;
+top: 540px;
+}
+@media(max-width: 480px) {
+display: flex;
+justify-content: center;
+padding: 13px, 133px, 13px, 133px;
+align-items: center;
+button{
+    cursor: pointer;
+background: linear-gradient(90deg, #FF6489 0%, #F9B24E 100%);
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+text-align: center;
+color: #FFFFFF;
+border: none;
+border-radius: 27px;
+position: absolute;
+width: 21rem;
+height: 51px;
+top: 640px;
+}
+}
+`
