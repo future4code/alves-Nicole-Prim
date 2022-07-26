@@ -1,24 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Logo from '../../Assets/Logo.svg'
 import { DivImg, DivP, Form, InputUm, InputDois, ButtonForm, Inputs, DivLine, ButtonSign } from './Styled'
 import { useForm } from '../../Hooks/useForm'
 import Line from '../../Assets/Line.svg'
 import { goToSignUpPage, goToPostListPage } from '../../Routes/Coordinator'
 import { useNavigate } from 'react-router-dom'
-import { BASE_URL } from '../../Constants/urls'
-import axios from 'axios'
 import { login } from '../../Services/User'
 import {useUnprotectedPage} from '../../Hooks/useUnprotectedPage'
+import LoadingLogin from '../../Assets/loadinglogin.gif'
 
 const LoginPage = () => {
   useUnprotectedPage()
   const { form, onChange, cleanFields } = useForm({ email: "", password: "" })
-
+  const [isLoading, setIsLoading] = useState(false)
   const navigate = useNavigate()
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    login(form, cleanFields, navigate)
+    login(form, cleanFields, navigate, setIsLoading)
   }
 
 
@@ -51,7 +50,11 @@ const LoginPage = () => {
           />
         </Inputs>
         <ButtonForm>
-          <button type="submit">Continuar</button>
+          <button type="submit" >
+          {isLoading? <img width={'30px'} src={LoadingLogin} alt="gif carregando"/> : <>Continuar</>}
+            
+            </button>
+      
         </ButtonForm>
       </Form>
       <DivLine>

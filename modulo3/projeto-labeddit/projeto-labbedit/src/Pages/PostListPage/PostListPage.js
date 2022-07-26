@@ -9,14 +9,13 @@ import { useState } from 'react'
 
 const PostListPage = () => {
   useProtectedPage()
-  const [refresh, setRefresh] = useState()
+  const [refresh, setRefresh] = useState(false)
   const posts = useRequestData([], `${BASE_URL}/posts`, refresh)
   const { form, onChange, cleanFields } = useForm({ title: "", body: "" })
 
   const onSubmitForm = (event) => {
     event.preventDefault()
     createPost(form, cleanFields, setRefresh, refresh)
-
   }
 
   return (

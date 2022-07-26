@@ -4,16 +4,20 @@ import axios from 'axios'
 import { goToSignUpPage, goToPostListPage } from '../Routes/Coordinator'
 
 
-export const login = (body, cleanFields, navigate) => {
+export const login = (body, cleanFields, navigate, setIsLoading) => {
+  setIsLoading(true)
     axios.post(`${BASE_URL}/users/login`, body)
         .then((response) => {
             localStorage.setItem('token', response.data.token)
             goToPostListPage(navigate)
             cleanFields()
+            setIsLoading(false)
         }).catch((error) => {
+            setIsLoading(false)
             alert("Usuário ou senha inválidos")
             console.log(error.response)
             cleanFields()
+
         })
 }
 
