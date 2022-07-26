@@ -5,18 +5,19 @@ import { useRequestData } from '../../Hooks/useRequestData'
 import Card from '../../Components/CardPost/Card'
 import { useForm } from '../../Hooks/useForm'
 import {createPost} from '../../Services/Posts'
+import { useState } from 'react'
 
 const PostListPage = () => {
   useProtectedPage()
-  const posts = useRequestData([], `${BASE_URL}/posts`)
+  const [refresh, setRefresh] = useState()
+  const posts = useRequestData([], `${BASE_URL}/posts`, refresh)
   const { form, onChange, cleanFields } = useForm({ title: "", body: "" })
 
   const onSubmitForm = (event) => {
     event.preventDefault()
-    createPost(form, cleanFields)
+    createPost(form, cleanFields, setRefresh, refresh)
+
   }
-
-
 
   return (
     <div>

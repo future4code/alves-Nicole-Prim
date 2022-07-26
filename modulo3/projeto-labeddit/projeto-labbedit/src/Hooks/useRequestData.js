@@ -3,7 +3,7 @@ import axios from 'axios'
 import { useState, useEffect } from 'react'
 
 
-export function useRequestData(initialData, url) {
+export function useRequestData(initialData, url, refresh) {
     const [data, setData] = useState(initialData);
 
     useEffect(() => {
@@ -18,6 +18,6 @@ export function useRequestData(initialData, url) {
             .catch((err) => {
                 console.log(err.response.data);
             })
-    }, [url])
+    }, [url, refresh])
     return ( data )
 }

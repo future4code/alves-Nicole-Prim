@@ -6,12 +6,16 @@ import { useRequestData } from '../../Hooks/useRequestData'
 import CardComments from '../../Components/CardComments/CardComments'
 import { useForm } from '../../Hooks/useForm'
 import axios from 'axios'
+import { createComment } from '../../Services/Posts'
+
 const PostDetailPage = () => {
     useProtectedPage()
     const params = useParams()
-    const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`)
+    const [refresh, setRefresh] = useState(false)
+    const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
     const { form, onChange, cleanFields } = useForm({ body: "" })
     const [post, setPost] = useState({})
+
 
     useEffect(() => {
         const postLocal = JSON.parse(localStorage.getItem("post"))
@@ -20,17 +24,8 @@ const PostDetailPage = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        axios.post(`${BASE_URL}/posts/${params.id}/comments`, form, {
-            headers: {
-                Authorization: localStorage.getItem("token")
-            }
-        }).then((res) => {
-            console.log(res)
-            cleanFields()
-        }).catch((err) => {
-            console.log(err.response)
-          })
-      }
+        createComment(form, params.id, cleanFields, setRefresh, refresh )
+    }
 
     return (
         <div>
