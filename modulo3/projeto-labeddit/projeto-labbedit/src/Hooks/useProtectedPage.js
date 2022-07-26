@@ -1,11 +1,11 @@
 import {useNavigate} from "react-router-dom"
-import {useLayoutEffect} from "react"
+import {useEffect} from "react"
 import { goToLoginPage } from "../Routes/Coordinator"
 
 export function useProtectedPage() {
     const navigate = useNavigate()
 
-    useLayoutEffect(() => {
+    useEffect(() => {
         const token = localStorage.getItem("token")
 
         if (!token) {

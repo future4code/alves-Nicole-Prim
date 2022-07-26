@@ -12,7 +12,7 @@ const Card = (props) => {
 
     const postCard = props.posts.map((post) => {
         return (
-            <div key={post.id}>
+            <div key={post.id} onClick={() => goTo(post.id)}>
                 <p>Enviado por: {post.username} </p>
                 <p> {post.body} </p>
                 <p> {post.voteSum} </p>               

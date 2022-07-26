@@ -29,7 +29,7 @@ const Header = () => {
                     <button onClick={logout}> <img src={Logout} alt="Botão logout" /> </button>
                 </>
             )
-        } else if (window.location.pathname === "/postdetailpage/:id") {
+        } else if (window.location.pathname === `/postdetailpage/:id`) {
             return (
                 <>
                     <button onClick={() => goToPostListPage(navigate)}> <img src={Fechar} alt="Botão fechar" /> </button>
