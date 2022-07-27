@@ -11,6 +11,7 @@ border-radius: 4px;
 top: 325px;
 @media(max-width: 480px) {
 top: 288px;
+width: 363px;
 }
 `
 
@@ -31,6 +32,10 @@ font-size: 33px;
 line-height: 43px;
 color: #373737;
 }
+@media(max-width: 480px) {
+margin-left: 28px;
+width: 80%;
+}
 `
 
 export const Check = styled.div`
@@ -38,14 +43,20 @@ display: flex;
 justify-content: center;
 align-items: center;
 p{
-    margin-top: 27px;
+    margin-top: 9px;
 width: 25rem;
 font-family: 'Noto Sans';
 font-style: normal;
-font-weight: 400;
+
 font-size: 14px;
 line-height: 19px;
 color: #000000;
+}
+@media(max-width: 480px) {
+
+    p{
+        margin-top: 7px;
+    }
 }
 `
 
@@ -55,10 +66,10 @@ flex-direction: column;
 justify-content: center;
 align-items: center;
 height: 93px;
-margin-top: 18rem;
+margin-top: 19.5rem;
 p{
     width: 25rem;
-    height: 38px;
+    height: 22px;
 font-family: 'Noto Sans';
 font-style: normal;
 font-weight: 400;
@@ -68,6 +79,13 @@ color: #000000;
 }
 a{
     text-decoration: none;
+}
+@media(max-width: 480px) {
+    margin-top: 19rem;
+p{
+    width: 345px;
+    height: 23px;
+}
 }
 `
 
@@ -91,11 +109,12 @@ border-radius: 27px;
 position: absolute;
 width: 25rem;
 height: 51px;
-top: 680px;
+top: 710px;
 }
 @media(max-width: 480px) {
 button{
-top: 640px;
+top: 700px;
+width: 365px;
 }
 }
 `
