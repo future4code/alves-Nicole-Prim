@@ -59,9 +59,9 @@ const SignUpPage = () => {
           />
         </Inputs>
         <DivP>
-        <p>Ao continuar, você concorda com o nosso Contrato de Usuário e nossa Política de Privacidade.</p>
+        <p>Ao continuar, você concorda com o nosso <a href="http://www.google.com.br">Contrato de Usuário</a> e nossa <a href="http://www.google.com.br">Política de Privacidade </a>.</p>
         <Check>
-        <input type="checkbox"/>
+        <input type="checkbox" required/>
         <p>Eu concordo em receber emails sobre coisas legais no LabEddit</p>
         </Check>
         </DivP>

@@ -5,24 +5,27 @@ export const DivImg = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
-margin-top: 4rem;
+margin-top: 5rem;
 position: relative;
 img{
-width: 9.5rem;
-height: 8.8rem;
+width: 10rem;
+height: 12rem;
 }
 @media(max-width: 480px) {
-margin-top: 6rem;
+margin-top: 89px;
+img{
+width: 152px;
+height: 142px;
+}
 }
 
 `
 export const DivP = styled.div`
 display: flex;
 justify-content: center;
-height: 1.3rem;
 p{ 
 font-family: 'IBM Plex Sans';
-margin-top: 1rem;
+margin-top: 0;
 font-style: normal;
 position: absolute;
 font-weight: 300;
@@ -50,28 +53,30 @@ align-items: center;
 
 export const InputUm = styled.input`
 box-sizing: border-box;
-width: 340px;
+width: 25rem;
 height: 60px;
 position: absolute;
 background: #FFFFFF;
 border: 1px solid #D5D8DE;
 border-radius: 4px;
-top: 325px;
+top: 395px;
 @media(max-width: 480px) {
 top: 359px;
+width: 363px;
 }
 `
 export const InputDois = styled.input`
 box-sizing: border-box;
-width: 340px;
+width: 25rem;
 height: 60px;
 position: absolute;
 background: #FFFFFF;
 border: 1px solid #D5D8DE;
 border-radius: 4px;
-top: 393px;
+top: 465px;
 @media(max-width: 480px) {
 top: 427px;
+width: 363px;
 }
 `
 
@@ -93,13 +98,14 @@ color: #FFFFFF;
 border: none;
 border-radius: 27px;
 position: absolute;
-width: 21rem;
+width: 25rem;
 height: 51px;
-top: 504px;
+top: 590px;
 }
 @media(max-width: 480px) {
 button{
 top: 543px;
+width: 365px;
 }
 }
 `
@@ -111,12 +117,13 @@ position: relative;
 height: 1rem;
 img{
     height: 1rem;
-    width: 21rem;
-    margin-top: 345px;
+    width: 25rem;
+    margin-top: 380px;
 }
 @media(max-width: 480px) {
 img{
-    margin-top: 350px;
+    margin-top: 375px;
+    width: 365px;
 }
 }
 `
@@ -131,8 +138,8 @@ cursor: pointer;
 box-sizing: border-box;
 position: absolute;
 height: 51px;
-width: 21rem;
-top: 595px;
+width: 25rem;
+top: 680px;
 border: 1px solid #FE7E02;
 border-radius: 27px;
 font-family: 'Noto Sans';
@@ -144,7 +151,8 @@ color: #FE7E02;
 }
 @media(max-width: 480px) {
 button{
-top: 634px;
+top: 632px;
+width: 365px;
 }
 }
 `

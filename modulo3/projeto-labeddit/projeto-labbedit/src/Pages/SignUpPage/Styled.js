@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 export const InputTres = styled.input`
 box-sizing: border-box;
-width: 340px;
+width: 25rem;
 height: 60px;
 position: absolute;
 background: #FFFFFF;
 border: 1px solid #D5D8DE;
 border-radius: 4px;
-top: 254px;
+top: 325px;
 @media(max-width: 480px) {
 top: 288px;
 }
@@ -18,12 +18,12 @@ export const DivTitulo = styled.div`
 display: flex;
 justify-content: center;
 align-items: center;
+width: 100%;
+height: 15rem;
 h2{
-position: absolute;
-width: 364px;
+width: 25rem;
 height: 86px;
 left: 32px;
-top: 95px;
 font-family: 'IBM Plex Sans';
 font-style: normal;
 font-weight: 700;
@@ -38,9 +38,8 @@ display: flex;
 justify-content: center;
 align-items: center;
 p{
-margin-top: 0px;
-width: 337.22px;
-height: 38px;
+    margin-top: 27px;
+width: 25rem;
 font-family: 'Noto Sans';
 font-style: normal;
 font-weight: 400;
@@ -55,18 +54,20 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-position: absolute;
 height: 93px;
-top: 520px;
+margin-top: 18rem;
 p{
-    width: 337.22px;
-height: 38px;
+    width: 25rem;
+    height: 38px;
 font-family: 'Noto Sans';
 font-style: normal;
 font-weight: 400;
 font-size: 14px;
 line-height: 19px;
 color: #000000;
+}
+a{
+    text-decoration: none;
 }
 `
 
@@ -88,9 +89,9 @@ color: #FFFFFF;
 border: none;
 border-radius: 27px;
 position: absolute;
-width: 21rem;
+width: 25rem;
 height: 51px;
-top: 540px;
+top: 680px;
 }
 @media(max-width: 480px) {
 button{

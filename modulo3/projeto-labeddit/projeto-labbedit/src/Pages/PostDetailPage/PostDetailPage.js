@@ -32,7 +32,7 @@ const PostDetailPage = () => {
 
     return (
         <div>
-            {comments.length > 0 ? 
+            {comments ? 
            <>
                         <p>Enviado por: {post.username}</p>
             <p>{post.body}</p>
