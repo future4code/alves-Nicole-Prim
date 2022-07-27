@@ -14,22 +14,33 @@ align-items: center;
 margin-top: 50px;
 `
 
-export const InputUm = styled.input`
+export const InputUm = styled.textarea`
 width: 25rem;
 height: 40px;
 background: #FFFFFF;
 border: none;
 border-radius: 12px;
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 23px;
+color: #6F6F6F;
 @media(max-width: 480px) {
 top: 359px;
 width: 363px;
 }
 `
-export const InputDois = styled.input`
+export const InputDois = styled.textarea`
 width: 25rem;
 height: 131px;
 background: #FFFFFF;
 border: none;
+font-family: 'IBM Plex Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 18px;
+line-height: 23px;
 border-radius: 12px;
 @media(max-width: 480px) {
 top: 427px;
