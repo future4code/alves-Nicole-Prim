@@ -5,7 +5,6 @@ import { useProtectedPage } from '../../Hooks/useProtectedPage'
 import { useRequestData } from '../../Hooks/useRequestData'
 import CardComments from '../../Components/CardComments/CardComments'
 import { useForm } from '../../Hooks/useForm'
-import axios from 'axios'
 import { createComment } from '../../Services/Posts'
 import LoadingLogin from '../../Assets/loadinglogin.gif'
 import Loading from '../../Components/Loading/Loading'
@@ -27,37 +26,36 @@ const PostDetailPage = () => {
 
     const onSubmitForm = (event) => {
         event.preventDefault()
-        createComment(form, params.id, cleanFields, setRefresh, refresh, setIsLoading )
+        createComment(form, params.id, cleanFields, setRefresh, refresh, setIsLoading)
     }
 
     return (
         <div>
-            {comments ? 
-           <>
-                        <p>Enviado por: {post.username}</p>
-            <p>{post.body}</p>
-            <form onSubmit={onSubmitForm}>
-                <input
-                    name="body"
-                    type="text"
-                    onChange={onChange}
-                    value={form.body}
-                    placeholder="Adicionar comentário"
-                    required
-                />
-                <button type="submit">
-                {isLoading? <img width={'30px'} src={LoadingLogin} alt="gif carregando"/> : <>Responder</>}
-                    
-                    </button>
-            </form>
+            {comments ?
+                <>
+                    <p>Enviado por: {post.username}</p>
+                    <p>{post.body}</p>
+                    <form onSubmit={onSubmitForm}>
+                        <input
+                            name="body"
+                            type="text"
+                            onChange={onChange}
+                            value={form.body}
+                            placeholder="Adicionar comentário"
+                            required
+                        />
+                        <button type="submit">
+                            {isLoading ? <img width={'30px'} src={LoadingLogin} alt="gif carregando" /> : <>Responder</>}
+                        </button>
+                    </form>
 
-            
-            <h2>Comentários:</h2>
-            <CardComments comments={comments} />
-            </>
 
-        : <Loading />
-        }
+                    <h2>Comentários:</h2>
+                    <CardComments comments={comments} />
+                </>
+
+                : <Loading />
+            }
         </div>
     )
 }

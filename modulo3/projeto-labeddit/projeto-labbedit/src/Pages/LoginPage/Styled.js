@@ -43,12 +43,10 @@ justify-content: center;
 `
 
 export const Inputs = styled.div`
-    display: flex;
-    flex-direction: column;
+display: flex;
+flex-direction: column;
 justify-content: center;
 align-items: center;
-
-
 `
 
 export const InputUm = styled.input`

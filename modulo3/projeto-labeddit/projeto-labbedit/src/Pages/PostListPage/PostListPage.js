@@ -8,6 +8,8 @@ import {createPost} from '../../Services/Posts'
 import { useState } from 'react'
 import LoadingLogin from '../../Assets/loadinglogin.gif'
 import Loading from '../../Components/Loading/Loading'
+import Line from '../../Assets/Line.svg'
+import {ContainerForm, Inputs, InputUm, InputDois, ButtonForm, DivLine} from './Styled'
 
 const PostListPage = () => {
   useProtectedPage()
@@ -25,8 +27,9 @@ const PostListPage = () => {
     <div>
             {posts.length > 0 ? 
             <>
-      <form onSubmit={onSubmitForm}>
-          <input
+      <ContainerForm onSubmit={onSubmitForm}>
+        <Inputs>
+          <InputUm
             name="title"
             type="text"
             onChange={onChange}
@@ -34,7 +37,7 @@ const PostListPage = () => {
             placeholder="Título"
             required
           />
-          <input
+          <InputDois
             name="body"
             type="text"
             onChange={onChange}
@@ -42,13 +45,16 @@ const PostListPage = () => {
             placeholder="Escreva seu post..."
             required
           />
+          </Inputs>
+          <ButtonForm>
           <button type="submit">
           {isLoading? <img width={'30px'} src={LoadingLogin} alt="gif carregando"/> : <>Postar</>}
             </button>
-      </form>
-      <hr />
-
-
+            </ButtonForm>
+      </ContainerForm>
+  <DivLine>
+        <img src={Line} alt="linha" />
+        </DivLine>
       <Card posts={posts}/>
       </>
       : <Loading />
