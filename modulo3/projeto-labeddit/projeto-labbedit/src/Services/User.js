@@ -2,7 +2,8 @@ import { useNavigate } from 'react-router-dom'
 import { BASE_URL } from '../Constants/urls'
 import axios from 'axios'
 import { goToSignUpPage, goToPostListPage } from '../Routes/Coordinator'
-
+import 'react-toastify/dist/ReactToastify.css';
+import { ToastContainer, toast } from 'react-toastify';
 
 export const login = (body, cleanFields, navigate, setIsLoading) => {
   setIsLoading(true)
@@ -14,8 +15,7 @@ export const login = (body, cleanFields, navigate, setIsLoading) => {
             setIsLoading(false)
         }).catch((error) => {
             setIsLoading(false)
-            alert("Usuário ou senha inválidos")
-            console.log(error.response)
+            toast.error("Usuário ou senha inválidos")
             cleanFields()
 
         })
@@ -31,8 +31,7 @@ export const signUp = (body, cleanFields, navigate, setIsLoading) => {
         setIsLoading(false)
       }).catch((error) => {
         setIsLoading(false)
-        alert("Tente novamente")
-        console.log(error.response)
+        toast.error("Tente novamente")
         cleanFields()
       })
   }
