@@ -22,9 +22,9 @@ const Card = (props) => {
                 </Post>
                 <Icones>
                     <Dados>
-                        <img src={FlechaUm} alt="ícone flecha" />
+                        <img onClick={() => props.voteLike(post.id)} src={FlechaUm} alt="ícone flecha" />
                         {post.voteSum}
-                        <img src={FlechaDois} alt="ícone flecha" />
+                        <img onClick={() => props.voteDislike(post.id)} src={FlechaDois} alt="ícone flecha" />
                     </Dados>
                     <Dados> <img onClick={() => goTo(post, post.id)} src={Comentario} alt="ícone comentarios" /> {post.commentCount} </Dados>
                 </Icones>
