@@ -1,92 +1,54 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    overflow: auto;
-    background-color: #FBFBFB;
+    background: #FBFBFB;
 border: 1px solid #E0E0E0;
-border-radius: 12px;
-display: flex;
-flex-direction: column;
-
-width: 25rem;
-    @media(max-width: 480px) {
-        width: 373px;
-
-margin-left: 1.4rem;
-margin-right: 1.4rem;
-}
+border-radius: 0.75rem;
+margin-bottom: 0.625rem;
 `
 
-export const Post = styled.div`
-    display: flex;
-    flex-direction: column;
-    height: 150px;
-    width: 335px;
-    cursor: pointer;
 
-   
-`
 
 export const ContainerPost = styled.div`
-    display: flex;
-    flex-wrap: wrap;
-    margin-top: 5rem;
-    gap: 1rem;
-    width: 330px;
-    @media(max-width: 480px) {
-        align-items: flex-start;
-padding: 0px;
-gap: 10px;
+display: flex;
+flex-direction: column;
 position: absolute;
-width: 373px;
-}
+top:22.188rem;
+left: 1.5rem;
+right: 1.5rem;
 `
 
 export const User = styled.p`
-width: 132px;
-height: 16px;
-    font-family: 'IBM Plex Sans';
+font-family: 'IBM Plex Sans', sans-serif;
 font-style: normal;
 font-weight: 400;
-font-size: 12px;
-line-height: 16px;
+font-size: 0.75rem;
+line-height: 1rem;
 color: #6F6F6F;
-text-align: center;
-
-@media(max-width: 480px) {
-
-}
+padding-left:1.125rem ;
 `
 
 export const Text = styled.p`
-width: 335px;
-
-font-family: 'IBM Plex Sans';
+font-family: 'IBM Plex Sans', sans-serif;
 font-style: normal;
 font-weight: 400;
-font-size: 18px;
-line-height: 23px;
-
-@media(max-width: 480px) {
-    width: 304px;
-    margin-left: 10px;
-    margin-right: 10px;
-    display: flex;
-    align-items: flex-start;
-}
+font-size: 1rem;
+line-height: 1rem;
+color: #000000;
+padding-left: 1.125rem ;
+padding-right: 1.125rem ;
 `
 export const Icones = styled.div`
 display: flex;
-width: 175px;
-gap: 10px;
-img {
-    cursor: pointer;
-    border: 0.793333px solid #ECECEC;
-border-radius: 28px;
-padding: 4.66667px;
-}
-@media(max-width: 480px) {
-
+flex-direction: row;
+gap:1.25rem;
+padding-left: 0.625rem;
+padding-bottom: 0.625rem;
+p{
+    font-family: 'Noto Sans';
+font-style: normal;
+font-size: 0.625rem;
+color: #6F6F6F;
 }
 `
 
@@ -101,5 +63,34 @@ align-items: center;
 color: #6F6F6F;
 display: flex;
 width: 1rem;
+@media(max-width: 480px) {
 
+}
+`
+
+export const IconesUm = styled.div`
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+min-width: 5rem;
+left: 0.313rem;
+height: 1.875rem;
+border: 0.796748px solid #ECECEC;
+border-radius: 1.75rem;
+button{
+    background-color: #FBFBFB;
+    border: none;
+    color: none;
+}
+`
+
+export const Comentarios = styled.div`
+display: flex;
+justify-content: space-evenly;
+align-items: center;
+min-width: 3.125rem;
+left: 6.25rem;
+height: 1.875rem;
+border: 0.796748px solid #ECECEC;
+border-radius: 1.75rem;
 `

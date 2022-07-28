@@ -1,23 +1,26 @@
 import React from 'react'
 import FlechaUm from '../../Assets/cima.svg'
 import FlechaDois from '../../Assets/baixo.svg'
-import { ContainerPost, Container, Post, Icones, Dados, User, Text } from './Styled'
+import { ContainerPost, IconesUm, Container, Post, Icones, Dados, User, Text } from './Styled'
 
 const CardComments = (props) => {
 
     const commentsCard = props.comments.map((comment) => {
         return (
-            <Container>
-                <Post key={comment.id}>
-                    <User>Enviado por: {comment.username} </User>
-                    <Text> {comment.body} </Text>
-                </Post>
+
+            <Container key={comment.id}>
+                <User>Enviado por: {comment.username} </User>
+                <Text> {comment.body} </Text>
                 <Icones>
-                    <Dados>
-                        <img onClick={() => props.voteLike(comment.id)} src={FlechaUm} alt="ícone flecha" />
-                        {comment.voteSum}
-                        <img onClick={() => props.voteDislike(comment.id)} src={FlechaDois} alt="ícone flecha" />
-                    </Dados>
+                    <IconesUm>
+                        <button onClick={() => props.voteLike(comment.id)}>
+                            <img src={FlechaUm} alt="ícone flecha" />
+                        </button>
+                        <p>{comment.voteSum}</p>
+                        <button onClick={() => props.voteDislike(comment.id)}>
+                            <img src={FlechaDois} alt="ícone flecha" />
+                        </button>
+                    </IconesUm>
                 </Icones>
             </Container>
         )

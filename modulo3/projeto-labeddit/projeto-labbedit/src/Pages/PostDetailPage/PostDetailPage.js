@@ -8,139 +8,139 @@ import { useForm } from '../../Hooks/useForm'
 import { createComment } from '../../Services/Posts'
 import LoadingLogin from '../../Assets/loadinglogin.gif'
 import Loading from '../../Components/Loading/Loading'
-import { Container, Post, User, Text, Icones, Dados } from '../../Components/CardPost/Styled'
+import {  Post, User, Text, Icones, IconesUm, Comentarios, Dados } from '../../Components/CardPost/Styled'
 import Comentario from '../../Assets/comentarios.svg'
 import FlechaUm from '../../Assets/cima.svg'
 import FlechaDois from '../../Assets/baixo.svg'
-import { ContainerPost } from './Styled'
+import { Container } from './Styled'
 import Line from '../../Assets/Line.svg'
-import { ContainerForm, Inputs, InputDois, ButtonForm, DivLine } from './Styled'
+import { ContainerForm, ContainerPost, Inputs, InputDois, ButtonForm, DivLine } from './Styled'
 import axios from 'axios'
 
 const PostDetailPage = () => {
-    useProtectedPage()
-    const params = useParams()
-    const [refresh, setRefresh] = useState(false)
-    const [like, setLike] = useState(false)
-    const [dislike, setDislike] = useState(false)
-    const [isLoading, setIsLoading] = useState(false)
-    const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
-    const { form, onChange, cleanFields } = useForm({ body: "" })
-    const [post, setPost] = useState({})
+  useProtectedPage()
+  const params = useParams()
+  const [refresh, setRefresh] = useState(false)
+  const [like, setLike] = useState(false)
+  const [dislike, setDislike] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+  const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
+  const { form, onChange, cleanFields } = useForm({ body: "" })
+  const [post, setPost] = useState({})
 
-    useEffect(() => {
-        const postLocal = JSON.parse(localStorage.getItem("post"))
-        postLocal && setPost(postLocal)
-    }, [])
+  useEffect(() => {
+    const postLocal = JSON.parse(localStorage.getItem("post"))
+    postLocal && setPost(postLocal)
+  }, [])
 
-    const onSubmitForm = (event) => {
-        event.preventDefault()
-        createComment(form, params.id, cleanFields, setRefresh, refresh, setIsLoading)
+  const onSubmitForm = (event) => {
+    event.preventDefault()
+    createComment(form, params.id, cleanFields, setRefresh, refresh, setIsLoading)
+  }
+
+  const voteLike = (id) => {
+    if (like === true) {
+      voteRemove(setLike, like, id)
+      setLike(!like)
+    } else {
+      const body = { direction: 1 }
+      axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
+        headers: {
+          Authorization: localStorage.getItem("token")
+        }
+      }).then((res) => {
+        console.log(res)
+        setLike(!like)
+        setRefresh(!refresh)
+      }).catch((err) => {
+        console.log(err.response)
+      })
     }
+  }
 
-    const voteLike = (id) => {
-        if (like === true) {
-          voteRemove(setLike, like, id)
-          setLike(!like)
-        } else {
-          const body = { direction: 1 }
-          axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
-            headers: {
-              Authorization: localStorage.getItem("token")
-            }
-          }).then((res) => {
-            console.log(res)
-            setLike(!like)
-            setRefresh(!refresh)
-          }).catch((err) => {
-            console.log(err.response)
-          })
+  const voteDislike = (id) => {
+    if (dislike === true) {
+      voteRemove(setDislike, dislike, id)
+      setDislike(!dislike)
+    } else {
+      const body = { direction: -1 }
+      axios.put(`${BASE_URL}/comments/${id}/votes`, body, {
+        headers: {
+          Authorization: localStorage.getItem("token")
         }
-      }
-    
-      const voteDislike = (id) => {
-        if (dislike === true) {
-          voteRemove(setDislike, dislike, id)
+      })
+        .then((res) => {
           setDislike(!dislike)
-        } else {
-          const body = { direction: -1 }
-          axios.put(`${BASE_URL}/comments/${id}/votes`, body, {
-            headers: {
-              Authorization: localStorage.getItem("token")
-            }
-          })
-            .then((res) => {
-              setDislike(!dislike)
-              setRefresh(!refresh)
-            })
-            .catch((err) => {
-              alert(err.response)
-            })
-        }
-      }
-    
-      const voteRemove = (setVote, voteName, id) => {
-        axios.delete(`${BASE_URL}/comments/${id}/votes`, {
-          headers: {
-            Authorization: localStorage.getItem("token")
-          }
+          setRefresh(!refresh)
         })
-          .then((res) => {
-            setVote(!voteName)
-            setRefresh(!refresh)
-          })
-          .catch((err) => {
-            alert(err.response.data)
-          })
+        .catch((err) => {
+          alert(err.response)
+        })
+    }
+  }
+
+  const voteRemove = (setVote, voteName, id) => {
+    axios.delete(`${BASE_URL}/comments/${id}/votes`, {
+      headers: {
+        Authorization: localStorage.getItem("token")
       }
+    })
+      .then((res) => {
+        setVote(!voteName)
+        setRefresh(!refresh)
+      })
+      .catch((err) => {
+        alert(err.response.data)
+      })
+  }
 
-    return (
+  return (
+    <>
+      {comments ?
         <>
-            {comments ?
-                <>
-                    <ContainerPost>
-                        <Container>
-                            <Post>
-                                <User>Enviado por: {post.username} </User>
-                                <Text> {post.body} </Text>
-                            </Post>
-                            <Icones>
-                                <Dados>
-                                    <img src={FlechaUm} alt="ícone flecha" />
-                                    {post.voteSum}
-                                    <img src={FlechaDois} alt="ícone flecha" />
-                                </Dados>
-                                <Dados> <img src={Comentario} alt="ícone comentarios" /> {post.commentCount} </Dados>
-                            </Icones>
-                        </Container>
-                    </ContainerPost>
-                    <ContainerForm onSubmit={onSubmitForm}>
-                        <Inputs>
-                            <InputDois
-                                name="body"
-                                type="text"
-                                onChange={onChange}
-                                value={form.body}
-                                placeholder="Adicionar comentário"
-                                required
-                            />
-                        </Inputs>
-                        <ButtonForm>
-                            <button type="submit">
-                                {isLoading ? <img width={'30px'} src={LoadingLogin} alt="gif carregando" /> : <>Responder</>}
-                            </button>
-                        </ButtonForm>
-                    </ContainerForm>
-                    <DivLine>
-                        <img src={Line} alt="linha" />
-                    </DivLine>
-                    <CardComments comments={comments} voteLike={voteLike} voteDislike={voteDislike} />
-                </>
+<ContainerPost>
+          <Container>
 
-                : <Loading />
-            }
+            <User>Enviado por: {post.username} </User>
+            <Text> {post.body} </Text>
+
+            <Icones>
+              <IconesUm>
+                <img src={FlechaUm} alt="ícone flecha" />
+                <p>{post.voteSum} </p>
+                <img src={FlechaDois} alt="ícone flecha" />
+              </IconesUm>
+              <Comentarios> <img src={Comentario} alt="ícone comentarios" />  <p>{post.commentCount}</p> </Comentarios>
+            </Icones>
+          </Container>
+          </ContainerPost>
+          <ContainerForm onSubmit={onSubmitForm}>
+            <Inputs>
+              <InputDois
+                name="body"
+                type="text"
+                onChange={onChange}
+                value={form.body}
+                placeholder="Adicionar comentário"
+                required
+              />
+            </Inputs>
+            <ButtonForm>
+              <button type="submit">
+                {isLoading ? <img width={'30px'} src={LoadingLogin} alt="gif carregando" /> : <>Responder</>}
+              </button>
+            </ButtonForm>
+          </ContainerForm>
+          <DivLine>
+            <img src={Line} alt="linha" />
+          </DivLine>
+          <CardComments comments={comments} voteLike={voteLike} voteDislike={voteDislike} />
         </>
-    )
+
+        : <Loading />
+      }
+    </>
+  )
 }
 
 export default PostDetailPage

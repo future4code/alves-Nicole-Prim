@@ -1,9 +1,19 @@
 import styled from 'styled-components'
 
 export const ContainerPost = styled.div`
-    display: flex;
-    justify-content: center;
-    margin-top: 5rem;
+display: flex;
+flex-direction: column;
+width: 330px;
+margin-top: 30px;
+margin-left: 1.5rem;
+right: 1.5rem;
+`
+
+export const Container = styled.div`
+    background: #FBFBFB;
+border: 1px solid #E0E0E0;
+border-radius: 0.75rem;
+
 `
 
 export const ContainerForm = styled.form`
@@ -17,13 +27,15 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-top: 23px;
+margin-top: 1rem;
+position: relative;
 `
 
 export const InputDois = styled.textarea`
 width: 25rem;
 height: 131px;
 background: #FFFFFF;
+background-color: #EDEDED;
 border: none;
 font-family: 'IBM Plex Sans';
 font-style: normal;
@@ -31,8 +43,10 @@ font-weight: 400;
 font-size: 18px;
 line-height: 23px;
 border-radius: 12px;
+color: #6F6F6F;
+margin-top: 12px;
 @media(max-width: 480px) {
-top: 427px;
+    margin-top: 0;
 width: 330px;
 }
 `
@@ -54,15 +68,10 @@ text-align: center;
 color: #FFFFFF;
 border: none;
 border-radius: 27px;
-position: absolute;
-width: 25rem;
-height: 47px;
-top: 473px;
-}
-@media(max-width: 480px) {
-button{
+position: relative;
 width: 330px;
-}
+height: 47px;
+top: 1rem;
 }
 `
 
@@ -73,12 +82,8 @@ position: relative;
 height: 1rem;
 img{
     height: 1rem;
-    width: 25rem;
-    margin-top: 62px;
-}
-@media(max-width: 480px) {
-img{
     width: 330px;
+    margin-top: 1.8rem;
 }
-}
+
 `
