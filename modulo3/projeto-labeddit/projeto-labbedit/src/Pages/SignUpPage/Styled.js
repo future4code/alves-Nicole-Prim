@@ -11,7 +11,7 @@ border-radius: 4px;
 top: 325px;
 @media(max-width: 480px) {
 top: 288px;
-width: 363px;
+width: 330px;
 }
 `
 
@@ -47,15 +47,13 @@ p{
 width: 25rem;
 font-family: 'Noto Sans';
 font-style: normal;
-
 font-size: 14px;
 line-height: 19px;
 color: #000000;
 }
 @media(max-width: 480px) {
-
     p{
-        margin-top: 7px;
+        margin-top: 20px;
     }
 }
 `
@@ -68,8 +66,8 @@ align-items: center;
 height: 93px;
 margin-top: 19.5rem;
 p{
-    width: 25rem;
-    height: 22px;
+width: 25rem;
+height: 22px;
 font-family: 'Noto Sans';
 font-style: normal;
 font-weight: 400;
@@ -83,8 +81,8 @@ a{
 @media(max-width: 480px) {
     margin-top: 19rem;
 p{
-    width: 345px;
-    height: 23px;
+    width: 335px;
+    height: 30px;
 }
 }
 `
@@ -114,7 +112,7 @@ top: 710px;
 @media(max-width: 480px) {
 button{
 top: 700px;
-width: 365px;
+width: 330px;
 }
 }
 `

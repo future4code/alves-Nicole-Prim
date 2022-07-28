@@ -33,7 +33,7 @@ line-height: 23px;
 border-radius: 12px;
 @media(max-width: 480px) {
 top: 427px;
-width: 363px;
+width: 330px;
 }
 `
 
@@ -61,7 +61,7 @@ top: 473px;
 }
 @media(max-width: 480px) {
 button{
-width: 365px;
+width: 330px;
 }
 }
 `
@@ -78,7 +78,7 @@ img{
 }
 @media(max-width: 480px) {
 img{
-    width: 365px;
+    width: 330px;
 }
 }
 `

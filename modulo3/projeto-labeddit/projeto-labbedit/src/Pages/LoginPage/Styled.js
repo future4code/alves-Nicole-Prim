@@ -60,7 +60,7 @@ border-radius: 4px;
 top: 395px;
 @media(max-width: 480px) {
 top: 359px;
-width: 363px;
+width: 330px;
 }
 `
 export const InputDois = styled.input`
@@ -74,7 +74,7 @@ border-radius: 4px;
 top: 465px;
 @media(max-width: 480px) {
 top: 427px;
-width: 363px;
+width: 330px;
 }
 `
 
@@ -103,7 +103,7 @@ top: 590px;
 @media(max-width: 480px) {
 button{
 top: 543px;
-width: 365px;
+width: 330px;
 }
 }
 `
@@ -121,7 +121,7 @@ img{
 @media(max-width: 480px) {
 img{
     margin-top: 375px;
-    width: 365px;
+    width: 330px;
 }
 }
 `
@@ -150,7 +150,7 @@ color: #FE7E02;
 @media(max-width: 480px) {
 button{
 top: 632px;
-width: 365px;
+width: 330px;
 }
 }
 `
