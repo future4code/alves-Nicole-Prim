@@ -26,9 +26,12 @@ font-weight: 400;
 font-size: 18px;
 line-height: 23px;
 color: #6F6F6F;
+@media(min-width: 480px) {
+    width: 500px;
+}
 `
 export const InputDois = styled.textarea`
-width: 25rem;
+width: 330px;
 height: 131px;
 background: #FFFFFF;
 background-color: #EDEDED;
@@ -41,9 +44,8 @@ line-height: 23px;
 border-radius: 12px;
 color: #6F6F6F;
 margin-top: 12px;
-@media(max-width: 480px) {
-top: 427px;
-width: 330px;
+@media(min-width: 480px) {
+    width: 500px;
 }
 `
 
@@ -65,15 +67,14 @@ color: #FFFFFF;
 border: none;
 border-radius: 27px;
 position: absolute;
-width: 25rem;
+width: 330px;
 height: 47px;
 top: 265px;
 }
-@media(max-width: 480px) {
-button{
-width: 330px;
+@media(min-width: 480px) {
+    
 }
-}
+
 `
 
 export const DivLine = styled.div`
@@ -83,12 +84,10 @@ position: relative;
 height: 1rem;
 img{
     height: 1rem;
-    width: 25rem;
+    width: 330px;
     margin-top: 62px;
 }
-@media(max-width: 480px) {
-img{
-    width: 330px;
-}
+@media(min-width: 480px) {
+    
 }
 `

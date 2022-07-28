@@ -5,6 +5,11 @@ export const Container = styled.div`
 border: 1px solid #E0E0E0;
 border-radius: 0.75rem;
 margin-bottom: 0.625rem;
+@media(min-width: 480px) {
+   
+  overflow: auto;
+  width: 500px;
+}
 `
 
 export const ContainerPost = styled.div`
@@ -15,6 +20,9 @@ top:3rem;
 width: 330px;
 margin-left: 1.5rem;
 margin-right: 1.5rem;
+@media(min-width: 480px) {
+   width: 500px;
+}
 `
 
 
@@ -75,6 +83,7 @@ button{
     background-color: #FBFBFB;
     border: none;
     color: none;
+    cursor: pointer;
 }
 `
 

@@ -5,9 +5,11 @@ export const Container = styled.div`
 border: 1px solid #E0E0E0;
 border-radius: 0.75rem;
 margin-bottom: 0.625rem;
+@media(min-width: 480px) {
+  overflow: auto;
+    width: 500px;
+}
 `
-
-
 
 export const ContainerPost = styled.div`
 display: flex;
@@ -16,6 +18,12 @@ position: absolute;
 top:22.188rem;
 left: 1.5rem;
 right: 1.5rem;
+@media(min-width: 480px) {
+    flex-direction: row;
+   flex-wrap: wrap;
+   gap: 1rem;
+    justify-content: center;
+}
 `
 
 export const User = styled.p`
@@ -52,22 +60,6 @@ color: #6F6F6F;
 }
 `
 
-export const Dados = styled.p`
-font-family: 'IBM Plex Sans';
-font-style: normal;
-font-weight: 700;
-font-size: 9.56098px;
-line-height: 12px;
-text-align: center;
-align-items: center;
-color: #6F6F6F;
-display: flex;
-width: 1rem;
-@media(max-width: 480px) {
-
-}
-`
-
 export const IconesUm = styled.div`
 display: flex;
 justify-content: space-evenly;
@@ -81,6 +73,7 @@ button{
     background-color: #FBFBFB;
     border: none;
     color: none;
+    cursor: pointer;
 }
 `
 
@@ -93,4 +86,5 @@ left: 6.25rem;
 height: 1.875rem;
 border: 0.796748px solid #ECECEC;
 border-radius: 1.75rem;
+cursor: pointer;
 `

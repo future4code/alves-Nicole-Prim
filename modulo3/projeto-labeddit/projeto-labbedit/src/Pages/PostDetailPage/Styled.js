@@ -6,14 +6,24 @@ flex-direction: column;
 width: 330px;
 margin-top: 30px;
 margin-left: 1.5rem;
-right: 1.5rem;
+margin-right: 1.5rem;
+@media(min-width: 480px) {
+  justify-content: center;
+  align-items: center;
+    margin: 30px auto auto auto;
+}
 `
 
 export const Container = styled.div`
     background: #FBFBFB;
 border: 1px solid #E0E0E0;
 border-radius: 0.75rem;
+@media(min-width: 480px) {
+    display: flex;
+flex-direction: column;
+width: 500px;
 
+}
 `
 
 export const ContainerForm = styled.form`
@@ -32,7 +42,7 @@ position: relative;
 `
 
 export const InputDois = styled.textarea`
-width: 25rem;
+width: 330px;
 height: 131px;
 background: #FFFFFF;
 background-color: #EDEDED;
@@ -44,10 +54,9 @@ font-size: 18px;
 line-height: 23px;
 border-radius: 12px;
 color: #6F6F6F;
-margin-top: 12px;
-@media(max-width: 480px) {
-    margin-top: 0;
-width: 330px;
+margin-top: 0;
+@media(min-width: 480px) {
+  width: 500px;
 }
 `
 
