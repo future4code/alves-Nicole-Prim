@@ -8,6 +8,7 @@ margin-top: 0.3rem;
 button{
     border: none;
     cursor: pointer;
+    background-color: transparent;
 }
 @media(max-width: 480px) {
     justify-content: space-between;

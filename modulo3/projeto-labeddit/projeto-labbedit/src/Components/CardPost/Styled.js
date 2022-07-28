@@ -41,7 +41,7 @@ width: 150px;
 text-align: center;
 color: #6F6F6F;
 @media(max-width: 480px) {
-margin-left: 1rem;
+margin-left: 3rem;
 }
 `
 
