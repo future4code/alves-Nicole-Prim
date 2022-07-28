@@ -15,7 +15,7 @@ margin-top: 30px;
 `
 
 export const InputUm = styled.textarea`
-width: 25rem;
+width: 330px;
 height: 40px;
 background-color: #EDEDED;
 border: none;
@@ -26,11 +26,6 @@ font-weight: 400;
 font-size: 18px;
 line-height: 23px;
 color: #6F6F6F;
-@media(max-width: 480px) {
-top: 359px;
-width: 330px;
-}
-
 `
 export const InputDois = styled.textarea`
 width: 25rem;

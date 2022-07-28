@@ -7,9 +7,6 @@ border-radius: 0.75rem;
 margin-bottom: 0.625rem;
 `
 
-
-
-
 export const ContainerPost = styled.div`
 display: flex;
 flex-direction: column;
