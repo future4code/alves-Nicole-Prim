@@ -15,16 +15,18 @@ import FlechaDois from '../../Assets/baixo.svg'
 import { ContainerPost } from './Styled'
 import Line from '../../Assets/Line.svg'
 import { ContainerForm, Inputs, InputDois, ButtonForm, DivLine } from './Styled'
+import axios from 'axios'
 
 const PostDetailPage = () => {
     useProtectedPage()
     const params = useParams()
     const [refresh, setRefresh] = useState(false)
+    const [like, setLike] = useState(false)
+    const [dislike, setDislike] = useState(false)
     const [isLoading, setIsLoading] = useState(false)
     const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
     const { form, onChange, cleanFields } = useForm({ body: "" })
     const [post, setPost] = useState({})
-
 
     useEffect(() => {
         const postLocal = JSON.parse(localStorage.getItem("post"))
@@ -35,6 +37,62 @@ const PostDetailPage = () => {
         event.preventDefault()
         createComment(form, params.id, cleanFields, setRefresh, refresh, setIsLoading)
     }
+
+    const voteLike = (id) => {
+        if (like === true) {
+          voteRemove(setLike, like, id)
+          setLike(!like)
+        } else {
+          const body = { direction: 1 }
+          axios.post(`${BASE_URL}/comments/${id}/votes`, body, {
+            headers: {
+              Authorization: localStorage.getItem("token")
+            }
+          }).then((res) => {
+            console.log(res)
+            setLike(!like)
+            setRefresh(!refresh)
+          }).catch((err) => {
+            console.log(err.response)
+          })
+        }
+      }
+    
+      const voteDislike = (id) => {
+        if (dislike === true) {
+          voteRemove(setDislike, dislike, id)
+          setDislike(!dislike)
+        } else {
+          const body = { direction: -1 }
+          axios.put(`${BASE_URL}/comments/${id}/votes`, body, {
+            headers: {
+              Authorization: localStorage.getItem("token")
+            }
+          })
+            .then((res) => {
+              setDislike(!dislike)
+              setRefresh(!refresh)
+            })
+            .catch((err) => {
+              alert(err.response)
+            })
+        }
+      }
+    
+      const voteRemove = (setVote, voteName, id) => {
+        axios.delete(`${BASE_URL}/comments/${id}/votes`, {
+          headers: {
+            Authorization: localStorage.getItem("token")
+          }
+        })
+          .then((res) => {
+            setVote(!voteName)
+            setRefresh(!refresh)
+          })
+          .catch((err) => {
+            alert(err.response.data)
+          })
+      }
 
     return (
         <>
@@ -76,7 +134,7 @@ const PostDetailPage = () => {
                     <DivLine>
                         <img src={Line} alt="linha" />
                     </DivLine>
-                    <CardComments comments={comments} />
+                    <CardComments comments={comments} voteLike={voteLike} voteDislike={voteDislike} />
                 </>
 
                 : <Loading />

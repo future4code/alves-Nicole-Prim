@@ -14,13 +14,12 @@ const CardComments = (props) => {
                 </Post>
                 <Icones>
                     <Dados>
-                        <img src={FlechaUm} alt="ícone flecha" />
+                        <img onClick={() => props.voteLike(comment.id)} src={FlechaUm} alt="ícone flecha" />
                         {comment.voteSum}
-                        <img src={FlechaDois} alt="ícone flecha" />
+                        <img onClick={() => props.voteDislike(comment.id)} src={FlechaDois} alt="ícone flecha" />
                     </Dados>
                 </Icones>
             </Container>
-
         )
     })
 
