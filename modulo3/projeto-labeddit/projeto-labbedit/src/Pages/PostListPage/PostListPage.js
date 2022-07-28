@@ -96,7 +96,7 @@ const PostListPage = () => {
                 type="text"
                 onChange={onChange}
                 value={form.title}
-                placeholder="Título"
+                placeholder="Título do post"
                 required
               />
               <InputDois

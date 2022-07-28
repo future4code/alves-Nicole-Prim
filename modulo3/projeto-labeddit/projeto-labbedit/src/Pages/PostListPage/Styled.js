@@ -11,13 +11,13 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
-margin-top: 50px;
+margin-top: 30px;
 `
 
 export const InputUm = styled.textarea`
 width: 25rem;
 height: 40px;
-background: #FFFFFF;
+background-color: #EDEDED;
 border: none;
 border-radius: 12px;
 font-family: 'IBM Plex Sans';
@@ -36,6 +36,7 @@ export const InputDois = styled.textarea`
 width: 25rem;
 height: 131px;
 background: #FFFFFF;
+background-color: #EDEDED;
 border: none;
 font-family: 'IBM Plex Sans';
 font-style: normal;
@@ -43,6 +44,8 @@ font-weight: 400;
 font-size: 18px;
 line-height: 23px;
 border-radius: 12px;
+color: #6F6F6F;
+margin-top: 12px;
 @media(max-width: 480px) {
 top: 427px;
 width: 330px;
@@ -69,7 +72,7 @@ border-radius: 27px;
 position: absolute;
 width: 25rem;
 height: 47px;
-top: 280px;
+top: 265px;
 }
 @media(max-width: 480px) {
 button{
@@ -86,7 +89,7 @@ height: 1rem;
 img{
     height: 1rem;
     width: 25rem;
-    margin-top: 70px;
+    margin-top: 62px;
 }
 @media(max-width: 480px) {
 img{

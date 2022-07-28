@@ -21,12 +21,12 @@ const Card = (props) => {
                     <Text> {post.body} </Text>
                 </Post>
                 <Icones>
-                    <Dados>
+                    <>
                         <img onClick={() => props.voteLike(post.id)} src={FlechaUm} alt="ícone flecha" />
-                        {post.voteSum}
+                      <Dados>  {post.voteSum} </Dados> 
                         <img onClick={() => props.voteDislike(post.id)} src={FlechaDois} alt="ícone flecha" />
-                    </Dados>
-                    <Dados> <img onClick={() => goTo(post, post.id)} src={Comentario} alt="ícone comentarios" /> {post.commentCount} </Dados>
+                    </>
+                    <Dados> <img onClick={() => goTo(post, post.id)} src={Comentario} alt="ícone comentarios" /> <Dados>{post.commentCount}</Dados> </Dados>
                 </Icones>
             </Container>
         )

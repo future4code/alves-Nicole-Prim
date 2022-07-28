@@ -9,6 +9,13 @@ background: #FFFFFF;
 border: 1px solid #D5D8DE;
 border-radius: 4px;
 top: 325px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #323941;
+opacity: 0.8;
 @media(max-width: 480px) {
 top: 288px;
 width: 330px;

@@ -58,6 +58,14 @@ background: #FFFFFF;
 border: 1px solid #D5D8DE;
 border-radius: 4px;
 top: 395px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #323941;
+opacity: 0.8;
+
 @media(max-width: 480px) {
 top: 359px;
 width: 330px;
@@ -72,6 +80,13 @@ background: #FFFFFF;
 border: 1px solid #D5D8DE;
 border-radius: 4px;
 top: 465px;
+font-family: 'Noto Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 22px;
+color: #323941;
+opacity: 0.8;
 @media(max-width: 480px) {
 top: 427px;
 width: 330px;
@@ -135,6 +150,7 @@ button{
 cursor: pointer;
 box-sizing: border-box;
 position: absolute;
+background-color: white;
 height: 51px;
 width: 25rem;
 top: 680px;
