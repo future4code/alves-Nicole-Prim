@@ -10,13 +10,11 @@ import { ToastContainer, toast } from 'react-toastify';
             Authorization: localStorage.getItem("token")
         }
     }).then((res) => {
-        console.log(res)
         cleanFields()
         setIsLoading(false)
         setRefresh(!refresh)
         toast.success("Post criado com sucesso")
     }).catch((err) => {
-        console.log(err.response)
         setIsLoading(false)
       })
 }
@@ -28,13 +26,11 @@ export const createComment = (body, id, cleanFields, setRefresh, refresh, setIsL
         Authorization: localStorage.getItem("token")
     }
 }).then((res) => {
-    console.log(res)
     cleanFields()
     setIsLoading(false)
     setRefresh(!refresh)
     toast.success("Comentário criado com sucesso")
 }).catch((err) => {
-    console.log(err.response)
     setIsLoading(false)
 })
 }

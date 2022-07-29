@@ -18,7 +18,7 @@ const PostListPage = () => {
   const [like, setLike] = useState(false)
   const [dislike, setDislike] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
-  const posts = useRequestData([], `${BASE_URL}/posts`, refresh)
+  const posts = useRequestData([], `${BASE_URL}/posts?size=500`, refresh)
   const { form, onChange, cleanFields } = useForm({ title: "", body: "" })
 
   const onSubmitForm = (event) => {
@@ -26,20 +26,17 @@ const PostListPage = () => {
     createPost(form, cleanFields, setRefresh, refresh, setIsLoading)
   }
 
-
   const voteLike = (id) => {
     if (like === true) {
       voteRemove(setLike, like, id)
       setLike(!like)
     } else {
       const body = { direction: 1 }
-
       axios.post(`${BASE_URL}/posts/${id}/votes`, body, {
         headers: {
           Authorization: localStorage.getItem("token")
         }
       }).then((res) => {
-        console.log(res)
         setLike(!like)
         setRefresh(!refresh)
       }).catch((err) => {
@@ -68,7 +65,6 @@ const PostListPage = () => {
         })
     }
   }
-
 
   const voteRemove = (setVote, voteName, id) => {
     axios.delete(`${BASE_URL}/posts/${id}/votes`, {

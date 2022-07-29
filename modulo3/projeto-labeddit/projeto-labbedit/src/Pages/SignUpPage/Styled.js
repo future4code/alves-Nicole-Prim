@@ -16,6 +16,7 @@ font-size: 16px;
 line-height: 22px;
 color: #323941;
 opacity: 0.8;
+padding-left: 1rem;
 @media(max-width: 480px) {
 top: 288px;
 width: 330px;

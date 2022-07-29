@@ -27,11 +27,7 @@ const PostDetailPage = () => {
   const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
   const { form, onChange, cleanFields } = useForm({ body: "" })
   const [post, setPost] = useState({})
-
-  useEffect(() => {
-    const postLocal = JSON.parse(localStorage.getItem("post"))
-    postLocal && setPost(postLocal)
-  }, [])
+  const posts = useRequestData([], `${BASE_URL}/posts`, refresh)
 
   const onSubmitForm = (event) => {
     event.preventDefault()
@@ -49,7 +45,6 @@ const PostDetailPage = () => {
           Authorization: localStorage.getItem("token")
         }
       }).then((res) => {
-        console.log(res)
         setLike(!like)
         setRefresh(!refresh)
       }).catch((err) => {
@@ -94,24 +89,34 @@ const PostDetailPage = () => {
       })
   }
 
+  const getPost = posts.map((post) => {
+    if (post.id === params.id) {
+      return (
+        <ContainerPost>
+        <Container>
+          <User>Enviado por: {post.username} </User>
+          <Text> {post.body} </Text>
+          <Icones>
+            <IconesUm>
+              <img src={FlechaUm} alt="ícone flecha" />
+              <p>{post.voteSum} </p>
+              <img src={FlechaDois} alt="ícone flecha" />
+            </IconesUm>
+            <Comentarios> <img src={Comentario} alt="ícone comentarios" />  <p>{post.commentCount}</p> </Comentarios>
+          </Icones>
+        </Container>
+      </ContainerPost>
+      )
+    }else {
+      return (<div key={post.id}></div>)
+    }
+  })
+
   return (
     <>
       {comments ?
         <>
-          <ContainerPost>
-            <Container>
-              <User>Enviado por: {post.username} </User>
-              <Text> {post.body} </Text>
-              <Icones>
-                <IconesUm>
-                  <img src={FlechaUm} alt="ícone flecha" />
-                  <p>{post.voteSum} </p>
-                  <img src={FlechaDois} alt="ícone flecha" />
-                </IconesUm>
-                <Comentarios> <img src={Comentario} alt="ícone comentarios" />  <p>{post.commentCount}</p> </Comentarios>
-              </Icones>
-            </Container>
-          </ContainerPost>
+        {getPost}
           <ContainerForm onSubmit={onSubmitForm}>
             <Inputs>
               <InputDois

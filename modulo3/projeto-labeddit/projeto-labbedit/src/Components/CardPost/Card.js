@@ -8,8 +8,7 @@ import FlechaDois from '../../Assets/baixo.svg'
 const Card = (props) => {
     const navigate = useNavigate()
 
-    const goTo = (post, id) => {
-        localStorage.setItem("post", JSON.stringify(post))
+    const goTo = ( id) => {
         goToPostDetailPage(navigate, id)
     }
 
@@ -28,7 +27,7 @@ const Card = (props) => {
                         <img src={FlechaDois} alt="ícone flecha" />
                     </button>
                 </IconesUm>
-                <Comentarios onClick={() => goTo(post, post.id)}>
+                <Comentarios onClick={() => goTo(post.id)}>
                     <img src={Comentario} alt="ícone comentarios" />
                     <p>{post.commentCount}</p>
                 </Comentarios>

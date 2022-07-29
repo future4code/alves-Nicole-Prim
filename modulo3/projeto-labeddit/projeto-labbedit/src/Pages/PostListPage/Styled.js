@@ -26,6 +26,7 @@ font-weight: 400;
 font-size: 18px;
 line-height: 23px;
 color: #6F6F6F;
+padding-left: 1rem;
 @media(min-width: 480px) {
     width: 500px;
 }
@@ -44,6 +45,7 @@ line-height: 23px;
 border-radius: 12px;
 color: #6F6F6F;
 margin-top: 12px;
+padding-left: 1rem;
 @media(min-width: 480px) {
     width: 500px;
 }

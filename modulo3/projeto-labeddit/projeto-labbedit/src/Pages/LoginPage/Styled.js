@@ -47,6 +47,7 @@ display: flex;
 flex-direction: column;
 justify-content: center;
 align-items: center;
+
 `
 
 export const InputUm = styled.input`
@@ -65,7 +66,7 @@ font-size: 16px;
 line-height: 22px;
 color: #323941;
 opacity: 0.8;
-
+padding-left: 1rem;
 @media(max-width: 480px) {
 top: 359px;
 width: 330px;
@@ -87,6 +88,7 @@ font-size: 16px;
 line-height: 22px;
 color: #323941;
 opacity: 0.8;
+padding-left: 1rem;
 @media(max-width: 480px) {
 top: 427px;
 width: 330px;

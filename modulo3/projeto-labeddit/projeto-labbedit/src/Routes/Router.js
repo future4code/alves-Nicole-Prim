@@ -13,7 +13,7 @@ const Router = () => {
             <Header />
             <Routes>
                 <Route path="/login" element={<LoginPage />} />
-                {/*  <Route path=":number" element={<PostListPage />} /> */}
+                <Route path="/postlistpage/:number" element={<PostListPage />} />
                 <Route path="/signup" element={<SignUpPage />} />
                 <Route path="/postdetailpage/:id" element={<PostDetailPage />} />
                 <Route index exact path="/" element={<PostListPage />} />

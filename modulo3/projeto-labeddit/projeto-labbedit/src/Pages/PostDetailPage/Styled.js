@@ -55,6 +55,7 @@ line-height: 23px;
 border-radius: 12px;
 color: #6F6F6F;
 margin-top: 0;
+padding-left: 1rem;
 @media(min-width: 480px) {
   width: 500px;
 }
