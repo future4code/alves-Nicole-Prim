@@ -8,7 +8,7 @@ import { useForm } from '../../Hooks/useForm'
 import { createComment } from '../../Services/Posts'
 import LoadingLogin from '../../Assets/loadinglogin.gif'
 import Loading from '../../Components/Loading/Loading'
-import {  Post, User, Text, Icones, IconesUm, Comentarios, Dados } from '../../Components/CardPost/Styled'
+import { Post, User, Text, Icones, IconesUm, Comentarios, Dados } from '../../Components/CardPost/Styled'
 import Comentario from '../../Assets/comentarios.svg'
 import FlechaUm from '../../Assets/cima.svg'
 import FlechaDois from '../../Assets/baixo.svg'
@@ -98,21 +98,19 @@ const PostDetailPage = () => {
     <>
       {comments ?
         <>
-<ContainerPost>
-          <Container>
-
-            <User>Enviado por: {post.username} </User>
-            <Text> {post.body} </Text>
-
-            <Icones>
-              <IconesUm>
-                <img src={FlechaUm} alt="ícone flecha" />
-                <p>{post.voteSum} </p>
-                <img src={FlechaDois} alt="ícone flecha" />
-              </IconesUm>
-              <Comentarios> <img src={Comentario} alt="ícone comentarios" />  <p>{post.commentCount}</p> </Comentarios>
-            </Icones>
-          </Container>
+          <ContainerPost>
+            <Container>
+              <User>Enviado por: {post.username} </User>
+              <Text> {post.body} </Text>
+              <Icones>
+                <IconesUm>
+                  <img src={FlechaUm} alt="ícone flecha" />
+                  <p>{post.voteSum} </p>
+                  <img src={FlechaDois} alt="ícone flecha" />
+                </IconesUm>
+                <Comentarios> <img src={Comentario} alt="ícone comentarios" />  <p>{post.commentCount}</p> </Comentarios>
+              </Icones>
+            </Container>
           </ContainerPost>
           <ContainerForm onSubmit={onSubmitForm}>
             <Inputs>
@@ -136,7 +134,6 @@ const PostDetailPage = () => {
           </DivLine>
           <CardComments comments={comments} voteLike={voteLike} voteDislike={voteDislike} />
         </>
-
         : <Loading />
       }
     </>
