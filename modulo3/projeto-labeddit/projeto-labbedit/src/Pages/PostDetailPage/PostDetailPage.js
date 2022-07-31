@@ -26,7 +26,6 @@ const PostDetailPage = () => {
   const [isLoading, setIsLoading] = useState(false)
   const comments = useRequestData([], `${BASE_URL}/posts/${params.id}/comments`, refresh)
   const { form, onChange, cleanFields } = useForm({ body: "" })
-  const [post, setPost] = useState({})
   const posts = useRequestData([], `${BASE_URL}/posts`, refresh)
 
   const onSubmitForm = (event) => {
