@@ -103,15 +103,15 @@ app.get("/clients/:cpf", (req: Request, res: Response) => {
 app.put("/clients/:name/:cpf", (req: Request, res: Response) => {
     try {
         const valor = Number(req.body.valor)
-        const {name, cpf} = req.params
-    
+        const { name, cpf } = req.params
+
         if (!name || !cpf) {
             res.statusCode = 400
             throw new Error("Por favor, informe nome e cpf")
         }
-    
+
         const findClient = accounts.find((client) => client.name === name && client.cpf === cpf)
-    
+
         if (findClient) {
             if (name && cpf) {
                 if (typeof name !== 'string' || typeof cpf !== 'string' || typeof valor !== 'number') {
@@ -119,17 +119,18 @@ app.put("/clients/:name/:cpf", (req: Request, res: Response) => {
                     throw new Error("O campo nome e cpf precisam ser uma string. Tente novamente")
                 } else {
                     findClient.saldo = findClient.saldo + valor
+                    res.status(200).send({ message: `Valor adicionado ao saldo com sucesso`, saldo: findClient.saldo })
                 }
             }
-            res.status(200).send({message: `Valor adicionado ao saldo com sucesso`, saldo: findClient.saldo})
+
         } else {
             res.statusCode = 404
             throw new Error("Cliente não encontrado")
         }
     }
     catch (error: any) {
-        res.status(res.statusCode || 500).send({ message: error.message})
+        res.status(res.statusCode || 500).send({ message: error.message })
     }
-    })
+})
 
 
