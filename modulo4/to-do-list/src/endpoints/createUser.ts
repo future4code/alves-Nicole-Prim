@@ -15,7 +15,7 @@ export default async function createUser(req: Request, res: Response){
             throw new Error("Algum dos parâmetros não é válido")
         }
 
-        const newUser = await createUserToDoList(name, nickname, email)
+        await createUserToDoList(name, nickname, email)
 
         res.status(201).send({ message: "Usuário cadastrado com sucesso" })
 

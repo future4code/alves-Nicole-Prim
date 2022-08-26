@@ -13,12 +13,12 @@ export default async function getUserById(req: Request, res: Response){
 
         const findUser = await selectUserById(Number(id))
 
-        if (!findUser) {
+        if (!findUser.length) {
             res.statusCode = 404
             throw new Error("Usuário não encontrado");
         }
 
-        res.status(201).send({findUser})
+        res.status(200).send({findUser})
 
     } catch (error: any) {
         res.status(res.statusCode || 500).send({ messagem: error.message || error.sqlMessage });
