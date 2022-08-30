@@ -1,0 +1,6 @@
+
+## GET http://localhost:3003/user/all
+
+## GET http://localhost:3003/user/all/Tea
+
+GET http://localhost:3003/users
