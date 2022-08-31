@@ -1,0 +1,8 @@
+POST http://localhost:3003/user/signup
+Content-Type: application/json
+
+{
+    "CEP": "88338140",
+    "numero": "500",
+    "complemento": "apto 2"
+}
