@@ -1,4 +1,5 @@
 import { Request, Response } from 'express'
+import selectPurchasesByUser from '../data/selectPurchaseByUser';
 import selectUsers from '../data/selectUsers';
 
 export default async function getUsers(req: Request, res: Response){
@@ -10,7 +11,13 @@ export default async function getUsers(req: Request, res: Response){
             throw new Error("Nenhum usuário encontrado")
         }
 
-        res.status(200).send({findUser})
+        for (const user of findUser) {
+            const purchases = await selectPurchasesByUser(user.id);
+      
+            user.purchases = purchases;
+          }
+
+        res.status(200).send(findUser)
 
     } catch (error: any) {
         res.status(res.statusCode || 500).send({ messagem: error.message || error.sqlMessage });
