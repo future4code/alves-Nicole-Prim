@@ -1,0 +1,51 @@
+
+POST http://localhost:3003/users
+Content-Type: application/json
+
+{
+    "name": "milka",
+    "email": "milka@milka",
+    "password": "123456"
+}
+
+###
+GET http://localhost:3003/users 
+
+###
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "notbook",
+    "price": 10000,
+    "image_url": "https://i.picsum.photos/id/0/5616/3744.jpg?hmac=3GAAioiQziMGEtLbfrdbcoenXoWAW-zlyEAMkfEdBzQ"
+}
+
+###
+GET http://localhost:3003/products
+
+###
+POST http://localhost:3003/purchases
+Content-Type: application/json
+
+{
+    "user_id": 3,
+    "product_id": 4,
+    "quantity": 3
+}
+
+###
+GET http://localhost:3003/users/1/purchases
+
+###
+GET http://localhost:3003/products?order=ASC&search=uv
+
+###
+POST http://localhost:3003/products
+Content-Type: application/json
+
+{
+    "name": "uva2",
+    "price": 5,
+    "image_url": "https://i.picsum.photos/id/237/200/300.jpg?hmac=TmmQSbShHz9CdQm0NkEjx1Dyh_Y984R9LpNrpvH2D_U"
+}
