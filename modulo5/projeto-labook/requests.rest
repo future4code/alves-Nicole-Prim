@@ -1,0 +1,30 @@
+### Endpoint de teste
+GET http://localhost:3003/ping
+
+### 1) Signup
+POST http://localhost:3003/users/signup
+Content-Type: application/json
+
+{
+    "name": "Theodoro",
+    "email": "theo@gmail.com",
+    "password": "abc123"
+}
+
+### 2) Login
+POST http://localhost:3003/users/login
+Content-Type: application/json
+
+{
+    "email": "theo@gmail.com",
+    "password": "abc123"
+}
+
+### 3) Create Post
+POST http://localhost:3003/posts
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjEwMGU3YTZiLTM5MjYtNGQ4NS1hMjhkLWE5OWIzNDlhZjVkMiIsInJvbGUiOiJOT1JNQUwiLCJpYXQiOjE2NjM5ODM5MjIsImV4cCI6MTY2NDA3MDMyMn0.gD27g-vbzN4K4hDLd06e21gnKcsuTwdyBeBcSnFnS-w
+Content-Type: application/json
+
+{
+    "content": "post do theo"
+}
