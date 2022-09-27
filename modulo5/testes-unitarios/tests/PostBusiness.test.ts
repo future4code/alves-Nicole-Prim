@@ -1,5 +1,5 @@
 import { PostBusiness } from "../src/business/PostBusiness"
-import { ICreatePostInputDTO, IGetPostsInputDTO, Post } from "../src/models/Post"
+import { IAddLikeInputDTO, ICreatePostInputDTO, IDeletePostInputDTO, IGetPostsInputDTO, IRemoveLikeInputDTO, Post } from "../src/models/Post"
 import { AuthenticatorMock } from "./mocks/AuthenticatorMock"
 import { IdGeneratorMock } from "./mocks/IdGeneratorMock"
 import { PostDatabaseMock } from "./mocks/PostDatabaseMock"
@@ -35,5 +35,35 @@ describe("Testando a PostBusiness", () => {
         expect(response.post.getContent()).toBe("Teste do mock")
         expect(response.post.getLikes()).toBe(0)
         expect(response.post.getUserId()).toBe("id-mock")
+    })
+
+    test("Deve deletar o post", async () => {
+        const input: IDeletePostInputDTO = {
+            token: "token-mock-admin",
+            postId: "201"
+        }
+        const response = await postBusiness.deletePost(input)
+
+        expect(response.message).toBe("Post deletado com sucesso")
+    })
+
+     test("Deve adicionar um like", async () => {
+        const input: IAddLikeInputDTO = {
+            token: "token-mock-normal",
+            postId: "202"
+        }
+        const response = await postBusiness.addLike(input)
+
+        expect(response.message).toBe("Like realizado com sucesso")
+    }) 
+
+    test("Deve remover um like", async () => {
+        const input: IRemoveLikeInputDTO = {
+            token: "token-mock-normal",
+            postId: "201"
+        }
+        const response = await postBusiness.removeLike(input)
+
+        expect(response.message).toBe("Like removido com sucesso")
     })
 })

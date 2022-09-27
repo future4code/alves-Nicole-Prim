@@ -66,19 +66,19 @@ export class PostDatabaseMock extends BaseDatabase {
     }
 
     public findPostById = async (postId: string): Promise<IPostDB | undefined> => {
-        // const postsDB: IPostDB[] = await BaseDatabase
-        //     .connection(PostDatabase.TABLE_POSTS)
-        //     .select()
-        //     .where({ id: postId })
 
-        // return postsDB[0]
-
-        switch(postId) {
+        switch (postId) {
             case "201":
                 return {
                     id: "201",
                     content: "Olá, sou novo por aqui!",
                     user_id: "101"
+                }
+            case "202":
+                return {
+                    id: "202",
+                    content: "Bom dia, família!",
+                    user_id: "102"
                 }
 
             default:
