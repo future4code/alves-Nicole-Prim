@@ -17,3 +17,4 @@ const showController = new ShowController(
 )
 
 showRouter.post("/createRecordShow", showController.createRecordShow)
+showRouter.get("/allshows", showController.getAllShows)

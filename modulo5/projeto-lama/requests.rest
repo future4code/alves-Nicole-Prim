@@ -30,3 +30,6 @@ Content-Type: application/json
     "band": "beyonce",
     "starts_at": "2022-12-13"
 }
+
+### 4) Todos os shows
+GET http://localhost:3003/shows/allshows

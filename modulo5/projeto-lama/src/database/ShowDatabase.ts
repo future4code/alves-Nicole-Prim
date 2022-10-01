@@ -23,12 +23,30 @@ export class ShowDatabase extends BaseDatabase {
             .insert(showDB)
     }
 
-    public checkDate = async (starts_at: any) =>{
+    public checkDate = async (starts_at: any) => {
         const result = await BaseDatabase.connection(ShowDatabase.TABLE_SHOWS)
-        .select()
-        .where({ starts_at })
+            .select()
+            .where({ starts_at })
 
         return result[0]
     }
+
+    public selectAllShows = async (): Promise<IShowDB[]> => {
+        const shows = await BaseDatabase.connection(ShowDatabase.TABLE_SHOWS)
+            .select()
+            .into(ShowDatabase.TABLE_SHOWS)
+
+        return shows
+    }
+
+    public getTicketsShow = async (showId: string): Promise<number> => {
+        const result = await BaseDatabase.connection(ShowDatabase.TABLE_TICKETS)
+        .select()
+        .count("id AS tickets")
+        .where({show_id: showId})
+    
+        return result[0].tickets as number
+    
+       }
 
 }

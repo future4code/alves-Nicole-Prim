@@ -13,14 +13,14 @@ export class ShowBusiness {
         private showDatabase: ShowDatabase,
         private idGenerator: IdGenerator,
         private authenticator: Authenticator
-    ) {}
+    ) { }
 
     public createRecordShow = async (input: any) => {
         const { band, starts_at, token } = input
 
         const payload = this.authenticator.getTokenPayload(token)
 
-        if(!payload) {
+        if (!payload) {
             throw new AuthenticationError();
         }
 
@@ -32,7 +32,7 @@ export class ShowBusiness {
             throw new ParamsError()
         }
 
-        if(payload.role !== USER_ROLES.ADMIN) {
+        if (payload.role !== USER_ROLES.ADMIN) {
             throw new AuthorizationError()
         }
 
@@ -58,6 +58,33 @@ export class ShowBusiness {
 
         return response
 
+    }
+
+    public getAllShows = async () => {
+
+        const shows = await this.showDatabase.selectAllShows()
+
+        const verifyShows = shows.map((show) => {
+            const date = new Date(show.starts_at)
+
+            return new Show(
+                show.id,
+                show.band,
+                date
+            )
+        })
+
+        for (let show of verifyShows) {
+            const showId = show.getId()
+            const tickets = await this.showDatabase.getTicketsShow(showId)
+            show.setTickets(5000 - tickets)
+        }
+
+        const response = {
+            verifyShows
+        }
+
+        return response
     }
 
 }
